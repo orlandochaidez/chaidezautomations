@@ -47,6 +47,9 @@ header{position:sticky;top:0;z-index:20;background:#ffffff;color:var(--ink);bord
 .hero h1{font-family:"Fraunces",serif;font-size:clamp(2.6rem,7vw,4.2rem);font-weight:800;letter-spacing:-.03em;max-width:720px}
 .hero h1 em{font-style:normal;color:var(--blue-dark)}
 .hero-sub{margin-top:18px;font-size:1.12rem;color:var(--muted);max-width:560px}
+.hero-umbrella{margin-top:14px;font-size:.98rem;font-weight:700;color:var(--ink);max-width:560px;line-height:1.5}
+.footer-umbrella{margin-top:6px;font-weight:700;color:var(--ink);font-size:.92rem}
+.footer-umbrella-tagline{margin-top:6px;color:var(--muted);font-size:.94rem;line-height:1.5;max-width:420px}
 .call-box{margin-top:28px;background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:18px;max-width:560px}
 .call-box-label{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark)}
 .demo-placeholder{margin-top:8px;font-weight:700;font-size:.98rem;line-height:1.4;color:var(--muted)}
@@ -141,6 +144,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
     <div class="wrap">
       <h1 data-i18n="heroH1">Missed calls are <em>missed jobs.</em></h1>
       <p class="hero-sub" data-i18n="heroSub">We answer your business phone 24/7 in English and Spanish, book the estimate, and text you the summary. You stay on the job — and you never miss a call.</p>
+      <p class="hero-umbrella" data-i18n="heroUmbrella">From Chaidez Automations — we automate your front desk: calls, texts, and forms, in English and Spanish.</p>
       <div class="call-box">
         <div class="call-box-label" data-i18n="demoLabel">Call our line — hear it answer</div>
         <p class="demo-placeholder" data-i18n="demoPlaceholder">This is our own No Missed Calls business line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.</p>
@@ -292,6 +296,8 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
     <div class="footer-grid">
       <div>
         <div class="brand"><span class="brand-mark" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="#ffffff"/></svg></span><span>No Missed Calls</span></div>
+        <p class="footer-umbrella" data-i18n="footerUmbrella">A Chaidez Automations product</p>
+        <p class="footer-umbrella-tagline" data-i18n="footerUmbrellaTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</p>
         <p style="margin-top:12px" data-i18n="footerTag">Answered 24/7, in English and Spanish.</p>
       </div>
       <div>
@@ -331,6 +337,7 @@ var T = {
     brandSub:"Bilingual Automated Receptionist", headerCall:"Call demo",
     heroH1:"Missed calls are <em>missed jobs.</em>",
     heroSub:"We answer your business phone 24/7 in English and Spanish, book the estimate, and text you the summary. You stay on the job — and you never miss a call.",
+    heroUmbrella:"From Chaidez Automations — we automate your front desk: calls, texts, and forms, in English and Spanish.",
     demoLabel:"Call our line — hear it answer", demoPlaceholder:"This is our own No Missed Calls business line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Demo number coming soon",
     howLabel:"How it works", howH2:"You work. It answers.",
     step1T:"A customer calls", step1:"Day, night, and weekends.",
@@ -357,13 +364,14 @@ var T = {
     consentEmail:"It's okay to email me setup info", consentText:"It's okay to text me about my setup (optional)",
     submitBtn:"Get my setup link",
     confirmTitle:"Got it — Orlando will email you within 24 hours with your setup link.",
-    footerTag:"Answered 24/7, in English and Spanish.", footerAreas:"Service areas", footerArea3:"Bakersfield / Central Valley",
+    footerTag:"Answered 24/7, in English and Spanish.", footerUmbrella:"A Chaidez Automations product", footerUmbrellaTagline:"Your front desk, automated. No missed calls. No missed texts. No missed leads.", footerAreas:"Service areas", footerArea3:"Bakersfield / Central Valley",
     disclaimer:"Automated receptionist, powered by AI, for routine business calls. Not certified legal/medical interpreting."
   },
   es: {
     brandSub:"Recepcionista bilingüe automatizada", headerCall:"Llamar al demo",
     heroH1:"Llamada perdida, <em>trabajo perdido.</em>",
     heroSub:"Contestamos el teléfono de su negocio las 24 horas, en inglés y español, agendamos la cotización y le enviamos el resumen por texto. Usted siga en su trabajo — y nunca pierda una llamada.",
+    heroUmbrella:"De Chaidez Automations — automatizamos su recepción: llamadas, mensajes de texto y formularios, en inglés y español.",
     demoLabel:"Llame a nuestra línea — escúchela contestar", demoPlaceholder:"Esta es nuestra propia línea de No Missed Calls. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Número demo muy pronto",
     howLabel:"Cómo funciona", howH2:"Usted trabaja. Nosotros contestamos.",
     step1T:"Un cliente llama", step1:"Día, noche y fines de semana.",
@@ -390,7 +398,7 @@ var T = {
     consentEmail:"Acepto que me envíen la información de instalación por correo", consentText:"Acepto que me envíen textos sobre mi instalación (opcional)",
     submitBtn:"Quiero mi enlace de instalación",
     confirmTitle:"Listo — Orlando le enviará un correo dentro de 24 horas con su enlace de instalación.",
-    footerTag:"Atención 24/7, en inglés y español.", footerAreas:"Áreas de servicio", footerArea3:"Bakersfield / Valle Central",
+    footerTag:"Atención 24/7, en inglés y español.", footerUmbrella:"Un producto de Chaidez Automations", footerUmbrellaTagline:"Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", footerAreas:"Áreas de servicio", footerArea3:"Bakersfield / Valle Central",
     disclaimer:"Recepcionista automatizada, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica."
   }
 };
