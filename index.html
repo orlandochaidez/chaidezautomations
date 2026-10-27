@@ -5,120 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:,">
-<title>No Missed Calls — Bilingual Automated Receptionist for Trades</title>
+<title>Chaidez Automations — Your front desk, automated</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#5aa3cf; --blue-dark:#2f6fa3; --blue-soft:#e8f2f9; --blue-mid:#d6eaf6;
-  --ink:#1a2f42; --muted:#5a748c; --line:#d9e6f0;
-  --bg:#ffffff; --card:#ffffff; --card-2:#f6fafd;
-  --radius:18px;
+  --ink:#16283a; --muted:#5b738a; --line:#dbe7f1;
+  --bg:#ffffff; --card:#ffffff; --wash:#f4f9fc;
+  --radius:14px;
   color-scheme: light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1,"cv05" 1}
 a{color:inherit}
-.wrap{width:min(1120px,100% - 40px);margin:0 auto}
-h1,h2,h3{line-height:1.05;margin:0}
-h2{font-family:"Fraunces",serif;font-size:clamp(1.9rem,4.5vw,2.6rem);letter-spacing:-.02em;font-weight:800}
-h3{font-size:1.05rem}
+.wrap{width:min(1080px,100% - 40px);margin:0 auto}
+h1,h2,h3{line-height:1.12;margin:0;font-family:"Inter",system-ui,sans-serif;font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(1.75rem,4vw,2.35rem)}
+h3{font-size:1rem;letter-spacing:-.01em}
 p{margin:0}
-.section{padding:64px 0}
-.section-head{max-width:640px;margin-bottom:28px}
+.section{padding:72px 0}
+.section-head{max-width:620px;margin-bottom:30px}
 .section-head p{color:var(--muted);margin-top:10px;font-size:1.02rem}
-.label{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-dark)}
+.label{font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-dark)}
+.num,.price{font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1}
 
-header{position:sticky;top:0;z-index:20;background:#ffffff;color:var(--ink);border-bottom:1px solid var(--line)}
-.header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;font-size:1.05rem;line-height:1}
-.brand-mark{width:36px;height:36px;border-radius:9px;background:var(--blue);display:grid;place-items:center;flex:none}
-.brand small{display:block;font-weight:600;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{font-weight:800;letter-spacing:-.02em;font-size:1.06rem;line-height:1.15}
+.brand small{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .header-actions{display:flex;align-items:center;gap:10px}
 .lang-toggle{display:flex;background:#eef5fa;border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang-toggle button{border:0;background:transparent;color:#4a6b84;font-weight:800;font-size:.85rem;padding:7px 14px;border-radius:999px;cursor:pointer}
+.lang-toggle button{border:0;background:transparent;color:#4a6b84;font-weight:700;font-size:.85rem;padding:7px 14px;border-radius:999px;cursor:pointer;font-family:inherit}
 .lang-toggle button[aria-pressed="true"]{background:var(--blue-dark);color:#fff}
-.header-call{display:none;background:var(--blue);color:#fff;font-weight:800;text-decoration:none;padding:11px 18px;border-radius:999px;font-size:.92rem}
+.header-call{display:none;background:var(--blue-dark);color:#fff;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;font-size:.92rem}
 @media(min-width:720px){.header-call{display:inline-flex}}
 
-.hero{background:#f2f8fc;color:var(--ink);padding:56px 0 64px;border-bottom:1px solid var(--line)}
-.hero h1{font-family:"Fraunces",serif;font-size:clamp(2.6rem,7vw,4.2rem);font-weight:800;letter-spacing:-.03em;max-width:720px}
-.hero h1 em{font-style:normal;color:var(--blue-dark)}
-.hero-sub{margin-top:18px;font-size:1.12rem;color:var(--muted);max-width:560px}
-.hero-umbrella{margin-top:14px;font-size:.98rem;font-weight:700;color:var(--ink);max-width:560px;line-height:1.5}
-.footer-umbrella{margin-top:6px;font-weight:700;color:var(--ink);font-size:.92rem}
-.footer-umbrella-tagline{margin-top:6px;color:var(--muted);font-size:.94rem;line-height:1.5;max-width:420px}
-.call-box{margin-top:28px;background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:18px;max-width:560px}
-.call-box-label{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark)}
-.demo-placeholder{margin-top:8px;font-weight:700;font-size:.98rem;line-height:1.4;color:var(--muted)}
-.big-call{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#e3eef6;color:#4a6b84;font-weight:800;font-size:1.02rem;padding:16px 20px;border-radius:12px;border:1px dashed #9fc3dd;cursor:default}
+.hero{padding:72px 0 76px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.5rem,6.5vw,4rem);max-width:680px}
+.hero-sub{margin-top:20px;font-size:1.14rem;color:var(--muted);max-width:560px;line-height:1.6}
+.call-box{margin-top:36px;border:1px solid var(--line);border-radius:var(--radius);padding:20px;max-width:560px}
+.call-box-label{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark)}
+.demo-placeholder{margin-top:8px;font-weight:500;font-size:.98rem;line-height:1.55;color:var(--muted)}
+.big-call{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--wash);color:#4a6b84;font-weight:700;font-size:1rem;padding:15px 20px;border-radius:10px;border:1px dashed #9fc3dd}
 
 .steps{display:grid;gap:16px}
 @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
-.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.step-num{width:40px;height:40px;border-radius:50%;background:var(--blue-soft);color:var(--blue-dark);display:grid;place-items:center;font-weight:800;font-size:1.02rem;margin-bottom:14px}
+.step{border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue-soft);color:var(--blue-dark);display:grid;place-items:center;font-weight:800;font-size:1rem;margin-bottom:14px;font-variant-numeric:tabular-nums}
 .step p{color:var(--muted);margin-top:8px;font-size:.97rem}
 
 .pricing{display:grid;gap:16px;align-items:stretch}
-@media(min-width:860px){.pricing{grid-template-columns:repeat(3,1fr)}}
-.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;position:relative}
-.price-card.popular{border:2px solid var(--blue)}
-.pop-tag{position:absolute;top:-13px;left:24px;background:var(--blue);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
-.price{font-family:"Fraunces",serif;font-size:2.5rem;font-weight:800;margin-top:10px}
-.price span{font-family:"Manrope",sans-serif;font-size:1rem;font-weight:600;color:var(--muted)}
-.price-card ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.96rem}
+@media(min-width:860px){.pricing{grid-template-columns:repeat(3,1fr)} .pricing.two{grid-template-columns:repeat(2,1fr);max-width:760px}}
+.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;position:relative;background:#fff}
+.price-card.popular{border:2px solid var(--blue-dark)}
+.pop-tag{position:absolute;top:-12px;left:22px;background:var(--blue-dark);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.price{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;margin-top:10px;line-height:1}
+.price span{font-size:1rem;font-weight:600;color:var(--muted);letter-spacing:0}
+.price-card ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.96rem}
 .price-card ul li{display:flex;gap:9px}
 .price-card ul svg{flex:none;margin-top:3px}
 .pricing-note{margin-top:18px;color:var(--muted);font-size:.94rem;max-width:760px}
 .pricing-note b{color:var(--ink)}
-.bundle-setup{margin-top:6px;color:var(--muted);font-size:.92rem;font-weight:700}
-.price.custom{font-size:1.9rem;line-height:1.2;padding-top:6px}
-.transfer-note{margin-top:16px;background:var(--blue-soft);border:1px solid var(--blue-mid);border-radius:12px;padding:14px 16px;color:var(--ink);font-size:.96rem;line-height:1.5;max-width:820px}
+.enterprise-note{margin-top:14px;color:var(--muted);font-size:.92rem}
+.transfer-note{margin-top:22px;background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:15px 17px;color:var(--ink);font-size:.96rem;line-height:1.55;max-width:820px}
 
-.addon-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-.addon-card p{color:var(--muted);margin-top:12px;font-size:1rem;max-width:700px}
-.addon-card ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.97rem}
+.simple-block{max-width:760px}
+.simple-block p{color:var(--muted);margin-top:12px;font-size:1rem}
+.simple-price{margin-top:16px;font-weight:700;font-size:1rem;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+
+.addon-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;max-width:820px}
+.addon-card p{color:var(--muted);margin-top:10px;font-size:1rem}
+.addon-card ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.97rem}
 .addon-card ul li{display:flex;gap:9px}
 .addon-card ul svg{flex:none;margin-top:3px}
-.addon-price{margin-top:20px;font-weight:800;font-size:1.08rem;color:var(--ink);background:var(--blue-soft);border:1px solid var(--blue-mid);border-radius:12px;padding:14px 16px}
-.addon-note{margin-top:12px !important;font-size:.9rem !important}
+.addon-price{margin-top:18px;font-weight:700;font-size:1rem;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.addon-note{margin-top:10px !important;font-size:.9rem !important}
 
-.form-section{background:#f6fafd;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.form-section{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 form{display:grid;gap:18px}
 .form-grid{display:grid;gap:16px}
 @media(min-width:720px){.form-grid{grid-template-columns:1fr 1fr}}
-.field label,.group-label{display:block;font-weight:700;font-size:.92rem;margin-bottom:7px}
-.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#ffffff;color:var(--ink);border-radius:11px;padding:13px 14px;font:inherit;font-size:1rem}
+.field label,.group-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:13px 14px;font:inherit;font-size:1rem}
 .field textarea{min-height:88px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
 .checks{display:grid;gap:9px}
 @media(min-width:720px){.checks{grid-template-columns:1fr 1fr}}
-.check{display:flex;gap:10px;align-items:flex-start;background:#ffffff;border:1px solid var(--line);border-radius:11px;padding:12px 13px;font-size:.95rem;font-weight:600;cursor:pointer}
+.check{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 13px;font-size:.95rem;font-weight:600;cursor:pointer}
 .check input{width:19px;height:19px;margin-top:1px;accent-color:var(--blue-dark);flex:none}
 .consent{display:grid;gap:10px}
 .consent .check{background:transparent;border:0;padding:2px 0}
 .required-star{color:#c2410c}
-.submit-btn{border:0;background:var(--blue-dark);color:#fff;font:inherit;font-weight:800;font-size:1.05rem;padding:16px 22px;border-radius:12px;cursor:pointer;width:100%}
-@media(min-width:720px){.submit-btn{width:auto;justify-self:start;padding:16px 32px}}
-.confirm{display:none;background:var(--blue-soft);border:1px solid var(--blue);border-radius:14px;padding:20px}
+.submit-btn{border:0;background:var(--blue-dark);color:#fff;font:inherit;font-weight:700;font-size:1.02rem;padding:15px 22px;border-radius:10px;cursor:pointer;width:100%}
+@media(min-width:720px){.submit-btn{width:auto;justify-self:start;padding:15px 32px}}
+.confirm{display:none;background:var(--blue-soft);border:1px solid var(--blue);border-radius:12px;padding:20px}
 .confirm.show{display:block}
-.confirm b{font-size:1.05rem}
+.confirm b{font-size:1.02rem}
 
 .faq{display:grid;gap:10px;max-width:820px}
-details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 20px}
-summary{cursor:pointer;font-weight:800;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+details{border:1px solid var(--line);border-radius:12px;padding:0 20px;background:#fff}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:1.4rem;color:var(--blue-dark);font-weight:700;line-height:1}
+summary::after{content:"+";font-size:1.35rem;color:var(--blue-dark);font-weight:600;line-height:1}
 details[open] summary::after{content:"−"}
 details p{color:var(--muted);padding:0 0 16px;max-width:680px}
 
-footer{background:#eef6fb;color:var(--muted);padding:40px 0 32px;font-size:.94rem;border-top:1px solid var(--line)}
+footer{background:#eef6fb;color:var(--muted);padding:44px 0 32px;font-size:.94rem;border-top:1px solid var(--line)}
 footer .brand{color:var(--ink)}
 .footer-grid{display:grid;gap:24px}
 @media(min-width:760px){.footer-grid{grid-template-columns:1.2fr 1fr}}
-footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
+footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
+.footer-tagline{margin-top:12px;font-weight:600;color:var(--ink);font-size:.95rem;line-height:1.55;max-width:440px}
 .disclaimer{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
 </style>
 </head>
@@ -127,8 +127,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
 <header>
   <div class="wrap header-in">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="#ffffff"/></svg></span>
-      <span>No Missed Calls<small data-i18n="brandSub">Bilingual Automated Receptionist</small></span>
+      <span>Chaidez Automations<small data-i18n="brandSub">Front desk automation</small></span>
     </div>
     <div class="header-actions">
       <div class="lang-toggle" role="group" aria-label="Language / Idioma">
@@ -141,15 +140,13 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="hero" id="demo">
     <div class="wrap">
-      <h1 data-i18n="heroH1">Missed calls are <em>missed jobs.</em></h1>
-      <p class="hero-sub" data-i18n="heroSub">We answer your business phone 24/7 in English and Spanish, book the estimate, and text you the summary. You stay on the job — and you never miss a call.</p>
-      <p class="hero-umbrella" data-i18n="heroUmbrella">From Chaidez Automations — we automate your front desk: calls, texts, and forms, in English and Spanish.</p>
+      <h1 data-i18n="heroH1">Your front desk, automated.</h1>
+      <p class="hero-sub" data-i18n="heroSub">Calls, texts, and forms — answered in English and Spanish. No missed calls. No missed texts. No missed leads.</p>
       <div class="call-box">
         <div class="call-box-label" data-i18n="demoLabel">Call our line — hear it answer</div>
-        <p class="demo-placeholder" data-i18n="demoPlaceholder">This is our own No Missed Calls business line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.</p>
+        <p class="demo-placeholder" data-i18n="demoPlaceholder">This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.</p>
         <div class="big-call" aria-disabled="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="currentColor"/></svg>
           <span data-i18n="callDemo">Demo number coming soon</span>
@@ -158,7 +155,6 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section class="section">
     <div class="wrap">
       <div class="section-head">
@@ -166,7 +162,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
         <h2 data-i18n="howH2">You work. It answers.</h2>
       </div>
       <div class="steps">
-        <div class="step"><div class="step-num">1</div><h3 data-i18n="step1T">A customer calls</h3><p data-i18n="step1">Day, night, and weekends.</p></div>
+        <div class="step"><div class="step-num">1</div><h3 data-i18n="step1T">A customer reaches out</h3><p data-i18n="step1">By phone, text, or a form on your website — day, night, and weekends.</p></div>
         <div class="step"><div class="step-num">2</div><h3 data-i18n="step2T">We answer in English or Spanish</h3><p data-i18n="step2">We take their name, number, and what they need, and book the estimate.</p></div>
         <div class="step"><div class="step-num">3</div><h3 data-i18n="step3T">You get a text summary</h3><p data-i18n="step3">Sent within a minute, so you can follow up when you're free.</p></div>
       </div>
@@ -174,13 +170,12 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
     </div>
   </section>
 
-  <!-- PRICING -->
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
-        <div class="label" data-i18n="priceLabel">Pricing</div>
+        <div class="label" data-i18n="priceLabel">Call Answering — Pricing</div>
         <h2 data-i18n="priceH2">Simple monthly pricing.</h2>
-        <p data-i18n="priceSub">Pick a plan, pay up, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.</p>
+        <p data-i18n="priceSub">Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.</p>
       </div>
       <div class="pricing">
         <div class="price-card">
@@ -211,33 +206,34 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
       </div>
       <p class="pricing-note"><span data-i18n="priceNote">We never quote your customers' job prices — your tech confirms on site.</span></p>
       <p class="pricing-note" data-i18n="autoAdjust">We check your actual call volume after your first month and move you up or down — you never pay for a plan that doesn't fit.</p>
+      <p class="enterprise-note" data-i18n="enterpriseNote">Need more? Enterprise and higher usage are available — just ask.</p>
     </div>
   </section>
 
-  <!-- FORM AUTOMATION ADD-ON -->
-  <section class="section" style="padding-top:0;padding-bottom:48px">
+  <section class="section" style="padding-top:0;padding-bottom:56px">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom:0">
-        <h2 data-i18n="formAutoH2" style="font-size:clamp(1.4rem,3vw,1.9rem)">Also from Chaidez Automations: Form Automation</h2>
-        <p data-i18n="formAutoText">Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. $150/mo standalone, or $75/mo when you have No Missed Calls. Up to 100 leads a month.</p>
+      <div class="simple-block">
+        <div class="label" data-i18n="formAutoLabel">Form Automation</div>
+        <h2 data-i18n="formAutoH2" style="font-size:clamp(1.5rem,3vw,1.95rem);margin-top:8px">Every form becomes a lead, instantly.</h2>
+        <p data-i18n="formAutoText">Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. Up to 100 leads a month included. Extra leads are $1 each.</p>
+        <div class="simple-price" data-i18n="formAutoPrice">Form Automation: $150/mo standalone, or $75/mo with Call Answering</div>
       </div>
     </div>
   </section>
 
-  <!-- FRONT DESK BUNDLES -->
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
         <div class="label" data-i18n="bundleLabel">Bundles</div>
         <h2 data-i18n="bundleH2">Or get the whole front desk</h2>
-        <p data-i18n="bundleSub">Calls, forms, and texts in one plan — from Chaidez Automations.</p>
+        <p data-i18n="bundleSub">Calls, forms, and texts in one plan.</p>
         <p data-i18n="bundleNoSetup" style="margin-top:8px;font-weight:700;color:var(--ink)">No setup fee — just pay your first month up front.</p>
       </div>
-      <div class="pricing">
+      <div class="pricing two">
         <div class="price-card">
           <h3>Front Desk Starter</h3><div class="price">$300<span data-i18n="bundlePerMo">/mo</span></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter1">No Missed Calls — up to 100 calls/mo</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter1">Call Answering — up to 100 calls/mo</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter2">Form Automation</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter3">Missed-Call Text-Back</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter4">Daily lead summary</span></li>
@@ -254,20 +250,11 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete5">Estimate follow-up</span></li>
           </ul>
         </div>
-        <div class="price-card">
-          <h3>Enterprise</h3><div class="price custom" data-i18n="bEntPrice">Custom</div>
-          <p class="bundle-setup" data-i18n="bundleEnterpriseSetup">Schedule a consult</p>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bEnt1">Multi-location &amp; franchise</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bEnt2">600+ calls/mo</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bEnt3">Custom integrations</span></li>
-          </ul>
-        </div>
       </div>
+      <p class="enterprise-note" data-i18n="enterpriseNote2">Need more? Enterprise and higher usage are available — just ask.</p>
     </div>
   </section>
 
-  <!-- WEBSITE ADD-ON -->
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
@@ -287,14 +274,12 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
     </div>
   </section>
 
-  <!-- FORM -->
   <section class="section form-section" id="setup">
     <div class="wrap">
       <div class="section-head">
         <div class="label" data-i18n="formLabel">Get set up</div>
         <h2 data-i18n="formH2">Tell us about your shop.</h2>
       </div>
-
       <form id="lead-form" novalidate>
         <div class="form-grid">
           <div class="field"><label for="owner" data-i18n="fOwner">Your name *</label><input id="owner" name="owner" required autocomplete="name"></div>
@@ -312,37 +297,29 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
             </select>
           </div>
         </div>
-
         <div>
           <label class="check"><input type="checkbox" id="website-addon" name="website-addon" value="Yes"><span data-i18n="fWebsite">I need a website too — add the $200 website build</span></label>
         </div>
-
         <div>
-          <label class="check"><input type="checkbox" id="form-automation" name="form-automation" value="Yes"><span data-i18n="fFormAuto">I want Form Automation too — $75/mo with No Missed Calls</span></label>
+          <label class="check"><input type="checkbox" id="form-automation" name="form-automation" value="Yes"><span data-i18n="fFormAuto">I want Form Automation too — $75/mo with Call Answering</span></label>
         </div>
-
         <div>
           <span class="group-label" data-i18n="fNeeds">What do you need most?</span>
           <div class="checks" id="needs"></div>
         </div>
-
         <div class="field"><label for="notes" data-i18n="fNotes">Anything we should know?</label><textarea id="notes" name="notes"></textarea></div>
-
         <div class="consent">
           <label class="check"><input type="checkbox" id="email-consent" required><span><span data-i18n="consentEmail">It's okay to email me setup info</span> <span class="required-star">*</span></span></label>
           <label class="check"><input type="checkbox" id="text-consent"><span data-i18n="consentText">It's okay to text me about my setup (optional)</span></label>
         </div>
-
         <div class="confirm" id="confirm" role="status">
           <b data-i18n="confirmTitle">Got it — Orlando will email you within 24 hours with your setup link.</b>
         </div>
-
         <button class="submit-btn" type="submit" data-i18n="submitBtn">Get my setup link</button>
       </form>
     </div>
   </section>
 
-  <!-- FAQ - 3 only -->
   <section class="section" style="padding-top:48px;padding-bottom:56px">
     <div class="wrap">
       <div class="faq" id="faq"></div>
@@ -354,17 +331,16 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="brand"><span class="brand-mark" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="#ffffff"/></svg></span><span>No Missed Calls</span></div>
-        <p class="footer-umbrella" data-i18n="footerUmbrella">A Chaidez Automations product</p>
-        <p class="footer-umbrella-tagline" data-i18n="footerUmbrellaTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</p>
-        <p style="margin-top:12px" data-i18n="footerTag">Answered 24/7, in English and Spanish.</p>
+        <div class="brand"><span>Chaidez Automations</span></div>
+        <p class="footer-tagline" data-i18n="footerTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</p>
+        <p style="margin-top:10px" data-i18n="footerTag">Answered 24/7, in English and Spanish.</p>
       </div>
       <div>
         <h3 data-i18n="footerAreas">Service areas</h3>
         <p>Los Angeles<br>San Diego<br><span data-i18n="footerArea3">Bakersfield / Central Valley</span></p>
       </div>
     </div>
-    <p class="disclaimer" data-i18n="disclaimer">Automated receptionist, powered by AI, for routine business calls. Not certified legal/medical interpreting.</p>
+    <p class="disclaimer" data-i18n="disclaimer">Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.</p>
   </div>
 </footer>
 
@@ -382,44 +358,44 @@ var FAQS = {
     ["Does it work with my current number?","Yes. It works with your current number — no new phone, no app."],
     ["Will it quote prices for my jobs?","No. It books the estimate or takes a message. Your tech confirms the price on site."],
     ["Can it transfer a call to me?","Yes — by default it takes a message and texts you, but we can set it up to transfer to your number when a caller asks for a human."],
-    ["What if I go over my plan's calls?","Each plan includes a set number of calls — Starter up to 100, Growth up to 300, Heavy up to 600. Extra calls are $1.50 each. If you go over two months in a row, we move you up to the next plan. If you use less than half your plan for two months, we move you down. Over 600 calls a month, or multi-location / franchise, is custom pricing — ask us."]
+    ["What if I go over my plan's calls?","Each plan includes a set number of calls — Starter up to 100, Growth up to 300, Heavy up to 600. Extra calls are $1.50 each. If you go over two months in a row, we move you up to the next plan. If you use less than half your plan for two months, we move you down. Need more? Enterprise and higher usage are available — just ask."]
   ],
   es: [
     ["¿Funciona con mi número actual?","Sí. Funciona con su número actual — sin teléfono nuevo, sin aplicación."],
     ["¿Va a dar precios de mis trabajos?","No. Agenda la cotización o toma el mensaje. Su técnico confirma el precio en el lugar."],
     ["¿Puede transferirme una llamada?","Sí — por defecto toma el mensaje y se lo envía por texto, pero podemos configurarlo para transferir la llamada a su número cuando quien llama pide hablar con una persona."],
-    ["¿Qué pasa si me paso de las llamadas de mi plan?","Cada plan incluye un número definido de llamadas — Starter hasta 100, Growth hasta 300, Heavy hasta 600. Las llamadas extra cuestan $1.50 cada una. Si se pasa dos meses seguidos, lo cambiamos al siguiente plan. Si usa menos de la mitad de su plan durante dos meses, lo bajamos de plan. Más de 600 llamadas al mes, o negocios con varias ubicaciones / franquicias, tienen precio personalizado — pregúntenos."]
+    ["¿Qué pasa si me paso de las llamadas de mi plan?","Cada plan incluye un número definido de llamadas — Starter hasta 100, Growth hasta 300, Heavy hasta 600. Las llamadas extra cuestan $1.50 cada una. Si se pasa dos meses seguidos, lo cambiamos al siguiente plan. Si usa menos de la mitad de su plan durante dos meses, lo bajamos de plan. ¿Necesita más? Planes empresariales y mayor uso están disponibles — solo pregunte."]
   ]
 };
 var T = {
   en: {
-    brandSub:"Bilingual Automated Receptionist", headerCall:"Call demo",
-    heroH1:"Missed calls are <em>missed jobs.</em>",
-    heroSub:"We answer your business phone 24/7 in English and Spanish, book the estimate, and text you the summary. You stay on the job — and you never miss a call.",
-    heroUmbrella:"From Chaidez Automations — we automate your front desk: calls, texts, and forms, in English and Spanish.",
-    demoLabel:"Call our line — hear it answer", demoPlaceholder:"This is our own No Missed Calls business line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Demo number coming soon",
+    brandSub:"Front desk automation", headerCall:"Call demo",
+    heroH1:"Your front desk, automated.",
+    heroSub:"Calls, texts, and forms — answered in English and Spanish. No missed calls. No missed texts. No missed leads.",
+    demoLabel:"Call our line — hear it answer", demoPlaceholder:"This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Demo number coming soon",
     howLabel:"How it works", howH2:"You work. It answers.",
-    step1T:"A customer calls", step1:"Day, night, and weekends.",
+    step1T:"A customer reaches out", step1:"By phone, text, or a form on your website — day, night, and weekends.",
     step2T:"We answer in English or Spanish", step2:"We take their name, number, and what they need, and book the estimate.",
     step3T:"You get a text summary", step3:"Sent within a minute, so you can follow up when you're free.",
     transferNote:"By default it takes the call and texts you the summary. If a caller asks for a human, we can also set it up to transfer the call to you or your team — your choice.",
-    priceLabel:"Pricing", priceH2:"Simple monthly pricing.", priceSub:"Pick a plan, pay up, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
+    priceLabel:"Call Answering — Pricing", priceH2:"Simple monthly pricing.", priceSub:"Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
     popular:"Most popular", perMo:"/mo", perMo2:"/mo", perMo3:"/mo",
     p1a:"Up to 100 calls/mo", p2a:"Up to 300 calls/mo", p3a:"Up to 600 calls/mo",
     pCommon1:"24/7 answering in English and Spanish", pCommon1b:"24/7 answering in English and Spanish", pCommon1c:"24/7 answering in English and Spanish",
     pCommon2:"Text summary after every call", pCommon2b:"Text summary after every call", pCommon2c:"Text summary after every call",
     priceNote:"We never quote your customers' job prices — your tech confirms on site.",
     autoAdjust:"We check your actual call volume after your first month and move you up or down — you never pay for a plan that doesn't fit.",
-    formAutoH2:"Also from Chaidez Automations: Form Automation",
-    formAutoText:"Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. $150/mo standalone, or $75/mo when you have No Missed Calls. Up to 100 leads a month.",
-    fFormAuto:"I want Form Automation too — $75/mo with No Missed Calls",
-    bundleLabel:"Bundles", bundleH2:"Or get the whole front desk", bundleSub:"Calls, forms, and texts in one plan — from Chaidez Automations.",
+    enterpriseNote:"Need more? Enterprise and higher usage are available — just ask.",
+    enterpriseNote2:"Need more? Enterprise and higher usage are available — just ask.",
+    formAutoLabel:"Form Automation", formAutoH2:"Every form becomes a lead, instantly.",
+    formAutoText:"Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. Up to 100 leads a month included. Extra leads are $1 each.",
+    formAutoPrice:"Form Automation: $150/mo standalone, or $75/mo with Call Answering",
+    fFormAuto:"I want Form Automation too — $75/mo with Call Answering",
+    bundleLabel:"Bundles", bundleH2:"Or get the whole front desk", bundleSub:"Calls, forms, and texts in one plan.",
     bundleNoSetup:"No setup fee — just pay your first month up front.",
     bundlePopular:"Most popular", bundlePerMo:"/mo", bundlePerMo2:"/mo",
-    bundleEnterpriseSetup:"Schedule a consult",
-    bStarter1:"No Missed Calls — up to 100 calls/mo", bStarter2:"Form Automation", bStarter3:"Missed-Call Text-Back", bStarter4:"Daily lead summary",
+    bStarter1:"Call Answering — up to 100 calls/mo", bStarter2:"Form Automation", bStarter3:"Missed-Call Text-Back", bStarter4:"Daily lead summary",
     bComplete1:"Everything in Starter", bComplete2:"Up to 300 calls/mo", bComplete3:"Booking + Reminders", bComplete4:"Review Requests", bComplete5:"Estimate follow-up",
-    bEntPrice:"Custom", bEnt1:"Multi-location & franchise", bEnt2:"600+ calls/mo", bEnt3:"Custom integrations",
     addonLabel:"Website add-on", addonH2:"No website? We can build it.",
     addonText:"A lot of shops have no website — just a Facebook page. We can build you a simple one-page site with your number and a form on it, connected to the same answering service.",
     addonB1:"Your number front and center, click-to-call", addonB2:"A form that sends leads to the same place as your calls", addonB3:"Services, service area, and reviews — clean and simple",
@@ -433,37 +409,37 @@ var T = {
     consentEmail:"It's okay to email me setup info", consentText:"It's okay to text me about my setup (optional)",
     submitBtn:"Get my setup link",
     confirmTitle:"Got it — Orlando will email you within 24 hours with your setup link.",
-    footerTag:"Answered 24/7, in English and Spanish.", footerUmbrella:"A Chaidez Automations product", footerUmbrellaTagline:"Your front desk, automated. No missed calls. No missed texts. No missed leads.", footerAreas:"Service areas", footerArea3:"Bakersfield / Central Valley",
-    disclaimer:"Automated receptionist, powered by AI, for routine business calls. Not certified legal/medical interpreting."
+    footerTag:"Answered 24/7, in English and Spanish.", footerTagline:"Your front desk, automated. No missed calls. No missed texts. No missed leads.", footerAreas:"Service areas", footerArea3:"Bakersfield / Central Valley",
+    disclaimer:"Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting."
   },
   es: {
-    brandSub:"Recepcionista bilingüe automatizada", headerCall:"Llamar al demo",
-    heroH1:"Llamada perdida, <em>trabajo perdido.</em>",
-    heroSub:"Contestamos el teléfono de su negocio las 24 horas, en inglés y español, agendamos la cotización y le enviamos el resumen por texto. Usted siga en su trabajo — y nunca pierda una llamada.",
-    heroUmbrella:"De Chaidez Automations — automatizamos su recepción: llamadas, mensajes de texto y formularios, en inglés y español.",
-    demoLabel:"Llame a nuestra línea — escúchela contestar", demoPlaceholder:"Esta es nuestra propia línea de No Missed Calls. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Número demo muy pronto",
+    brandSub:"Automatización de recepción", headerCall:"Llamar al demo",
+    heroH1:"Su recepción, automatizada.",
+    heroSub:"Llamadas, mensajes de texto y formularios — atendidos en inglés y español. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.",
+    demoLabel:"Llame a nuestra línea — escúchela contestar", demoPlaceholder:"Esta es nuestra propia línea de Chaidez Automations. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Número demo muy pronto",
     howLabel:"Cómo funciona", howH2:"Usted trabaja. Nosotros contestamos.",
-    step1T:"Un cliente llama", step1:"Día, noche y fines de semana.",
+    step1T:"Un cliente se comunica", step1:"Por teléfono, mensaje de texto o un formulario en su sitio web — día, noche y fines de semana.",
     step2T:"Contestamos en inglés o español", step2:"Tomamos su nombre, número y lo que necesita, y agendamos la cotización.",
     step3T:"Usted recibe el resumen por texto", step3:"En menos de un minuto, para que le regrese la llamada cuando pueda.",
     transferNote:"Por defecto toma la llamada y le envía el resumen por texto. Si quien llama pide hablar con una persona, también podemos configurarlo para transferir la llamada a usted o a su equipo — usted elige.",
-    priceLabel:"Precios", priceH2:"Precios mensuales simples.", priceSub:"Elija un plan, pague, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
+    priceLabel:"Contestación de llamadas — Precios", priceH2:"Precios mensuales simples.", priceSub:"Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
     popular:"El más popular", perMo:"/mes", perMo2:"/mes", perMo3:"/mes",
     p1a:"Hasta 100 llamadas/mes", p2a:"Hasta 300 llamadas/mes", p3a:"Hasta 600 llamadas/mes",
     pCommon1:"Atención 24/7 en inglés y español", pCommon1b:"Atención 24/7 en inglés y español", pCommon1c:"Atención 24/7 en inglés y español",
     pCommon2:"Resumen por texto después de cada llamada", pCommon2b:"Resumen por texto después de cada llamada", pCommon2c:"Resumen por texto después de cada llamada",
     priceNote:"Nunca damos precios de sus trabajos a sus clientes — su técnico confirma en el lugar.",
     autoAdjust:"Revisamos su volumen real de llamadas después de su primer mes y lo cambiamos de plan según corresponda — nunca paga por un plan que no se ajusta a su negocio.",
-    formAutoH2:"También de Chaidez Automations: Automatización de Formularios",
-    formAutoText:"Cada formulario en su sitio web se convierte al instante en un texto + correo electrónico para usted, y una respuesta automática para su cliente en inglés o español. $150/mes solo, o $75/mes cuando tiene No Missed Calls. Hasta 100 clientes potenciales al mes.",
-    fFormAuto:"También quiero Automatización de Formularios — $75/mes con No Missed Calls",
-    bundleLabel:"Paquetes", bundleH2:"O lleve toda la recepción", bundleSub:"Llamadas, formularios y mensajes en un solo plan — de Chaidez Automations.",
+    enterpriseNote:"¿Necesita más? Planes empresariales y mayor uso están disponibles — solo pregunte.",
+    enterpriseNote2:"¿Necesita más? Planes empresariales y mayor uso están disponibles — solo pregunte.",
+    formAutoLabel:"Automatización de formularios", formAutoH2:"Cada formulario se convierte en un cliente, al instante.",
+    formAutoText:"Cada formulario en su sitio web se convierte al instante en un texto + correo electrónico para usted, y una respuesta automática para su cliente en inglés o español. Hasta 100 clientes potenciales al mes incluidos. Los clientes extra cuestan $1 cada uno.",
+    formAutoPrice:"Automatización de formularios: $150/mes solo, o $75/mes con Contestación de Llamadas",
+    fFormAuto:"También quiero Automatización de Formularios — $75/mes con Contestación de Llamadas",
+    bundleLabel:"Paquetes", bundleH2:"O lleve toda la recepción", bundleSub:"Llamadas, formularios y mensajes en un solo plan.",
     bundleNoSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.",
     bundlePopular:"El más popular", bundlePerMo:"/mes", bundlePerMo2:"/mes",
-    bundleEnterpriseSetup:"Agende una consulta",
-    bStarter1:"No Missed Calls — hasta 100 llamadas/mes", bStarter2:"Automatización de Formularios", bStarter3:"Respuesta por texto a llamadas perdidas", bStarter4:"Resumen diario de clientes potenciales",
+    bStarter1:"Contestación de llamadas — hasta 100 llamadas/mes", bStarter2:"Automatización de formularios", bStarter3:"Respuesta por texto a llamadas perdidas", bStarter4:"Resumen diario de clientes potenciales",
     bComplete1:"Todo lo de Starter", bComplete2:"Hasta 300 llamadas/mes", bComplete3:"Reservas + Recordatorios", bComplete4:"Solicitudes de reseñas", bComplete5:"Seguimiento de cotizaciones",
-    bEntPrice:"Personalizado", bEnt1:"Varias ubicaciones y franquicias", bEnt2:"Más de 600 llamadas/mes", bEnt3:"Integraciones personalizadas",
     addonLabel:"Sitio web adicional", addonH2:"¿No tiene sitio web? Nosotros lo construimos.",
     addonText:"Muchos negocios no tienen sitio web — solo una página de Facebook. Podemos construirle un sitio simple de una página con su número y un formulario, conectado al mismo servicio de contestación.",
     addonB1:"Su número al frente, con llamada con un toque", addonB2:"Un formulario que envía clientes al mismo lugar que sus llamadas", addonB3:"Servicios, área de servicio y reseñas — limpio y simple",
@@ -477,8 +453,8 @@ var T = {
     consentEmail:"Acepto que me envíen la información de instalación por correo", consentText:"Acepto que me envíen textos sobre mi instalación (opcional)",
     submitBtn:"Quiero mi enlace de instalación",
     confirmTitle:"Listo — Orlando le enviará un correo dentro de 24 horas con su enlace de instalación.",
-    footerTag:"Atención 24/7, en inglés y español.", footerUmbrella:"Un producto de Chaidez Automations", footerUmbrellaTagline:"Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", footerAreas:"Áreas de servicio", footerArea3:"Bakersfield / Valle Central",
-    disclaimer:"Recepcionista automatizada, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica."
+    footerTag:"Atención 24/7, en inglés y español.", footerTagline:"Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", footerAreas:"Áreas de servicio", footerArea3:"Bakersfield / Valle Central",
+    disclaimer:"Asistente automatizado, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica."
   }
 };
 var lang = "en";
@@ -524,7 +500,6 @@ function setLang(l){
 document.getElementById("btn-en").addEventListener("click", function(){ setLang("en"); });
 document.getElementById("btn-es").addEventListener("click", function(){ setLang("es"); });
 setLang("en");
-
 document.getElementById("lead-form").addEventListener("submit", function(e){
   e.preventDefault();
   var form = e.target;
