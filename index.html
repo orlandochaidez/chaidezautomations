@@ -73,6 +73,8 @@ header{position:sticky;top:0;z-index:20;background:#ffffff;color:var(--ink);bord
 .price-card ul svg{flex:none;margin-top:3px}
 .pricing-note{margin-top:18px;color:var(--muted);font-size:.94rem;max-width:760px}
 .pricing-note b{color:var(--ink)}
+.bundle-setup{margin-top:6px;color:var(--muted);font-size:.92rem;font-weight:700}
+.price.custom{font-size:1.9rem;line-height:1.2;padding-top:6px}
 .transfer-note{margin-top:16px;background:var(--blue-soft);border:1px solid var(--blue-mid);border-radius:12px;padding:14px 16px;color:var(--ink);font-size:.96rem;line-height:1.5;max-width:820px}
 
 .addon-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
@@ -218,6 +220,49 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px}
       <div class="section-head" style="margin-bottom:0">
         <h2 data-i18n="formAutoH2" style="font-size:clamp(1.4rem,3vw,1.9rem)">Also from Chaidez Automations: Form Automation</h2>
         <p data-i18n="formAutoText">Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. $150/mo standalone, or $75/mo when you have No Missed Calls. Up to 100 leads a month.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRONT DESK BUNDLES -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label" data-i18n="bundleLabel">Bundles</div>
+        <h2 data-i18n="bundleH2">Or get the whole front desk</h2>
+        <p data-i18n="bundleSub">Calls, forms, and texts in one plan — from Chaidez Automations.</p>
+        <p data-i18n="bundleNoSetup" style="margin-top:8px;font-weight:700;color:var(--ink)">No setup fee — just pay your first month up front.</p>
+      </div>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Front Desk Starter</h3><div class="price">$300<span data-i18n="bundlePerMo">/mo</span></div>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter1">No Missed Calls — up to 100 calls/mo</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter2">Form Automation</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter3">Missed-Call Text-Back</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter4">Daily lead summary</span></li>
+          </ul>
+        </div>
+        <div class="price-card popular">
+          <span class="pop-tag" data-i18n="bundlePopular">Most popular</span>
+          <h3>Front Desk Complete</h3><div class="price">$650<span data-i18n="bundlePerMo2">/mo</span></div>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete1">Everything in Starter</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete2">Up to 300 calls/mo</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete3">Booking + Reminders</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete4">Review Requests</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete5">Estimate follow-up</span></li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3>Enterprise</h3><div class="price custom" data-i18n="bEntPrice">Custom</div>
+          <p class="bundle-setup" data-i18n="bundleEnterpriseSetup">Schedule a consult</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bEnt1">Multi-location &amp; franchise</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bEnt2">600+ calls/mo</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bEnt3">Custom integrations</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -368,6 +413,13 @@ var T = {
     formAutoH2:"Also from Chaidez Automations: Form Automation",
     formAutoText:"Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. $150/mo standalone, or $75/mo when you have No Missed Calls. Up to 100 leads a month.",
     fFormAuto:"I want Form Automation too — $75/mo with No Missed Calls",
+    bundleLabel:"Bundles", bundleH2:"Or get the whole front desk", bundleSub:"Calls, forms, and texts in one plan — from Chaidez Automations.",
+    bundleNoSetup:"No setup fee — just pay your first month up front.",
+    bundlePopular:"Most popular", bundlePerMo:"/mo", bundlePerMo2:"/mo",
+    bundleEnterpriseSetup:"Schedule a consult",
+    bStarter1:"No Missed Calls — up to 100 calls/mo", bStarter2:"Form Automation", bStarter3:"Missed-Call Text-Back", bStarter4:"Daily lead summary",
+    bComplete1:"Everything in Starter", bComplete2:"Up to 300 calls/mo", bComplete3:"Booking + Reminders", bComplete4:"Review Requests", bComplete5:"Estimate follow-up",
+    bEntPrice:"Custom", bEnt1:"Multi-location & franchise", bEnt2:"600+ calls/mo", bEnt3:"Custom integrations",
     addonLabel:"Website add-on", addonH2:"No website? We can build it.",
     addonText:"A lot of shops have no website — just a Facebook page. We can build you a simple one-page site with your number and a form on it, connected to the same answering service.",
     addonB1:"Your number front and center, click-to-call", addonB2:"A form that sends leads to the same place as your calls", addonB3:"Services, service area, and reviews — clean and simple",
@@ -405,6 +457,13 @@ var T = {
     formAutoH2:"También de Chaidez Automations: Automatización de Formularios",
     formAutoText:"Cada formulario en su sitio web se convierte al instante en un texto + correo electrónico para usted, y una respuesta automática para su cliente en inglés o español. $150/mes solo, o $75/mes cuando tiene No Missed Calls. Hasta 100 clientes potenciales al mes.",
     fFormAuto:"También quiero Automatización de Formularios — $75/mes con No Missed Calls",
+    bundleLabel:"Paquetes", bundleH2:"O lleve toda la recepción", bundleSub:"Llamadas, formularios y mensajes en un solo plan — de Chaidez Automations.",
+    bundleNoSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.",
+    bundlePopular:"El más popular", bundlePerMo:"/mes", bundlePerMo2:"/mes",
+    bundleEnterpriseSetup:"Agende una consulta",
+    bStarter1:"No Missed Calls — hasta 100 llamadas/mes", bStarter2:"Automatización de Formularios", bStarter3:"Respuesta por texto a llamadas perdidas", bStarter4:"Resumen diario de clientes potenciales",
+    bComplete1:"Todo lo de Starter", bComplete2:"Hasta 300 llamadas/mes", bComplete3:"Reservas + Recordatorios", bComplete4:"Solicitudes de reseñas", bComplete5:"Seguimiento de cotizaciones",
+    bEntPrice:"Personalizado", bEnt1:"Varias ubicaciones y franquicias", bEnt2:"Más de 600 llamadas/mes", bEnt3:"Integraciones personalizadas",
     addonLabel:"Sitio web adicional", addonH2:"¿No tiene sitio web? Nosotros lo construimos.",
     addonText:"Muchos negocios no tienen sitio web — solo una página de Facebook. Podemos construirle un sitio simple de una página con su número y un formulario, conectado al mismo servicio de contestación.",
     addonB1:"Su número al frente, con llamada con un toque", addonB2:"Un formulario que envía clientes al mismo lugar que sus llamadas", addonB3:"Servicios, área de servicio y reseñas — limpio y simple",
