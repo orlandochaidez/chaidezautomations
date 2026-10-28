@@ -69,20 +69,12 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .price-card ul svg{flex:none;margin-top:3px}
 .pricing-note{margin-top:18px;color:var(--muted);font-size:.94rem;max-width:760px}
 .pricing-note b{color:var(--ink)}
-.enterprise-note{margin-top:14px;color:var(--muted);font-size:.92rem}
 .transfer-note{margin-top:22px;background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:15px 17px;color:var(--ink);font-size:.96rem;line-height:1.55;max-width:820px}
 
 .simple-block{max-width:760px}
 .simple-block p{color:var(--muted);margin-top:12px;font-size:1rem}
 .simple-price{margin-top:16px;font-weight:700;font-size:1rem;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 
-.addon-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;max-width:820px}
-.addon-card p{color:var(--muted);margin-top:10px;font-size:1rem}
-.addon-card ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.97rem}
-.addon-card ul li{display:flex;gap:9px}
-.addon-card ul svg{flex:none;margin-top:3px}
-.addon-price{margin-top:18px;font-weight:700;font-size:1rem;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
-.addon-note{margin-top:10px !important;font-size:.9rem !important}
 
 .form-section{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 form{display:grid;gap:18px}
@@ -143,7 +135,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
   <section class="hero" id="demo">
     <div class="wrap">
       <h1 data-i18n="heroH1">Your front desk, automated.</h1>
-      <p class="hero-sub" data-i18n="heroSub">Calls, texts, and forms — answered in English and Spanish. No missed calls. No missed texts. No missed leads.</p>
+      <p class="hero-sub" data-i18n="heroSub">Your calls answered 24/7 in English and Spanish. No missed calls. No missed texts. No missed leads.</p>
       <div class="call-box">
         <div class="call-box-label" data-i18n="demoLabel">Call our line — hear it answer</div>
         <p class="demo-placeholder" data-i18n="demoPlaceholder">This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.</p>
@@ -162,7 +154,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
         <h2 data-i18n="howH2">You work. It answers.</h2>
       </div>
       <div class="steps">
-        <div class="step"><div class="step-num">1</div><h3 data-i18n="step1T">A customer reaches out</h3><p data-i18n="step1">By phone, text, or a form on your website — day, night, and weekends.</p></div>
+        <div class="step"><div class="step-num">1</div><h3 data-i18n="step1T">A customer calls</h3><p data-i18n="step1">By phone — day, night, and weekends.</p></div>
         <div class="step"><div class="step-num">2</div><h3 data-i18n="step2T">We answer in English or Spanish</h3><p data-i18n="step2">We take their name, number, and what they need, and book the estimate.</p></div>
         <div class="step"><div class="step-num">3</div><h3 data-i18n="step3T">You get a text summary</h3><p data-i18n="step3">Sent within a minute, so you can follow up when you're free.</p></div>
       </div>
@@ -173,104 +165,31 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
-        <div class="label" data-i18n="priceLabel">Call Answering — Pricing</div>
-        <h2 data-i18n="priceH2">Simple monthly pricing.</h2>
+        <div class="label" data-i18n="priceLabel">Pricing</div>
+        <h2 data-i18n="priceH2">Two plans. That's it.</h2>
         <p data-i18n="priceSub">Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.</p>
-      </div>
-      <div class="pricing">
-        <div class="price-card">
-          <h3>Starter</h3><div class="price">$200<span data-i18n="perMo">/mo</span></div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="p1a">Up to 100 calls/mo</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="pCommon1">24/7 answering in English and Spanish</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="pCommon2">Text summary after every call</span></li>
-          </ul>
-        </div>
-        <div class="price-card popular">
-          <span class="pop-tag" data-i18n="popular">Most popular</span>
-          <h3>Growth</h3><div class="price">$350<span data-i18n="perMo2">/mo</span></div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="p2a">Up to 300 calls/mo</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="pCommon1b">24/7 answering in English and Spanish</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="pCommon2b">Text summary after every call</span></li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <h3>Heavy</h3><div class="price">$550<span data-i18n="perMo3">/mo</span></div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="p3a">Up to 600 calls/mo</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="pCommon1c">24/7 answering in English and Spanish</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="pCommon2c">Text summary after every call</span></li>
-          </ul>
-        </div>
-      </div>
-      <p class="pricing-note"><span data-i18n="priceNote">We never quote your customers' job prices — your tech confirms on site.</span></p>
-      <p class="pricing-note" data-i18n="autoAdjust">We check your actual call volume after your first month and move you up or down — you never pay for a plan that doesn't fit.</p>
-      <p class="enterprise-note" data-i18n="enterpriseNote">Need more? Enterprise and higher usage are available — just ask.</p>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0;padding-bottom:56px">
-    <div class="wrap">
-      <div class="simple-block">
-        <div class="label" data-i18n="formAutoLabel">Form Automation</div>
-        <h2 data-i18n="formAutoH2" style="font-size:clamp(1.5rem,3vw,1.95rem);margin-top:8px">Every form becomes a lead, instantly.</h2>
-        <p data-i18n="formAutoText">Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. Up to 100 leads a month included. Extra leads are $1 each.</p>
-        <div class="simple-price" data-i18n="formAutoPrice">Form Automation: $150/mo standalone, or $75/mo with Call Answering</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label" data-i18n="bundleLabel">Bundles</div>
-        <h2 data-i18n="bundleH2">Or get the whole front desk</h2>
-        <p data-i18n="bundleSub">Calls, forms, and texts in one plan.</p>
-        <p data-i18n="bundleNoSetup" style="margin-top:8px;font-weight:700;color:var(--ink)">No setup fee — just pay your first month up front.</p>
+        <p data-i18n="noSetup" style="margin-top:8px;font-weight:700;color:var(--ink)">No setup fee — just pay your first month up front.</p>
       </div>
       <div class="pricing two">
         <div class="price-card">
-          <h3>Front Desk Starter</h3><div class="price">$300<span data-i18n="bundlePerMo">/mo</span></div>
+          <h3>Front Desk</h3><div class="price">$350<span data-i18n="perMo">/mo</span></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter1">Call Answering — up to 100 calls/mo</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter2">Form Automation</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter3">Missed-Call Text-Back</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bStarter4">Daily lead summary</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1b">24/7 answering in English and Spanish</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1c">Text summary to you after every call</span></li>
           </ul>
+          <p class="simple-price" style="margin-top:20px" data-i18n="t1Texting">Add customer texting: +$100/mo</p>
         </div>
         <div class="price-card popular">
-          <span class="pop-tag" data-i18n="bundlePopular">Most popular</span>
-          <h3>Front Desk Complete</h3><div class="price">$650<span data-i18n="bundlePerMo2">/mo</span></div>
+          <span class="pop-tag" data-i18n="popular">Most popular</span>
+          <h3>Front Desk Complete</h3><div class="price">$600<span data-i18n="perMo2">/mo</span></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete1">Everything in Starter</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete2">Up to 300 calls/mo</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete3">Booking + Reminders</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete4">Review Requests</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bComplete5">Estimate follow-up</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2a">Everything in Front Desk</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2c">Simple 1-page website, with forms</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2d">Customer texting included</span></li>
           </ul>
         </div>
       </div>
-      <p class="enterprise-note" data-i18n="enterpriseNote2">Need more? Enterprise and higher usage are available — just ask.</p>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label" data-i18n="addonLabel">Website add-on</div>
-        <h2 data-i18n="addonH2">No website? We can build it.</h2>
-      </div>
-      <div class="addon-card">
-        <p data-i18n="addonText">A lot of shops have no website — just a Facebook page. We can build you a simple one-page site with your number and a form on it, connected to the same answering service.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="addonB1">Your number front and center, click-to-call</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="addonB2">A form that sends leads to the same place as your calls</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="addonB3">Services, service area, and reviews — clean and simple</span></li>
-        </ul>
-        <div class="addon-price" data-i18n="addonPrice">Website add-on: $200 one-time build + $25/mo hosting and small updates</div>
-        <p class="addon-note" data-i18n="addonNote">Extra pages $50 each. 2 rounds of revisions. You supply photos and your services list, or we use stock photos.</p>
-      </div>
+      <p class="pricing-note" data-i18n="priceNote">We never quote your customers' job prices — your tech confirms on site.</p>
     </div>
   </section>
 
@@ -298,10 +217,14 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
           </div>
         </div>
         <div>
-          <label class="check"><input type="checkbox" id="website-addon" name="website-addon" value="Yes"><span data-i18n="fWebsite">I need a website too — add the $200 website build</span></label>
+          <span class="group-label" data-i18n="fPlan">Which plan are you interested in?</span>
+          <div class="checks">
+            <label class="check"><input type="radio" name="plan" value="Front Desk $350/mo" checked><span data-i18n="fPlan1">Front Desk — $350/mo</span></label>
+            <label class="check"><input type="radio" name="plan" value="Front Desk Complete $600/mo"><span data-i18n="fPlan2">Front Desk Complete — $600/mo</span></label>
+          </div>
         </div>
         <div>
-          <label class="check"><input type="checkbox" id="form-automation" name="form-automation" value="Yes"><span data-i18n="fFormAuto">I want Form Automation too — $75/mo with Call Answering</span></label>
+          <label class="check"><input type="checkbox" id="customer-texting" name="customer-texting" value="Yes"><span data-i18n="fCustText">Add customer texting (+$100/mo, basic tier only)</span></label>
         </div>
         <div>
           <span class="group-label" data-i18n="fNeeds">What do you need most?</span>
@@ -357,51 +280,34 @@ var FAQS = {
   en: [
     ["Does it work with my current number?","Yes. It works with your current number — no new phone, no app."],
     ["Will it quote prices for my jobs?","No. It books the estimate or takes a message. Your tech confirms the price on site."],
-    ["Can it transfer a call to me?","Yes — by default it takes a message and texts you, but we can set it up to transfer to your number when a caller asks for a human."],
-    ["What if I go over my plan's calls?","Each plan includes a set number of calls — Starter up to 100, Growth up to 300, Heavy up to 600. Extra calls are $1.50 each. If you go over two months in a row, we move you up to the next plan. If you use less than half your plan for two months, we move you down. Need more? Enterprise and higher usage are available — just ask."]
+    ["Can it transfer a call to me?","Yes — by default it takes a message and texts you, but we can set it up to transfer to your number when a caller asks for a human."]
   ],
   es: [
     ["¿Funciona con mi número actual?","Sí. Funciona con su número actual — sin teléfono nuevo, sin aplicación."],
     ["¿Va a dar precios de mis trabajos?","No. Agenda la cotización o toma el mensaje. Su técnico confirma el precio en el lugar."],
-    ["¿Puede transferirme una llamada?","Sí — por defecto toma el mensaje y se lo envía por texto, pero podemos configurarlo para transferir la llamada a su número cuando quien llama pide hablar con una persona."],
-    ["¿Qué pasa si me paso de las llamadas de mi plan?","Cada plan incluye un número definido de llamadas — Starter hasta 100, Growth hasta 300, Heavy hasta 600. Las llamadas extra cuestan $1.50 cada una. Si se pasa dos meses seguidos, lo cambiamos al siguiente plan. Si usa menos de la mitad de su plan durante dos meses, lo bajamos de plan. ¿Necesita más? Planes empresariales y mayor uso están disponibles — solo pregunte."]
+    ["¿Puede transferirme una llamada?","Sí — por defecto toma el mensaje y se lo envía por texto, pero podemos configurarlo para transferir la llamada a su número cuando quien llama pide hablar con una persona."]
   ]
 };
 var T = {
   en: {
     brandSub:"Front desk automation", headerCall:"Call demo",
     heroH1:"Your front desk, automated.",
-    heroSub:"Calls, texts, and forms — answered in English and Spanish. No missed calls. No missed texts. No missed leads.",
+    heroSub:"Your calls answered 24/7 in English and Spanish. No missed calls. No missed texts. No missed leads.",
     demoLabel:"Call our line — hear it answer", demoPlaceholder:"This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Demo number coming soon",
     howLabel:"How it works", howH2:"You work. It answers.",
-    step1T:"A customer reaches out", step1:"By phone, text, or a form on your website — day, night, and weekends.",
+    step1T:"A customer calls", step1:"By phone — day, night, and weekends.",
     step2T:"We answer in English or Spanish", step2:"We take their name, number, and what they need, and book the estimate.",
     step3T:"You get a text summary", step3:"Sent within a minute, so you can follow up when you're free.",
     transferNote:"By default it takes the call and texts you the summary. If a caller asks for a human, we can also set it up to transfer the call to you or your team — your choice.",
-    priceLabel:"Call Answering — Pricing", priceH2:"Simple monthly pricing.", priceSub:"Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
-    popular:"Most popular", perMo:"/mo", perMo2:"/mo", perMo3:"/mo",
-    p1a:"Up to 100 calls/mo", p2a:"Up to 300 calls/mo", p3a:"Up to 600 calls/mo",
-    pCommon1:"24/7 answering in English and Spanish", pCommon1b:"24/7 answering in English and Spanish", pCommon1c:"24/7 answering in English and Spanish",
-    pCommon2:"Text summary after every call", pCommon2b:"Text summary after every call", pCommon2c:"Text summary after every call",
+    priceLabel:"Pricing", priceH2:"Two plans. That's it.", priceSub:"Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
+    noSetup:"No setup fee — just pay your first month up front.",
+    popular:"Most popular", perMo:"/mo", perMo2:"/mo",
+    t1b:"24/7 answering in English and Spanish", t1c:"Text summary to you after every call",
+    t1Texting:"Add customer texting: +$100/mo",
+    t2a:"Everything in Front Desk", t2c:"Simple 1-page website, with forms", t2d:"Customer texting included",
     priceNote:"We never quote your customers' job prices — your tech confirms on site.",
-    autoAdjust:"We check your actual call volume after your first month and move you up or down — you never pay for a plan that doesn't fit.",
-    enterpriseNote:"Need more? Enterprise and higher usage are available — just ask.",
-    enterpriseNote2:"Need more? Enterprise and higher usage are available — just ask.",
-    formAutoLabel:"Form Automation", formAutoH2:"Every form becomes a lead, instantly.",
-    formAutoText:"Every form on your website instantly becomes a text + email to you, and an auto-reply to your customer in English or Spanish. Up to 100 leads a month included. Extra leads are $1 each.",
-    formAutoPrice:"Form Automation: $150/mo standalone, or $75/mo with Call Answering",
-    fFormAuto:"I want Form Automation too — $75/mo with Call Answering",
-    bundleLabel:"Bundles", bundleH2:"Or get the whole front desk", bundleSub:"Calls, forms, and texts in one plan.",
-    bundleNoSetup:"No setup fee — just pay your first month up front.",
-    bundlePopular:"Most popular", bundlePerMo:"/mo", bundlePerMo2:"/mo",
-    bStarter1:"Call Answering — up to 100 calls/mo", bStarter2:"Form Automation", bStarter3:"Missed-Call Text-Back", bStarter4:"Daily lead summary",
-    bComplete1:"Everything in Starter", bComplete2:"Up to 300 calls/mo", bComplete3:"Booking + Reminders", bComplete4:"Review Requests", bComplete5:"Estimate follow-up",
-    addonLabel:"Website add-on", addonH2:"No website? We can build it.",
-    addonText:"A lot of shops have no website — just a Facebook page. We can build you a simple one-page site with your number and a form on it, connected to the same answering service.",
-    addonB1:"Your number front and center, click-to-call", addonB2:"A form that sends leads to the same place as your calls", addonB3:"Services, service area, and reviews — clean and simple",
-    addonPrice:"Website add-on: $200 one-time build + $25/mo hosting and small updates",
-    addonNote:"Extra pages $50 each. 2 rounds of revisions. You supply photos and your services list, or we use stock photos.",
-    fWebsite:"I need a website too — add the $200 website build",
+    fPlan:"Which plan are you interested in?", fPlan1:"Front Desk — $350/mo", fPlan2:"Front Desk Complete — $600/mo",
+    fCustText:"Add customer texting (+$100/mo, basic tier only)",
     formLabel:"Get set up", formH2:"Tell us about your shop.",
     fOwner:"Your name *", fBusiness:"Business name *", fTrade:"Trade *", fSelect:"Select your trade", fPhone:"Phone *", fEmail:"Email *",
     fTimeline:"When do you want to start?", optThisWeek:"This week", optLooking:"Just looking", optLater:"Later",
@@ -415,37 +321,22 @@ var T = {
   es: {
     brandSub:"Automatización de recepción", headerCall:"Llamar al demo",
     heroH1:"Su recepción, automatizada.",
-    heroSub:"Llamadas, mensajes de texto y formularios — atendidos en inglés y español. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.",
+    heroSub:"Sus llamadas atendidas 24/7 en inglés y español. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.",
     demoLabel:"Llame a nuestra línea — escúchela contestar", demoPlaceholder:"Esta es nuestra propia línea de Chaidez Automations. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Número demo muy pronto",
     howLabel:"Cómo funciona", howH2:"Usted trabaja. Nosotros contestamos.",
-    step1T:"Un cliente se comunica", step1:"Por teléfono, mensaje de texto o un formulario en su sitio web — día, noche y fines de semana.",
+    step1T:"Un cliente llama", step1:"Por teléfono — día, noche y fines de semana.",
     step2T:"Contestamos en inglés o español", step2:"Tomamos su nombre, número y lo que necesita, y agendamos la cotización.",
     step3T:"Usted recibe el resumen por texto", step3:"En menos de un minuto, para que le regrese la llamada cuando pueda.",
     transferNote:"Por defecto toma la llamada y le envía el resumen por texto. Si quien llama pide hablar con una persona, también podemos configurarlo para transferir la llamada a usted o a su equipo — usted elige.",
-    priceLabel:"Contestación de llamadas — Precios", priceH2:"Precios mensuales simples.", priceSub:"Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
-    popular:"El más popular", perMo:"/mes", perMo2:"/mes", perMo3:"/mes",
-    p1a:"Hasta 100 llamadas/mes", p2a:"Hasta 300 llamadas/mes", p3a:"Hasta 600 llamadas/mes",
-    pCommon1:"Atención 24/7 en inglés y español", pCommon1b:"Atención 24/7 en inglés y español", pCommon1c:"Atención 24/7 en inglés y español",
-    pCommon2:"Resumen por texto después de cada llamada", pCommon2b:"Resumen por texto después de cada llamada", pCommon2c:"Resumen por texto después de cada llamada",
+    priceLabel:"Precios", priceH2:"Dos planes. Eso es todo.", priceSub:"Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
+    noSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.",
+    popular:"El más popular", perMo:"/mes", perMo2:"/mes",
+    t1b:"Atención 24/7 en inglés y español", t1c:"Resumen por texto para usted después de cada llamada",
+    t1Texting:"Agregue mensajes a clientes: +$100/mes",
+    t2a:"Todo lo de Front Desk", t2c:"Sitio web simple de 1 página, con formularios", t2d:"Mensajes a clientes incluidos",
     priceNote:"Nunca damos precios de sus trabajos a sus clientes — su técnico confirma en el lugar.",
-    autoAdjust:"Revisamos su volumen real de llamadas después de su primer mes y lo cambiamos de plan según corresponda — nunca paga por un plan que no se ajusta a su negocio.",
-    enterpriseNote:"¿Necesita más? Planes empresariales y mayor uso están disponibles — solo pregunte.",
-    enterpriseNote2:"¿Necesita más? Planes empresariales y mayor uso están disponibles — solo pregunte.",
-    formAutoLabel:"Automatización de formularios", formAutoH2:"Cada formulario se convierte en un cliente, al instante.",
-    formAutoText:"Cada formulario en su sitio web se convierte al instante en un texto + correo electrónico para usted, y una respuesta automática para su cliente en inglés o español. Hasta 100 clientes potenciales al mes incluidos. Los clientes extra cuestan $1 cada uno.",
-    formAutoPrice:"Automatización de formularios: $150/mes solo, o $75/mes con Contestación de Llamadas",
-    fFormAuto:"También quiero Automatización de Formularios — $75/mes con Contestación de Llamadas",
-    bundleLabel:"Paquetes", bundleH2:"O lleve toda la recepción", bundleSub:"Llamadas, formularios y mensajes en un solo plan.",
-    bundleNoSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.",
-    bundlePopular:"El más popular", bundlePerMo:"/mes", bundlePerMo2:"/mes",
-    bStarter1:"Contestación de llamadas — hasta 100 llamadas/mes", bStarter2:"Automatización de formularios", bStarter3:"Respuesta por texto a llamadas perdidas", bStarter4:"Resumen diario de clientes potenciales",
-    bComplete1:"Todo lo de Starter", bComplete2:"Hasta 300 llamadas/mes", bComplete3:"Reservas + Recordatorios", bComplete4:"Solicitudes de reseñas", bComplete5:"Seguimiento de cotizaciones",
-    addonLabel:"Sitio web adicional", addonH2:"¿No tiene sitio web? Nosotros lo construimos.",
-    addonText:"Muchos negocios no tienen sitio web — solo una página de Facebook. Podemos construirle un sitio simple de una página con su número y un formulario, conectado al mismo servicio de contestación.",
-    addonB1:"Su número al frente, con llamada con un toque", addonB2:"Un formulario que envía clientes al mismo lugar que sus llamadas", addonB3:"Servicios, área de servicio y reseñas — limpio y simple",
-    addonPrice:"Sitio web adicional: $200 por la construcción, una sola vez + $25/mes por alojamiento y actualizaciones pequeñas",
-    addonNote:"Páginas extra $50 cada una. 2 rondas de revisiones. Usted provee fotos y su lista de servicios, o usamos fotos de archivo.",
-    fWebsite:"También necesito un sitio web — agregue la construcción de $200",
+    fPlan:"¿Qué plan le interesa?", fPlan1:"Front Desk — $350/mes", fPlan2:"Front Desk Complete — $600/mes",
+    fCustText:"Agregar mensajes a clientes (+$100/mes, solo plan básico)",
     formLabel:"Empiece ahora", formH2:"Cuéntenos de su negocio.",
     fOwner:"Su nombre *", fBusiness:"Nombre del negocio *", fTrade:"Oficio *", fSelect:"Seleccione su oficio", fPhone:"Teléfono *", fEmail:"Correo electrónico *",
     fTimeline:"¿Cuándo quiere empezar?", optThisWeek:"Esta semana", optLooking:"Solo estoy viendo", optLater:"Más adelante",
