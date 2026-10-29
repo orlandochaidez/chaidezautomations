@@ -49,7 +49,8 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .call-box{margin-top:36px;border:1px solid var(--line);border-radius:var(--radius);padding:20px;max-width:560px}
 .call-box-label{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark)}
 .demo-placeholder{margin-top:8px;font-weight:500;font-size:.98rem;line-height:1.55;color:var(--muted)}
-.big-call{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--wash);color:#4a6b84;font-weight:700;font-size:1rem;padding:15px 20px;border-radius:10px;border:1px dashed #9fc3dd}
+.big-call{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--blue-dark);color:#fff;font-weight:700;font-size:1.05rem;padding:16px 20px;border-radius:10px;border:0;text-decoration:none}
+.big-call:hover{background:#265a85}
 
 .steps{display:grid;gap:16px}
 @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
@@ -126,7 +127,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
         <button type="button" id="btn-en" aria-pressed="true">EN</button>
         <button type="button" id="btn-es" aria-pressed="false">ES</button>
       </div>
-      <a class="header-call" href="#demo" data-i18n="headerCall">Call demo</a>
+      <a class="header-call" href="tel:+16193042687" data-i18n="headerCall">Call the demo: (619) 304-2687</a>
     </div>
   </div>
 </header>
@@ -137,12 +138,12 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
       <h1 data-i18n="heroH1">Your front desk, automated.</h1>
       <p class="hero-sub" data-i18n="heroSub">Your calls answered 24/7 in English and Spanish. No missed calls. No missed texts. No missed leads.</p>
       <div class="call-box">
-        <div class="call-box-label" data-i18n="demoLabel">Call our line — hear it answer</div>
+        <div class="call-box-label" data-i18n="demoLabel">Call our demo line</div>
         <p class="demo-placeholder" data-i18n="demoPlaceholder">This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.</p>
-        <div class="big-call" aria-disabled="true">
+        <a class="big-call" href="tel:+16193042687">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="currentColor"/></svg>
-          <span data-i18n="callDemo">Demo number coming soon</span>
-        </div>
+          <span data-i18n="callDemo">Call the demo: (619) 304-2687</span>
+        </a>
       </div>
     </div>
   </section>
@@ -290,10 +291,10 @@ var FAQS = {
 };
 var T = {
   en: {
-    brandSub:"Front desk automation", headerCall:"Call demo",
+    brandSub:"Front desk automation", headerCall:"Call the demo: (619) 304-2687",
     heroH1:"Your front desk, automated.",
     heroSub:"Your calls answered 24/7 in English and Spanish. No missed calls. No missed texts. No missed leads.",
-    demoLabel:"Call our line — hear it answer", demoPlaceholder:"This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Demo number coming soon",
+    demoLabel:"Call our demo line", demoPlaceholder:"This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Call the demo: (619) 304-2687",
     howLabel:"How it works", howH2:"You work. It answers.",
     step1T:"A customer calls", step1:"By phone — day, night, and weekends.",
     step2T:"We answer in English or Spanish", step2:"We take their name, number, and what they need, and book the estimate.",
@@ -319,10 +320,10 @@ var T = {
     disclaimer:"Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting."
   },
   es: {
-    brandSub:"Automatización de recepción", headerCall:"Llamar al demo",
+    brandSub:"Automatización de recepción", headerCall:"Llame al demo: (619) 304-2687",
     heroH1:"Su recepción, automatizada.",
     heroSub:"Sus llamadas atendidas 24/7 en inglés y español. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.",
-    demoLabel:"Llame a nuestra línea — escúchela contestar", demoPlaceholder:"Esta es nuestra propia línea de Chaidez Automations. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Número demo muy pronto",
+    demoLabel:"Llame a nuestra línea demo", demoPlaceholder:"Esta es nuestra propia línea de Chaidez Automations. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Llame al demo: (619) 304-2687",
     howLabel:"Cómo funciona", howH2:"Usted trabaja. Nosotros contestamos.",
     step1T:"Un cliente llama", step1:"Por teléfono — día, noche y fines de semana.",
     step2T:"Contestamos en inglés o español", step2:"Tomamos su nombre, número y lo que necesita, y agendamos la cotización.",
