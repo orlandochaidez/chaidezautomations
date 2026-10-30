@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:,">
+<title>Pricing — Chaidez Automations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#5aa3cf; --blue-dark:#2f6fa3; --blue-soft:#e8f2f9; --blue-mid:#d6eaf6;
+  --ink:#16283a; --muted:#5b738a; --line:#dbe7f1;
+  --bg:#ffffff; --card:#ffffff; --wash:#f4f9fc;
+  --radius:14px;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1,"cv05" 1}
+a{color:inherit}
+.wrap{width:min(1160px,100% - 40px);margin:0 auto}
+h1,h2,h3{line-height:1.12;margin:0;font-family:"Inter",system-ui,sans-serif;font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(1.75rem,4vw,2.35rem)}
+h3{font-size:1rem;letter-spacing:-.01em}
+p{margin:0}
+.section{padding:72px 0}
+.section-head{max-width:760px;margin-bottom:30px}
+.section-head p{color:var(--muted);margin-top:10px;font-size:1.02rem}
+.label{font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-dark)}
+.num,.price{font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1}
+
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{font-weight:800;letter-spacing:-.02em;font-size:1.06rem;line-height:1.15;text-decoration:none}
+.brand small{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.header-actions{display:flex;align-items:center;gap:14px}
+.header-nav{font-weight:700;text-decoration:none;font-size:.95rem;color:var(--blue-dark)}
+.lang-toggle{display:flex;background:#eef5fa;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang-toggle button{border:0;background:transparent;color:#4a6b84;font-weight:700;font-size:.85rem;padding:7px 14px;border-radius:999px;cursor:pointer;font-family:inherit}
+.lang-toggle button[aria-pressed="true"]{background:var(--blue-dark);color:#fff}
+.header-call{display:none;background:var(--blue-dark);color:#fff;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;font-size:.92rem}
+@media(min-width:720px){.header-call{display:inline-flex}}
+
+.page-hero{padding:64px 0 8px}
+.page-hero h1{font-size:clamp(2.2rem,5.5vw,3.2rem);max-width:760px}
+.page-hero p{margin-top:16px;font-size:1.1rem;color:var(--muted);max-width:700px;line-height:1.6}
+.no-setup{margin-top:12px;font-weight:700;color:var(--ink)}
+
+.pricing{display:grid;gap:16px;align-items:stretch}
+@media(min-width:860px){.pricing.two{grid-template-columns:repeat(2,1fr)}}
+.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;position:relative;background:#fff}
+.price{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;margin-top:10px;line-height:1}
+.price span{font-size:1rem;font-weight:600;color:var(--muted);letter-spacing:0}
+.price-card ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.96rem}
+.price-card ul li{display:flex;gap:9px}
+.price-card ul svg{flex:none;margin-top:3px}
+.simple-price{margin-top:16px;font-weight:700;font-size:1rem;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card-cta{margin-top:22px;display:flex;align-items:center;justify-content:center;background:var(--blue-dark);color:#fff;font-weight:700;font-size:1rem;padding:14px 20px;border-radius:10px;text-decoration:none}
+.card-cta:hover{background:#265a85}
+.pricing-note{margin-top:18px;color:var(--muted);font-size:.94rem;max-width:900px}
+
+.info-block{margin-top:26px;background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:22px 24px;max-width:100%}
+.info-block h3{font-size:1.08rem;margin-bottom:8px}
+.info-block p{color:var(--muted);font-size:.98rem;line-height:1.6}
+.info-block p b{color:var(--ink)}
+
+.enterprise{border:2px solid var(--blue-dark);border-radius:var(--radius);padding:30px;display:grid;gap:18px}
+@media(min-width:860px){.enterprise{grid-template-columns:1.2fr .8fr;align-items:center}}
+.enterprise p{color:var(--muted);margin-top:10px;font-size:1rem;line-height:1.6}
+.ent-actions{display:grid;gap:12px}
+.ent-call{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--blue-dark);color:#fff;font-weight:700;font-size:1rem;padding:15px 20px;border-radius:10px;text-decoration:none}
+.ent-call:hover{background:#265a85}
+.ent-alt{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;padding:14px 20px;border-radius:10px;border:1px solid var(--line);text-decoration:none;color:var(--blue-dark);background:#fff}
+
+footer{background:#eef6fb;color:var(--muted);padding:44px 0 32px;font-size:.94rem;border-top:1px solid var(--line)}
+footer .brand{color:var(--ink)}
+.footer-grid{display:grid;gap:24px}
+@media(min-width:760px){.footer-grid{grid-template-columns:1.2fr 1fr}}
+footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
+.footer-tagline{margin-top:12px;font-weight:600;color:var(--ink);font-size:.95rem;line-height:1.55;max-width:440px}
+.disclaimer{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <span>Chaidez Automations<small data-i18n="brandSub">Front desk automation</small></span>
+    </a>
+    <div class="header-actions">
+      <a class="header-nav" href="index.html" data-i18n="navHome">Home</a>
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+        <button type="button" id="btn-en" aria-pressed="true">EN</button>
+        <button type="button" id="btn-es" aria-pressed="false">ES</button>
+      </div>
+      <a class="header-call" href="tel:+16193042687" data-i18n="headerCall">Call the demo: (619) 304-2687</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="label" data-i18n="priceLabel">Pricing</div>
+      <h1 data-i18n="priceH1">Simple pricing, built for small business.</h1>
+      <p data-i18n="priceSub">Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.</p>
+      <p class="no-setup" data-i18n="noSetup">No setup fee — just pay your first month up front.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:36px">
+    <div class="wrap">
+      <div class="pricing two">
+        <div class="price-card">
+          <h3>Front Desk</h3><div class="price">$350<span data-i18n="perMo">/mo</span></div>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1b">24/7 answering in English and Spanish</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1c">Text summary to you after every call</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1num">1 business number covered</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1min">500 minutes of calls a month — about 150+ typical calls. Most small shops never get close</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1transfer">Call transfers — your choice: transfer to you, or we take the info and text you</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1quote">Rough estimates for simple jobs — only if you want them</span></li>
+          </ul>
+          <p class="simple-price" style="margin-top:20px" data-i18n="t1Texting">Add customer texting: +$100/mo</p>
+          <a class="card-cta" href="index.html#setup" data-i18n="ctaSetup">Get set up</a>
+        </div>
+        <div class="price-card">
+          <h3>Front Desk Complete</h3><div class="price">$600<span data-i18n="perMo2">/mo</span></div>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2a">Everything in Front Desk, plus:</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2web">A custom 1-page website, built how you want it — we show you design options, you pick the look. Your colors, your logo, your photos, your words</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2domain">Your own domain + hosting included — we set it all up and keep it online while you're subscribed</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2form">Contact form on your website included</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2num">Up to 3 business numbers covered</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2min">1,500 minutes of calls a month — around 500 typical calls</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2text">Customer texting included</span></li>
+          </ul>
+          <a class="card-cta" href="index.html#setup" data-i18n="ctaSetup2">Get set up</a>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3 data-i18n="minH">How far do the minutes actually go?</h3>
+        <p data-i18n="minP">A typical call — hello, what they need, name and number, booking the estimate — takes about <b>3 minutes</b>. So 500 minutes covers roughly <b>150+ calls a month</b>, and 1,500 minutes covers around <b>500 calls</b>. Most small shops use a fraction of that. And if your shop ever regularly needs more, we'll flag it and talk through options — you'll never get a surprise bill from us.</p>
+      </div>
+
+      <p class="pricing-note" data-i18n="priceNote">Quoting is your choice — it can give rough estimates for simple jobs, or never mention price at all. Either way, your tech confirms the final price on site.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="enterprise">
+        <div>
+          <div class="label" data-i18n="entLabel">Enterprise</div>
+          <h2 data-i18n="entH2">Running something bigger?</h2>
+          <p data-i18n="entP">Our standard plans are made for small businesses. Got multiple locations, heavy call volume, or an operation that doesn't fit a standard plan? We'll build custom enterprise pricing around your business. Call the demo line, tell the assistant about your operation, and our team will follow up with a custom quote.</p>
+        </div>
+        <div class="ent-actions">
+          <a class="ent-call" href="tel:+16193042687">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="currentColor"/></svg>
+            <span data-i18n="entCall">Call the demo: (619) 304-2687</span>
+          </a>
+          <a class="ent-alt" href="index.html#setup" data-i18n="entAlt">Tell us about your shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span>Chaidez Automations</span></div>
+        <p class="footer-tagline" data-i18n="footerTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</p>
+        <p style="margin-top:10px" data-i18n="footerTag">Answered 24/7, in English and Spanish.</p>
+      </div>
+      <div>
+        <h3 data-i18n="footerAreas">Service areas</h3>
+        <p><span data-i18n="footerArea3">All across the US</span></p>
+      </div>
+    </div>
+    <p class="disclaimer" data-i18n="disclaimer">Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.</p>
+  </div>
+</footer>
+
+<script>
+var T = {
+  en: {
+    brandSub:"Front desk automation", navHome:"Home", headerCall:"Call the demo: (619) 304-2687",
+    priceLabel:"Pricing", priceH1:"Simple pricing, built for small business.",
+    priceSub:"Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
+    noSetup:"No setup fee — just pay your first month up front.",
+    perMo:"/mo", perMo2:"/mo",
+    t1b:"24/7 answering in English and Spanish", t1c:"Text summary to you after every call",
+    t1num:"1 business number covered",
+    t1min:"500 minutes of calls a month — about 150+ typical calls. Most small shops never get close",
+    t1transfer:"Call transfers — your choice: transfer to you, or we take the info and text you",
+    t1quote:"Rough estimates for simple jobs — only if you want them",
+    t1Texting:"Add customer texting: +$100/mo", ctaSetup:"Get set up",
+    t2a:"Everything in Front Desk, plus:",
+    t2web:"A custom 1-page website, built how you want it — we show you design options, you pick the look. Your colors, your logo, your photos, your words",
+    t2domain:"Your own domain + hosting included — we set it all up and keep it online while you're subscribed",
+    t2form:"Contact form on your website included",
+    t2num:"Up to 3 business numbers covered",
+    t2min:"1,500 minutes of calls a month — around 500 typical calls",
+    t2text:"Customer texting included", ctaSetup2:"Get set up",
+    minH:"How far do the minutes actually go?",
+    minP:"A typical call — hello, what they need, name and number, booking the estimate — takes about <b>3 minutes</b>. So 500 minutes covers roughly <b>150+ calls a month</b>, and 1,500 minutes covers around <b>500 calls</b>. Most small shops use a fraction of that. And if your shop ever regularly needs more, we'll flag it and talk through options — you'll never get a surprise bill from us.",
+    priceNote:"Quoting is your choice — it can give rough estimates for simple jobs, or never mention price at all. Either way, your tech confirms the final price on site.",
+    entLabel:"Enterprise", entH2:"Running something bigger?",
+    entP:"Our standard plans are made for small businesses. Got multiple locations, heavy call volume, or an operation that doesn't fit a standard plan? We'll build custom enterprise pricing around your business. Call the demo line, tell the assistant about your operation, and our team will follow up with a custom quote.",
+    entCall:"Call the demo: (619) 304-2687", entAlt:"Tell us about your shop",
+    footerTag:"Answered 24/7, in English and Spanish.", footerTagline:"Your front desk, automated. No missed calls. No missed texts. No missed leads.", footerAreas:"Service areas", footerArea3:"All across the US",
+    disclaimer:"Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting."
+  },
+  es: {
+    brandSub:"Automatización de recepción", navHome:"Inicio", headerCall:"Llame al demo: (619) 304-2687",
+    priceLabel:"Precios", priceH1:"Precios simples, pensados para negocios pequeños.",
+    priceSub:"Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
+    noSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.",
+    perMo:"/mes", perMo2:"/mes",
+    t1b:"Atención 24/7 en inglés y español", t1c:"Resumen por texto para usted después de cada llamada",
+    t1num:"1 número de negocio cubierto",
+    t1min:"500 minutos de llamadas al mes — unas 150+ llamadas típicas. La mayoría de los negocios pequeños ni se acerca",
+    t1transfer:"Transferencias — usted elige: transferirle la llamada, o tomamos los datos y se los enviamos por texto",
+    t1quote:"Estimaciones aproximadas para trabajos sencillos — solo si usted lo quiere",
+    t1Texting:"Agregue mensajes a clientes: +$100/mes", ctaSetup:"Empezar ahora",
+    t2a:"Todo lo de Front Desk, más:",
+    t2web:"Un sitio web personalizado de 1 página, hecho como usted quiera — le mostramos opciones de diseño y usted elige el estilo. Sus colores, su logo, sus fotos, sus palabras",
+    t2domain:"Su propio dominio + hosting incluido — nosotros lo configuramos todo y lo mantenemos en línea mientras esté suscrito",
+    t2form:"Formulario de contacto en su sitio web incluido",
+    t2num:"Hasta 3 números de negocio cubiertos",
+    t2min:"1,500 minutos de llamadas al mes — unas 500 llamadas típicas",
+    t2text:"Mensajes a clientes incluidos", ctaSetup2:"Empezar ahora",
+    minH:"¿Qué tanto alcanzan los minutos en realidad?",
+    minP:"Una llamada típica — saludo, lo que necesita el cliente, nombre y número, agendar la cotización — toma unos <b>3 minutos</b>. Así que 500 minutos cubren aproximadamente <b>más de 150 llamadas al mes</b>, y 1,500 minutos cubren unas <b>500 llamadas</b>. La mayoría de los negocios pequeños usa solo una fracción de eso. Y si su negocio llegara a necesitar más regularmente, se lo avisamos y vemos opciones — nunca recibirá un cargo sorpresa de nosotros.",
+    priceNote:"Dar precios es su decisión — puede dar estimaciones aproximadas para trabajos sencillos, o nunca mencionar precios. De cualquier forma, su técnico confirma el precio final en el lugar.",
+    entLabel:"Empresas", entH2:"¿Su operación es más grande?",
+    entP:"Nuestros planes estándar están hechos para negocios pequeños. ¿Tiene varias ubicaciones, un volumen alto de llamadas, o una operación que no encaja en un plan estándar? Creamos un precio empresarial a la medida de su negocio. Llame a la línea demo, cuéntele al asistente sobre su operación, y nuestro equipo le enviará una cotización personalizada.",
+    entCall:"Llame al demo: (619) 304-2687", entAlt:"Cuéntenos de su negocio",
+    footerTag:"Atención 24/7, en inglés y español.", footerTagline:"Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", footerAreas:"Áreas de servicio", footerArea3:"Todo Estados Unidos",
+    disclaimer:"Asistente automatizado, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica."
+  }
+};
+var lang = "en";
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = (l==="es" ? "es" : "en");
+  document.getElementById("btn-en").setAttribute("aria-pressed", l==="en" ? "true":"false");
+  document.getElementById("btn-es").setAttribute("aria-pressed", l==="es" ? "true":"false");
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var k = el.getAttribute("data-i18n");
+    if(T[l][k] !== undefined) el.innerHTML = T[l][k];
+  });
+}
+document.getElementById("btn-en").addEventListener("click", function(){ setLang("en"); });
+document.getElementById("btn-es").addEventListener("click", function(){ setLang("es"); });
+setLang("en");
+</script>
+</body>
+</html>
