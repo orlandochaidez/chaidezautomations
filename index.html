@@ -174,13 +174,24 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
+  <section class="section" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:0">
+        <div class="label" data-i18n="outLabel">Why it matters</div>
+        <h2 data-i18n="outH2">One saved job pays for this for months.</h2>
+        <p data-i18n="outP">When a customer can't reach you, they don't leave a voicemail — they hang up and call the next shop on Google. One booked job in most trades is worth <b>$400 to $5,000+</b>. Front Desk costs <b>$350/mo</b> — less than a single job. If we save you <i>one</i> call a month, everything after that is profit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px">
     <div class="wrap">
       <div class="section-head">
         <div class="label" data-i18n="priceLabel">Pricing</div>
         <h2 data-i18n="priceH2">Two plans.</h2>
         <p data-i18n="priceSub">Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.</p>
         <p data-i18n="noSetup" style="margin-top:8px;font-weight:700;color:var(--ink)">No setup fee — just pay your first month up front.</p>
+        <p data-i18n="mtm" style="margin-top:4px;font-weight:700;color:var(--ink)">Month-to-month. No contract. Cancel anytime.</p>
       </div>
       <div class="pricing two">
         <div class="price-card">
@@ -200,6 +211,7 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="minComplete">1,500 minutes/mo — around 500 typical calls</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2d">Customer texting included</span></li>
           </ul>
+          <p class="simple-price" style="margin-top:20px" data-i18n="t2value">3× the minutes. 3× the numbers. A whole website included — for less than 2× the price.</p>
         </div>
       </div>
       <a class="see-pricing" href="pricing.html" data-i18n="seePricing">See full pricing details</a>
@@ -314,7 +326,9 @@ var T = {
     step3T:"You get a text summary", step3:"Sent within a minute, so you can follow up when you're free.",
     transferNote:"By default it takes the call and texts you the summary. If a caller asks for a human, we can also set it up to transfer the call to you or your team — your choice.",
     priceLabel:"Pricing", priceH2:"Two plans.", priceSub:"Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
-    noSetup:"No setup fee — just pay your first month up front.",
+    noSetup:"No setup fee — just pay your first month up front.", mtm:"Month-to-month. No contract. Cancel anytime.",
+    outLabel:"Why it matters", outH2:"One saved job pays for this for months.", outP:"When a customer can't reach you, they don't leave a voicemail — they hang up and call the next shop on Google. One booked job in most trades is worth <b>$400 to $5,000+</b>. Front Desk costs <b>$350/mo</b> — less than a single job. If we save you <i>one</i> call a month, everything after that is profit.",
+    t2value:"3× the minutes. 3× the numbers. A whole website included — for less than 2× the price.",
     perMo:"/mo", perMo2:"/mo", navPricing:"Pricing", minFD:"500 minutes/mo — about 150+ typical calls", minComplete:"1,500 minutes/mo — around 500 typical calls", seePricing:"See full pricing details",
     t1b:"24/7 answering in English and Spanish", t1c:"Text summary to you after every call",
     t1Texting:"Add customer texting: +$100/mo",
@@ -343,7 +357,9 @@ var T = {
     step3T:"Usted recibe el resumen por texto", step3:"En menos de un minuto, para que le regrese la llamada cuando pueda.",
     transferNote:"Por defecto toma la llamada y le envía el resumen por texto. Si quien llama pide hablar con una persona, también podemos configurarlo para transferir la llamada a usted o a su equipo — usted elige.",
     priceLabel:"Precios", priceH2:"Dos planes.", priceSub:"Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
-    noSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.",
+    noSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.", mtm:"Mes a mes. Sin contrato. Cancele cuando quiera.",
+    outLabel:"Por qué importa", outH2:"Un solo trabajo salvado paga esto por meses.", outP:"Cuando un cliente no logra comunicarse con usted, no deja un mensaje de voz — cuelga y llama al siguiente negocio en Google. Un solo trabajo agendado en la mayoría de los oficios vale de <b>$400 a $5,000+</b>. Front Desk cuesta <b>$350/mes</b> — menos que un solo trabajo. Si le salvamos <i>una</i> llamada al mes, todo lo demás es ganancia.",
+    t2value:"3× los minutos. 3× los números. Un sitio web completo incluido — por menos del doble del precio.",
     perMo:"/mes", perMo2:"/mes", navPricing:"Precios", minFD:"500 minutos/mes — unas 150+ llamadas típicas", minComplete:"1,500 minutos/mes — unas 500 llamadas típicas", seePricing:"Ver todos los detalles de precios",
     t1b:"Atención 24/7 en inglés y español", t1c:"Resumen por texto para usted después de cada llamada",
     t1Texting:"Agregue mensajes a clientes: +$100/mes",
