@@ -1,232 +1,1113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light">
-<link rel="icon" href="data:,">
-<title>Chaidez Automations — Your front desk, automated</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaidez Automations — Your Front Desk, Automated | 24/7 Answering in English &amp; Spanish</title>
+<meta name="description" content="Chaidez Automations answers your business calls 24/7 in English and Spanish, and texts you a summary after every call. Front Desk $350/mo, Front Desk Complete $600/mo. Live in about 3 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --blue:#5aa3cf; --blue-dark:#2f6fa3; --blue-soft:#e8f2f9; --blue-mid:#d6eaf6;
-  --ink:#16283a; --muted:#5b738a; --line:#dbe7f1;
-  --bg:#ffffff; --card:#ffffff; --wash:#f4f9fc;
-  --radius:14px;
-  color-scheme: light;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1,"cv05" 1}
-a{color:inherit}
-.wrap{width:min(1160px,100% - 40px);margin:0 auto}
-h1,h2,h3{line-height:1.12;margin:0;font-family:"Inter",system-ui,sans-serif;font-weight:800;letter-spacing:-.03em}
-h2{font-size:clamp(1.75rem,4vw,2.35rem)}
-h3{font-size:1rem;letter-spacing:-.01em}
-p{margin:0}
-.section{padding:72px 0}
-.section-head{max-width:760px;margin-bottom:30px}
-.section-head p{color:var(--muted);margin-top:10px;font-size:1.02rem}
-.label{font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-dark)}
-.num,.price{font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1}
+  :root{
+    --ink:#0d2136; --ink2:#3c5871; --mut:#647d92;
+    --blue:#1f6fb2; --blue-d:#155a94; --sky:#eef4fa; --sky2:#e2edf7;
+    --line:#d8e4ee; --card:#ffffff; --amber:#f5a800;
+    --radius:18px; --shadow:0 10px 30px rgba(13,33,54,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  a{color:var(--blue);text-decoration:none}
+  h1,h2{letter-spacing:-.02em;line-height:1.08}
+  h2{font-size:clamp(26px,3.4vw,38px);font-weight:800}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .sub{color:var(--ink2);font-size:17px;line-height:1.55}
+  section{padding:64px 0}
+  .alt{background:var(--sky)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:13px 22px;border-radius:999px;border:0;cursor:pointer;transition:.15s}
+  .btn:hover{background:var(--blue-d)}
+  .btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--blue);color:var(--blue)}
+  .btn.amber{background:var(--amber);color:#231a00}
+  .btn.amber:hover{background:#e09c00}
 
-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
-.header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
-.brand{font-weight:800;letter-spacing:-.02em;font-size:1.06rem;line-height:1.15}
-.brand small{display:block;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-.header-actions{display:flex;align-items:center;gap:14px}
-.header-nav{font-weight:700;text-decoration:none;font-size:.95rem;color:var(--blue-dark)}
-.see-pricing{display:inline-flex;margin-top:20px;background:var(--blue-dark);color:#fff;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:10px;font-size:.98rem}
-.see-pricing:hover{background:#265a85}
-.lang-toggle{display:flex;background:#eef5fa;border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang-toggle button{border:0;background:transparent;color:#4a6b84;font-weight:700;font-size:.85rem;padding:7px 14px;border-radius:999px;cursor:pointer;font-family:inherit}
-.lang-toggle button[aria-pressed="true"]{background:var(--blue-dark);color:#fff}
-.header-call{display:none;background:var(--blue-dark);color:#fff;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;font-size:.92rem}
-@media(min-width:720px){.header-call{display:inline-flex}}
+  /* mockup ribbon */
+  .ribbon{background:#231a00;color:#ffd34d;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:8px 12px;position:relative;z-index:60}
 
-.hero{padding:72px 0 76px;border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;gap:32px}
-.hero-grid .call-box{margin-top:0;max-width:100%}
-@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}.hero-grid .hero-sub{max-width:540px}}
-.hero h1{font-size:clamp(2.5rem,6.5vw,4rem);max-width:800px}
-.hero-sub{margin-top:20px;font-size:1.14rem;color:var(--muted);max-width:660px;line-height:1.6}
-.call-box{margin-top:36px;border:1px solid var(--line);border-radius:var(--radius);padding:20px;max-width:660px}
-.call-box-label{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark)}
-.demo-placeholder{margin-top:8px;font-weight:500;font-size:.98rem;line-height:1.55;color:var(--muted)}
-.big-call{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--blue-dark);color:#fff;font-weight:700;font-size:1.05rem;padding:16px 20px;border-radius:10px;border:0;text-decoration:none}
-.big-call:hover{background:#265a85}
+  /* header */
+  header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
+  .bar{display:flex;align-items:center;gap:18px;height:68px}
+  .logo{font-weight:900;font-size:19px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+  .logo span{color:var(--blue)}
+  nav.main{display:flex;gap:4px;margin-left:12px}
+  nav.main>a,nav.main .navitem>button{font:inherit;font-size:14.5px;font-weight:600;color:var(--ink);background:none;border:0;padding:9px 12px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+  nav.main>a:hover,nav.main .navitem>button:hover{background:var(--sky)}
+  .navitem{position:relative}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:10px;min-width:330px;display:none}
+  .navitem:hover .dropdown,.navitem:focus-within .dropdown{display:block}
+  .dropdown a{display:flex;gap:12px;padding:10px 12px;border-radius:12px;color:var(--ink)}
+  .dropdown a:hover{background:var(--sky)}
+  .dropdown .ic{font-size:19px;line-height:1.2}
+  .dropdown b{display:block;font-size:14.5px}
+  .dropdown small{color:var(--mut);font-size:12.5px;font-weight:500}
+  .dropdown.wide{min-width:520px}
+  .dropdown .cols{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .bar .sp{flex:1}
+  .langtog{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+  .langtog button{font:inherit;font-size:12.5px;font-weight:700;padding:7px 12px;background:#fff;border:0;cursor:pointer;color:var(--mut)}
+  .langtog button.on{background:var(--blue);color:#fff}
+  .callbtn{white-space:nowrap}
+  .burger{width:42px;height:42px;border-radius:12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .burger i{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px}
 
-.steps{display:grid;gap:16px}
-@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
-.step{border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue-soft);color:var(--blue-dark);display:grid;place-items:center;font-weight:800;font-size:1rem;margin-bottom:14px;font-variant-numeric:tabular-nums}
-.step p{color:var(--muted);margin-top:8px;font-size:.97rem}
+  /* side drawer */
+  .scrim{position:fixed;inset:0;background:rgba(13,33,54,.45);opacity:0;pointer-events:none;transition:.25s;z-index:90}
+  .scrim.open{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100dvh;width:min(360px,88vw);background:#fff;z-index:95;transform:translateX(105%);transition:transform .28s ease;box-shadow:-16px 0 40px rgba(13,33,54,.18);display:flex;flex-direction:column}
+  .drawer.open{transform:none}
+  .drawer .dhead{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+  .drawer .dbody{padding:14px 20px 24px;overflow-y:auto}
+  .drawer .x{width:38px;height:38px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:17px;cursor:pointer}
+  .dgroup{font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);margin:20px 0 6px}
+  .dlink{display:flex;justify-content:space-between;align-items:center;padding:11px 6px;font-weight:600;font-size:15.5px;color:var(--ink);border-bottom:1px solid #eef3f8}
+  .dlink small{color:var(--mut);font-weight:500;font-size:12.5px;display:block}
+  .dlink:hover{color:var(--blue)}
+  .drawer .dcta{margin-top:22px;background:var(--sky);border-radius:14px;padding:16px;text-align:center}
+  .drawer .dcta b{font-size:16px}
 
-.pricing{display:grid;gap:16px;align-items:stretch}
-@media(min-width:860px){.pricing{grid-template-columns:repeat(3,1fr)} .pricing.two{grid-template-columns:repeat(2,1fr)}}
-.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;position:relative;background:#fff}
-.price-card.popular{border:2px solid var(--blue-dark)}
-.pop-tag{position:absolute;top:-12px;left:22px;background:var(--blue-dark);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
-.price{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;margin-top:10px;line-height:1}
-.price span{font-size:1rem;font-weight:600;color:var(--muted);letter-spacing:0}
-.price-card ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px;color:var(--muted);font-size:.96rem}
-.price-card ul li{display:flex;gap:9px}
-.price-card ul svg{flex:none;margin-top:3px}
-.pricing-note{margin-top:18px;color:var(--muted);font-size:.94rem;max-width:900px}
-.pricing-note b{color:var(--ink)}
-.transfer-note{margin-top:22px;background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:15px 17px;color:var(--ink);font-size:.96rem;line-height:1.55;max-width:100%}
+  /* hero */
+  .hero{padding:64px 0 0}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:44px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.2vw,60px);font-weight:900}
+  .hero h1 .hl{color:var(--blue)}
+  .hero .sub{margin:18px 0 22px;max-width:34rem}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+  .pill{font-size:13px;font-weight:700;background:var(--sky);border:1px solid var(--sky2);padding:8px 13px;border-radius:999px}
+  .pill b{color:var(--blue)}
+  .demo-box{background:var(--ink);color:#fff;border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+  .demo-box .tag{font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#9fc6e8}
+  .demo-box .num{font-size:clamp(26px,3vw,34px);font-weight:900;letter-spacing:-.01em;margin:10px 0 6px;color:#fff;display:block}
+  .demo-box p{color:#c3d6e6;font-size:14.5px;line-height:1.55}
+  .demo-box .btn{margin-top:18px;width:100%;justify-content:center}
+  .demo-box .fine{margin-top:12px;font-size:12.5px;color:#8fb0c9;text-align:center}
+  .transcript{margin-top:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.6}
+  .transcript .who{font-weight:800;color:#9fc6e8;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .transcript .cust{color:#ffd34d}
 
-.simple-block{max-width:900px}
-.simple-block p{color:var(--muted);margin-top:12px;font-size:1rem}
-.simple-price{margin-top:16px;font-weight:700;font-size:1rem;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  /* stats strip */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:26px;padding-bottom:26px}
+  .stat b{display:block;font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em}
+  .stat span{color:var(--mut);font-size:13.5px;font-weight:600}
 
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .step .n{font-size:13px;font-weight:900;color:#fff;background:var(--blue);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .step h3{font-size:18px;margin-bottom:8px}
+  .step p{color:var(--ink2);font-size:14.5px;line-height:1.6}
+  .chip{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:800;background:#fdf3d7;color:#7a5b00;padding:6px 11px;border-radius:999px}
 
-.form-section{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-form{display:grid;gap:18px}
-.form-grid{display:grid;gap:16px}
-@media(min-width:720px){.form-grid{grid-template-columns:1fr 1fr}}
-.field label,.group-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:7px}
-.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:13px 14px;font:inherit;font-size:1rem}
-.field textarea{min-height:88px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
-.checks{display:grid;gap:9px}
-@media(min-width:720px){.checks{grid-template-columns:1fr 1fr}}
-.check{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 13px;font-size:.95rem;font-weight:600;cursor:pointer}
-.check input{width:19px;height:19px;margin-top:1px;accent-color:var(--blue-dark);flex:none}
-.consent{display:grid;gap:10px}
-.consent .check{background:transparent;border:0;padding:2px 0}
-.required-star{color:#c2410c}
-.submit-btn{border:0;background:var(--blue-dark);color:#fff;font:inherit;font-weight:700;font-size:1.02rem;padding:15px 22px;border-radius:10px;cursor:pointer;width:100%}
-@media(min-width:720px){.submit-btn{width:auto;justify-self:start;padding:15px 32px}}
-.confirm{display:none;background:var(--blue-soft);border:1px solid var(--blue);border-radius:12px;padding:20px}
-.confirm.show{display:block}
-.confirm b{font-size:1.02rem}
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
+  .svc .ic{font-size:30px;margin-bottom:12px}
+  .svc h3{font-size:19px;margin-bottom:6px}
+  .svc .plan{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+  .svc p{color:var(--ink2);font-size:14.5px;line-height:1.6;margin-bottom:14px}
+  .svc ul{list-style:none;margin-top:auto}
+  .svc li{font-size:14px;padding:6px 0 6px 24px;position:relative;color:var(--ink2)}
+  .svc li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:900}
 
-.faq{display:grid;gap:10px;max-width:100%}
-details{border:1px solid var(--line);border-radius:12px;padding:0 20px;background:#fff}
-summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:1.35rem;color:var(--blue-dark);font-weight:600;line-height:1}
-details[open] summary::after{content:"−"}
-details p{color:var(--muted);padding:0 0 16px;max-width:860px}
+  /* industries */
+  .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+  .ind{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+  .ind .ic{font-size:24px}
+  .ind b{display:block;margin:8px 0 4px;font-size:15.5px}
+  .ind small{color:var(--mut);font-size:13px;line-height:1.45;display:block}
+  .ind.more-chips{background:var(--sky);border-style:dashed;display:flex;flex-direction:column;justify-content:center}
+  .chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{font-size:13px;font-weight:600;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:999px}
+  .catchall{margin-top:20px;font-size:15.5px;color:var(--ink2)}
+  .catchall b{color:var(--ink)}
 
-footer{background:#eef6fb;color:var(--muted);padding:44px 0 32px;font-size:.94rem;border-top:1px solid var(--line)}
-footer .brand{color:var(--ink)}
-.footer-grid{display:grid;gap:24px}
-@media(min-width:760px){.footer-grid{grid-template-columns:1.2fr 1fr}}
-footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
-.footer-tagline{margin-top:12px;font-weight:600;color:var(--ink);font-size:.95rem;line-height:1.55;max-width:440px}
-.disclaimer{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+  /* speed + price compare */
+
+  /* pricing */
+  .roi{background:var(--ink);color:#fff;border-radius:22px;padding:34px;margin-bottom:34px}
+  .roi h3{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.01em;margin-bottom:10px}
+  .roi p{color:#c3d6e6;line-height:1.6;max-width:46rem}
+  .roi b{color:#fff}
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .price{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+  .price h3{font-size:19px}
+  .price .amt{font-size:44px;font-weight:900;letter-spacing:-.03em;margin:8px 0 2px}
+  .price .amt small{font-size:16px;color:var(--mut);font-weight:600}
+  .price .live{display:inline-block;font-size:12.5px;font-weight:800;background:#e7f6ec;color:#177245;padding:6px 11px;border-radius:999px;margin:10px 0 16px}
+  .price ul{list-style:none;margin-bottom:22px}
+  .price li{font-size:14.5px;padding:6px 0 6px 24px;position:relative;color:var(--ink2)}
+  .price li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:900}
+  .price .btn{width:100%;justify-content:center}
+  .launchline{text-align:center;margin-top:22px;font-weight:700;color:var(--ink2)}
+  .ent{margin-top:18px;background:var(--sky);border:1px dashed var(--blue);border-radius:16px;padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .ent b{font-size:16px}
+  .ent p{color:var(--ink2);font-size:14.5px;flex:1;min-width:240px}
+
+  /* faq */
+  .faq{max-width:820px}
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:10px}
+  summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::after{content:"+";color:var(--blue);font-weight:900}
+  details[open ] summary::after{content:"–"}
+  details p{color:var(--ink2);line-height:1.65;margin-top:10px;font-size:15px}
+
+  /* form + footer */
+  .formcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;max-width:720px}
+  .formcard label{font-size:13px;font-weight:700;display:block;margin:14px 0 6px}
+  .formcard input,.formcard select,.formcard textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fbfdff}
+  .formcard .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  footer{background:var(--ink);color:#c3d6e6;padding:56px 0 34px;margin-top:0}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+  footer b{color:#fff;display:block;margin-bottom:12px;font-size:14px}
+  footer a{color:#c3d6e6;display:block;font-size:14px;padding:4px 0}
+  footer a:hover{color:#fff}
+  .fbot{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding-top:20px;font-size:13px;color:#8fb0c9;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  @media(max-width:960px){
+    nav.main{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .steps,.svc-grid,.versus{grid-template-columns:1fr}
+    .ind-grid{grid-template-columns:1fr 1fr}
+    .price-grid{grid-template-columns:1fr}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .fcols{grid-template-columns:1fr 1fr}
+    .callbtn .lbl{display:none}
+  }
+
+  .lucide{stroke-width:2px}
+  i.bic{display:inline-flex;vertical-align:-3px;margin-right:6px}
+  i.bic svg{width:16px;height:16px}
+  .pill i.bic svg{width:14px;height:14px}
+  .dropdown .ic{display:inline-flex;color:var(--blue)}
+  .dropdown .ic svg{width:20px;height:20px}
+  .svc .ic{color:var(--blue);margin-bottom:12px}
+  .svc .ic svg{width:30px;height:30px}
+  .ind .ic{color:var(--blue)}
+  .ind .ic svg{width:24px;height:24px}
+  .chips span{display:inline-flex;align-items:center}
+  .dlink i.bic svg{width:17px;height:17px}
+  .live{display:inline-flex;align-items:center}
+
+  svg.bic{width:16px;height:16px;vertical-align:-3px;margin-right:6px;flex:none}
+  .pill svg.bic{width:14px;height:14px}
+  .dropdown .ic svg{width:20px;height:20px}
+  .svc .ic svg{width:30px;height:30px}
+  .ind .ic svg{width:24px;height:24px}
+
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+  .checks{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .check{display:inline-flex;gap:8px;align-items:center;background:#fbfdff;border:1.5px solid var(--line);border-radius:999px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer}
+  .formcard .check input{width:auto}
+  .group-label{font-size:13px;font-weight:700;display:block;margin:14px 0 2px}
+  .consent{margin-top:16px;display:grid;gap:8px}
+  .consent .check{border-radius:12px}
+  .confirm{display:none;background:#e7f6ec;border:1px solid #bfe6cd;color:#14532d;border-radius:12px;padding:14px 16px;margin-top:16px;font-size:14.5px}
+  .confirm.show{display:block}
+  .submit-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:700;font-size:15.5px;padding:14px 22px;border-radius:999px;border:0;cursor:pointer;width:100%;margin-top:20px}
+  .submit-btn:hover{background:var(--blue-d)}
+  .required-star{color:#c0392b}
+  @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="wrap header-in">
-    <div class="brand">
-      <span>Chaidez Automations<small data-i18n="brandSub">Front desk automation</small></span>
-    </div>
-    <div class="header-actions">
-      <a class="header-nav" href="pricing.html" data-i18n="navPricing">Pricing</a>
-      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
-        <button type="button" id="btn-en" aria-pressed="true">EN</button>
-        <button type="button" id="btn-es" aria-pressed="false">ES</button>
+  <div class="wrap bar">
+    <a class="logo" href="index.html">Chaidez <span>Automations</span></a>
+    <nav class="main">
+      <div class="navitem">
+        <button data-i18n="nav_services">Services ▾</button>
+        <div class="dropdown">
+          <a href="#services"><svg
+  class="ic lucide lucide-phone"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg><span><b data-i18n="svc1_t">Phone Answering</b><small data-i18n="svc1_d">24/7 front desk in English &amp; Spanish</small></span></a>
+          <a href="#services"><svg
+  class="ic lucide lucide-message-square"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+</svg><span><b data-i18n="svc2_t">Customer Texting</b><small data-i18n="svc2_d">Your customers text — it answers instantly</small></span></a>
+          <a href="#services"><svg
+  class="ic lucide lucide-globe"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" />
+</svg><span><b data-i18n="svc3_t">Website &amp; Forms</b><small data-i18n="svc3_d">A custom one-page site that captures leads</small></span></a>
+        </div>
       </div>
-      <a class="header-call" href="tel:+16193042687" data-i18n="headerCall">Call the demo: (619) 304-2687</a>
+      <div class="navitem">
+        <button data-i18n="nav_ind">Industries ▾</button>
+        <div class="dropdown wide">
+          <div class="cols">
+            <a href="#industries"><svg
+  class="ic lucide lucide-wrench"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
+</svg><span><b data-i18n="dd1t">HVAC, Plumbing &amp; Electrical</b><small data-i18n="dd1d">Emergency calls can't wait</small></span></a>
+            <a href="#industries"><svg
+  class="ic lucide lucide-home"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+</svg><span><b data-i18n="dd2t">Roofing &amp; Contractors</b><small data-i18n="dd2d">Every estimate starts with a call</small></span></a>
+            <a href="#industries"><svg
+  class="ic lucide lucide-leaf"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" />
+  <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" />
+</svg><span><b data-i18n="dd3t">Landscaping &amp; Pest Control</b><small data-i18n="dd3d">Route crews, not voicemails</small></span></a>
+            <a href="#industries"><svg
+  class="ic lucide lucide-spray-can"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 3h.01" />
+  <path d="M7 5h.01" />
+  <path d="M11 7h.01" />
+  <path d="M3 7h.01" />
+  <path d="M7 9h.01" />
+  <path d="M3 11h.01" />
+  <rect width="4" height="4" x="15" y="5" />
+  <path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2" />
+  <path d="m13 14 8-2" />
+  <path d="m13 19 8-2" />
+</svg><span><b data-i18n="dd4t">Cleaning &amp; Home Services</b><small data-i18n="dd4d">Quotes while you're on a job</small></span></a>
+            <a href="#industries"><svg
+  class="ic lucide lucide-car"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+  <circle cx="7" cy="17" r="2" />
+  <path d="M9 17h6" />
+  <circle cx="17" cy="17" r="2" />
+</svg><span><b data-i18n="dd5t">Auto Shops</b><small data-i18n="dd5d">Status calls handled for you</small></span></a>
+            <a href="#industries"><svg
+  class="ic lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" />
+</svg><span><b data-i18n="dd6t">Salons, Clinics &amp; More</b><small data-i18n="dd6d">Any business that lives on the phone</small></span></a>
+          </div>
+        </div>
+      </div>
+      <a href="#how" data-i18n="nav_how">How it works</a>
+      <a href="pricing.html" data-i18n="nav_pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+    <div class="sp"></div>
+    <div class="langtog" role="group" aria-label="Language">
+      <button class="on" id="btn-en" aria-pressed="true">EN</button>
+      <button id="btn-es" aria-pressed="false">ES</button>
     </div>
+    <a class="btn callbtn" href="tel:+16193042687"><svg
+  class="bic lucide lucide-phone"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg><span class="lbl" data-i18n="call_demo">Call the demo</span></a>
+    <button class="burger" onclick="toggleDrawer(true)" aria-label="Menu"><i></i><i></i><i></i></button>
   </div>
 </header>
 
-<main>
-  <section class="hero" id="demo">
+<!-- SIDE DRAWER (the "side menu") -->
+<div class="scrim" id="scrim" onclick="toggleDrawer(false)"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="dhead">
+    <span class="logo">Chaidez <span>Automations</span></span>
+    <button class="x" onclick="toggleDrawer(false)" aria-label="Close">✕</button>
+  </div>
+  <div class="dbody">
+    <div class="dgroup" data-i18n="d_services">Services</div>
+    <a class="dlink" href="#services" onclick="toggleDrawer(false)"><span><svg
+  class="bic lucide lucide-phone"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg><span data-i18n="svc1_t">Phone Answering</span><small data-i18n="svc1_d">24/7 front desk in English &amp; Spanish</small></span><span>→</span></a>
+    <a class="dlink" href="#services" onclick="toggleDrawer(false)"><span><svg
+  class="bic lucide lucide-message-square"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+</svg><span data-i18n="svc2_t">Customer Texting</span><small data-i18n="svc2_d">Your customers text — it answers instantly</small></span><span>→</span></a>
+    <a class="dlink" href="#services" onclick="toggleDrawer(false)"><span><svg
+  class="bic lucide lucide-globe"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" />
+</svg><span data-i18n="svc3_t">Website &amp; Forms</span><small data-i18n="svc3_d">A custom one-page site that captures leads</small></span><span>→</span></a>
+    <div class="dgroup" data-i18n="d_explore">Explore</div>
+    <a class="dlink" href="#how" onclick="toggleDrawer(false)"><span data-i18n="nav_how">How it works</span><span>→</span></a>
+    <a class="dlink" href="#industries" onclick="toggleDrawer(false)"><span data-i18n="nav_ind2">Industries we serve</span><span>→</span></a>
+    <a class="dlink" href="pricing.html"><span data-i18n="nav_pricing">Pricing</span><span>→</span></a>
+    <a class="dlink" href="#faq" onclick="toggleDrawer(false)"><span data-i18n="nav_faq">FAQ</span><span>→</span></a>
+    <a class="dlink" href="#getstarted" onclick="toggleDrawer(false)"><span data-i18n="d_start">Get started</span><span>→</span></a>
+    <div class="dcta">
+      <b data-i18n="d_hear">Hear it yourself</b>
+      <p style="color:var(--ink2);font-size:13.5px;margin:6px 0 12px" data-i18n="d_hear_sub">Call our live demo line — it answers like it would for your shop.</p>
+      <a class="btn amber" href="tel:+16193042687" style="width:100%;justify-content:center">(619) 304-2687</a>
+    </div>
+  </div>
+</aside>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 data-i18n="hero_h">Your front desk, <span class="hl">automated.</span></h1>
+      <p class="sub" data-i18n="hero_sub">Every call answered in seconds, day or night, in English and Spanish — and a text summary in your pocket after every single one. Built for shops that can't afford to miss a job.</p>
+      <div class="pills">
+        <span class="pill"><svg
+  class="bic lucide lucide-clock"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6l4 2" />
+</svg><span data-i18n="pill1">24/7 answering</span></span>
+        <span class="pill"><svg
+  class="bic lucide lucide-languages"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m5 8 6 6" />
+  <path d="m4 14 6-6 2-3" />
+  <path d="M2 5h12" />
+  <path d="M7 2h1" />
+  <path d="m22 22-5-10-5 10" />
+  <path d="M14 18h6" />
+</svg><span data-i18n="pill2">English &amp; Spanish</span></span>
+        <span class="pill"><svg
+  class="bic lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><b data-i18n="pill3">Live in about 3 days</b></span>
+        <span class="pill"><svg
+  class="bic lucide lucide-shield-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg><span data-i18n="pill4">No contract</span></span>
+      </div>
+      <a class="btn" href="#getstarted" data-i18n="hero_cta">Get started</a>
+      <a class="btn ghost" href="#pricing" data-i18n="hero_cta2">See pricing</a>
+    </div>
+    <div class="demo-box">
+      <span class="tag" data-i18n="demo_tag">Try it right now</span>
+      <a class="num" href="tel:+16193042687">(619) 304-2687</a>
+      <p data-i18n="demo_p">This is our own automated assistant, live. Call it, speak English or Spanish, and hear exactly what your customers would hear.</p>
+      <div class="transcript">
+        <div><span class="who">Assistant</span> · <span data-i18n="tr1">"Thanks for calling — how can we help you?"</span></div>
+        <div><span class="who cust">Caller</span> · <span data-i18n="tr2">"My AC died. Can someone come out this week?"</span></div>
+        <div><span class="who">Assistant</span> · <span data-i18n="tr3">"Absolutely — let me grab your name, address, and the best callback number…"</span></div>
+      </div>
+      <a class="btn amber" href="tel:+16193042687"><svg
+  class="bic lucide lucide-phone"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg><span data-i18n="demo_btn">Call the demo line</span></a>
+      <div class="fine" data-i18n="demo_fine">Free to call · Answers in English &amp; Spanish</div>
+    </div>
+  </div>
+  <div class="stats">
     <div class="wrap">
-      <div class="hero-grid">
-      <div class="hero-text">
-      <h1 data-i18n="heroH1">Your front desk, automated.</h1>
-      <p class="hero-sub" data-i18n="heroSub">Your calls answered 24/7 in English and Spanish. No missed calls. No missed texts. No missed leads.</p>
+      <div class="stat"><b>24/7</b><span data-i18n="st1">nights, weekends, holidays</span></div>
+      <div class="stat"><b>2</b><span data-i18n="st2">languages — English &amp; Spanish</span></div>
+      <div class="stat"><b>~3 days</b><span data-i18n="st3">from signup to live</span></div>
+      <div class="stat"><b>$0</b><span data-i18n="st4">setup fee · no contract</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="how_eye">How it works</div>
+    <h2 data-i18n="how_h">Live in days. Not weeks.</h2>
+    <p class="sub" style="max-width:44rem;margin-top:10px" data-i18n="how_sub">The big answering services put you through sales calls, onboarding teams, and week-long setups. Ours is three steps — and the timeline is printed right here, not hidden behind a demo request.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3 data-i18n="s1h">Tell us how your shop runs</h3><p data-i18n="s1p">A short form or one call with our demo line: your hours, services, service area, and how you want calls handled. Keep your number or get a new one — your choice.</p><span class="chip" data-i18n="s1c">Takes about 10 minutes</span></div>
+      <div class="step"><div class="n">2</div><h3 data-i18n="s2h">We build &amp; test your assistant</h3><p data-i18n="s2p">We train it on your business, set up your number, and test-call it before a single customer hears it. You hear it first and approve how it sounds.</p><span class="chip" data-i18n="s2c">Front Desk: ~3 days · Complete: 3–5 days</span></div>
+      <div class="step"><div class="n">3</div><h3 data-i18n="s3h">It answers. You get a text.</h3><p data-i18n="s3p">Every call answered in seconds, 24/7. After every call, a text summary lands on your phone — who called, what they need, and how to reach them.</p><span class="chip" data-i18n="s3c">Summary after every call</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="svc_eye">What we do</div>
+    <h2 data-i18n="svc_h">Three services. One front desk.</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg
+  class="lucide lucide-phone-call"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13 2a9 9 0 0 1 9 9" />
+  <path d="M13 6a5 5 0 0 1 5 5" />
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg></div>
+        <h3 data-i18n="svc1_t">Phone Answering</h3>
+        <div class="plan" data-i18n="svc1_plan">Front Desk · $350/mo</div>
+        <p data-i18n="svc1_p">Your business number, answered in seconds around the clock by an automated assistant that knows your shop — services, hours, area, and how you like calls handled.</p>
+        <ul>
+          <li data-i18n="svc1_l1">Answers in English &amp; Spanish</li>
+          <li data-i18n="svc1_l2">Takes messages &amp; books estimate requests</li>
+          <li data-i18n="svc1_l3">Text summary to you after every call</li>
+          <li data-i18n="svc1_l4">500 minutes a month included</li>
+        </ul>
       </div>
-      <div class="call-box">
-        <div class="call-box-label" data-i18n="demoLabel">Call our demo line</div>
-        <p class="demo-placeholder" data-i18n="demoPlaceholder">This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.</p>
-        <a class="big-call" href="tel:+16193042687">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="currentColor"/></svg>
-          <span data-i18n="callDemo">Call the demo: (619) 304-2687</span>
-        </a>
+      <div class="svc">
+        <div class="ic"><svg
+  class="lucide lucide-messages-square"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+  <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" />
+</svg></div>
+        <h3 data-i18n="svc2_t">Customer Texting</h3>
+        <div class="plan" data-i18n="svc2_plan">Add-on $100/mo · Included in Complete</div>
+        <p data-i18n="svc2_p">Customers text your business number and get instant answers — hours, services, service area — plus help booking an estimate. Every conversation lands in your summary.</p>
+        <ul>
+          <li data-i18n="svc2_l1">Unlimited texts — no per-message charges</li>
+          <li data-i18n="svc2_l2">Replies in seconds, 24/7, both languages</li>
+          <li data-i18n="svc2_l3">Captures names, jobs &amp; callback numbers</li>
+        </ul>
       </div>
+      <div class="svc">
+        <div class="ic"><svg
+  class="lucide lucide-app-window"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect x="2" y="4" width="20" height="16" rx="2" />
+  <path d="M10 4v4" />
+  <path d="M2 8h20" />
+  <path d="M6 4v4" />
+</svg></div>
+        <h3 data-i18n="svc3_t">Website &amp; Forms</h3>
+        <div class="plan" data-i18n="svc3_plan">Front Desk Complete · $600/mo</div>
+        <p data-i18n="svc3_p">A custom one-page website, built how you want it — your colors, your logo, your photos, your words — with lead forms wired straight to you. Domain &amp; hosting included.</p>
+        <ul>
+          <li data-i18n="svc3_l1">Designed with you — you pick the look</li>
+          <li data-i18n="svc3_l2">Lead forms that text you instantly</li>
+          <li data-i18n="svc3_l3">Your domain &amp; hosting included</li>
+          <li data-i18n="svc3_l4">Stays online while you're subscribed</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label" data-i18n="howLabel">How it works</div>
-        <h2 data-i18n="howH2">You work. It answers.</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><h3 data-i18n="step1T">A customer calls</h3><p data-i18n="step1">By phone — day, night, and weekends.</p></div>
-        <div class="step"><div class="step-num">2</div><h3 data-i18n="step2T">We answer in English or Spanish</h3><p data-i18n="step2">We take their name, number, and what they need, and book the estimate.</p></div>
-        <div class="step"><div class="step-num">3</div><h3 data-i18n="step3T">You get a text summary</h3><p data-i18n="step3">Sent within a minute, so you can follow up when you're free.</p></div>
-      </div>
-      <p class="transfer-note" data-i18n="transferNote">By default it takes the call and texts you the summary. If a caller asks for a human, we can also set it up to transfer the call to you or your team — your choice.</p>
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ind_eye">Industries</div>
+    <h2 data-i18n="ind_h">Built for the trades. Ready for any business that lives on the phone.</h2>
+    <div class="ind-grid">
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-snowflake"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m10 20-1.25-2.5L6 18" />
+  <path d="M10 4 8.75 6.5 6 6" />
+  <path d="m14 20 1.25-2.5L18 18" />
+  <path d="m14 4 1.25 2.5L18 6" />
+  <path d="m17 21-3-6h-4" />
+  <path d="m17 3-3 6 1.5 3" />
+  <path d="M2 12h6.5L10 9" />
+  <path d="m20 10-1.5 2 1.5 2" />
+  <path d="M22 12h-6.5L14 15" />
+  <path d="m4 10 1.5 2L4 14" />
+  <path d="m7 21 3-6-1.5-3" />
+  <path d="m7 3 3 6h4" />
+</svg></div><b data-i18n="ind1n">HVAC</b><small data-i18n="ind1d">No-cool calls at 9 PM are tomorrow's installs — if somebody answers.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-wrench"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
+</svg></div><b data-i18n="ind2n">Plumbing</b><small data-i18n="ind2d">A burst pipe won't leave a voicemail. We pick up, you roll out.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg></div><b data-i18n="ind3n">Electrical</b><small data-i18n="ind3d">Emergency calls screened and summarized while you're on a panel.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-hard-hat"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" />
+  <path d="M14 6a6 6 0 0 1 6 6v3" />
+  <path d="M4 15v-3a6 6 0 0 1 6-6" />
+  <rect x="2" y="15" width="20" height="4" rx="1" />
+</svg></div><b data-i18n="ind4n">Roofing &amp; Contractors</b><small data-i18n="ind4d">Every estimate request captured with name, address, and job details.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-leaf"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" />
+  <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" />
+</svg></div><b data-i18n="ind5n">Landscaping</b><small data-i18n="ind5d">New-client calls answered while the whole crew is on site.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-bug"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 20v-9" />
+  <path d="M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z" />
+  <path d="M14.12 3.88 16 2" />
+  <path d="M21 21a4 4 0 0 0-3.81-4" />
+  <path d="M21 5a4 4 0 0 1-3.55 3.97" />
+  <path d="M22 13h-4" />
+  <path d="M3 21a4 4 0 0 1 3.81-4" />
+  <path d="M3 5a4 4 0 0 0 3.55 3.97" />
+  <path d="M6 13H2" />
+  <path d="m8 2 1.88 1.88" />
+  <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
+</svg></div><b data-i18n="ind6n">Pest Control</b><small data-i18n="ind6d">Recurring-service questions and new bookings, handled.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-spray-can"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 3h.01" />
+  <path d="M7 5h.01" />
+  <path d="M11 7h.01" />
+  <path d="M3 7h.01" />
+  <path d="M7 9h.01" />
+  <path d="M3 11h.01" />
+  <rect width="4" height="4" x="15" y="5" />
+  <path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2" />
+  <path d="m13 14 8-2" />
+  <path d="m13 19 8-2" />
+</svg></div><b data-i18n="ind7n">Cleaning Services</b><small data-i18n="ind7d">Quote requests taken by phone or text, day or night.</small></div>
+      <div class="ind"><div class="ic"><svg
+  class="lucide lucide-hammer"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" />
+  <path d="m18 15 4-4" />
+  <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" />
+</svg></div><b data-i18n="ind8n">Handyman &amp; Remodeling</b><small data-i18n="ind8d">You're under a sink or up a ladder — we answer.</small></div>
     </div>
-  </section>
+    <div class="chips">
+      <span data-i18n="chip1"><svg
+  class="bic lucide lucide-car"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+  <circle cx="7" cy="17" r="2" />
+  <path d="M9 17h6" />
+  <circle cx="17" cy="17" r="2" />
+</svg>Auto repair</span><span data-i18n="chip2"><svg
+  class="bic lucide lucide-scissors"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="6" cy="6" r="3" />
+  <path d="M8.12 8.12 12 12" />
+  <path d="M20 4 8.12 15.88" />
+  <circle cx="6" cy="18" r="3" />
+  <path d="M14.8 14.8 20 20" />
+</svg>Salons &amp; barbers</span><span data-i18n="chip3"><svg
+  class="bic lucide lucide-building-2"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12h4" />
+  <path d="M10 8h4" />
+  <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
+  <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
+  <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
+</svg>Property management</span><span data-i18n="chip4"><svg
+  class="bic lucide lucide-scale"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3v18" />
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M7 21h10" />
+</svg>Law offices</span><span data-i18n="chip5"><svg
+  class="bic lucide lucide-stethoscope"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 2v2" />
+  <path d="M5 2v2" />
+  <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" />
+  <path d="M8 15a6 6 0 0 0 12 0v-3" />
+  <circle cx="20" cy="10" r="2" />
+</svg>Dental &amp; clinics</span><span data-i18n="chip6"><svg
+  class="bic lucide lucide-key-round"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" />
+  <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
+</svg>Real estate</span><span data-i18n="chip7"><svg
+  class="bic lucide lucide-truck"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+  <path d="M15 18H9" />
+  <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+  <circle cx="17" cy="18" r="2" />
+  <circle cx="7" cy="18" r="2" />
+</svg>Moving &amp; junk removal</span><span data-i18n="chip8"><svg
+  class="bic lucide lucide-wrench"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
+</svg>Appliance repair</span><span data-i18n="chip9"><svg
+  class="bic lucide lucide-paw-print"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="11" cy="4" r="2" />
+  <circle cx="18" cy="8" r="2" />
+  <circle cx="20" cy="16" r="2" />
+  <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" />
+</svg>Pet services</span><span data-i18n="chip10"><svg
+  class="bic lucide lucide-dumbbell"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z" />
+  <path d="m2.5 21.5 1.4-1.4" />
+  <path d="m20.1 3.9 1.4-1.4" />
+  <path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z" />
+  <path d="m9.6 14.4 4.8-4.8" />
+</svg>Gyms &amp; studios</span>
+    </div>
+    <p class="catchall"><b data-i18n="ind_catch_b">Don't see your business?</b> <span data-i18n="ind_catch">If your customers call you, we can answer for you — in English and Spanish, 24/7.</span></p>
+  </div>
+</section>
 
-  <section class="section" style="padding-top:0;padding-bottom:0">
-    <div class="wrap">
-      <div class="section-head" style="margin-bottom:0">
-        <div class="label" data-i18n="outLabel">Why it matters</div>
-        <h2 data-i18n="outH2">One saved job pays for this for months.</h2>
-        <p data-i18n="outP">When a customer can't reach you, they don't leave a voicemail — they hang up and call the next shop on Google. One booked job in most trades is worth <b>$400 to $5,000+</b>. Front Desk costs <b>$350/mo</b> — less than a single job. If we save you <i>one</i> call a month, everything after that is profit.</p>
+
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="roi">
+      <h3 data-i18n="roi_h">One saved job pays for this for months.</h3>
+      <p data-i18n="roi_p">When a caller hits voicemail, they don't wait — they call the next shop on Google. One booked job is worth <b>$400–$5,000+</b> for most home-service businesses. Front Desk is <b>$350/mo</b> — less than a single saved job.</p>
+    </div>
+    <div class="eyebrow" data-i18n="pr_eye">Pricing</div>
+    <h2 data-i18n="pr_h">Two plans. That's it.</h2>
+    <p class="sub" style="margin-top:8px" data-i18n="pr_sub">First month up front. No setup fee. Month-to-month — cancel anytime.</p>
+    <div class="price-grid" style="margin-top:30px">
+      <div class="price">
+        <h3>Front Desk</h3>
+        <div class="amt">$350<small data-i18n="perMo">/mo</small></div>
+        <span class="live"><svg
+  class="bic lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><span data-i18n="live1">Live in about 3 days</span></span>
+        <ul>
+          <li data-i18n="t1b">24/7 answering in English and Spanish</li>
+          <li data-i18n="t1c">Text summary to you after every call</li>
+          <li data-i18n="t1num">1 business number covered</li>
+          <li data-i18n="minFD">500 minutes/mo — about 150+ typical calls</li>
+          <li data-i18n="t1Texting">Add customer texting: +$100/mo — unlimited texts, instant replies to your customers</li>
+        </ul>
+        <a class="btn" href="#getstarted">Get started</a>
+      </div>
+      <div class="price">
+        <h3>Front Desk Complete</h3>
+        <div class="amt">$600<small data-i18n="perMo2">/mo</small></div>
+        <span class="live"><svg
+  class="bic lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><span data-i18n="live2">Live in 3–5 days</span></span>
+        <ul>
+          <li data-i18n="t2a">Everything in Front Desk, plus:</li>
+          <li data-i18n="t2web">A custom 1-page website, built how you want it — we show you design options, you pick the look. Your colors, your logo, your photos, your words</li>
+          <li data-i18n="t2domain">Your own domain + hosting included — we set it all up and keep it online while you’re subscribed</li>
+          <li data-i18n="t2num">Up to 3 business numbers covered</li>
+          <li data-i18n="minComplete">1,500 minutes/mo — around 500 typical calls</li>
+          <li data-i18n="t2text">Customer texting included — unlimited texts. Customers text your number and the assistant replies instantly, 24/7</li>
+        </ul>
+        <a class="btn" href="#getstarted">Get started</a>
       </div>
     </div>
-  </section>
-
-  <section class="section" style="padding-top:56px">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label" data-i18n="priceLabel">Pricing</div>
-        <h2 data-i18n="priceH2">Two plans.</h2>
-        <p data-i18n="priceSub">Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.</p>
-        <p data-i18n="noSetup" style="margin-top:8px;font-weight:700;color:var(--ink)">No setup fee — just pay your first month up front.</p>
-        <p data-i18n="mtm" style="margin-top:4px;font-weight:700;color:var(--ink)">Month-to-month. No contract. Cancel anytime.</p>
-        <p data-i18n="introLine" style="margin-top:4px;font-weight:700;color:var(--blue-dark)">Launch pricing — these rates are good through the end of 2026.</p>
-      </div>
-      <div class="pricing two">
-        <div class="price-card">
-          <h3>Front Desk</h3><div class="price">$350<span data-i18n="perMo">/mo</span></div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1b">24/7 answering in English and Spanish</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t1c">Text summary to you after every call</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="minFD">500 minutes/mo — about 150+ typical calls</span></li>
-          </ul>
-          <p class="simple-price" style="margin-top:20px" data-i18n="t1Texting">Add customer texting: +$100/mo — unlimited texts, instant replies to your customers</p>
-        </div>
-        <div class="price-card">
-          <h3>Front Desk Complete</h3><div class="price">$600<span data-i18n="perMo2">/mo</span></div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2a">Everything in Front Desk</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2c">Custom 1-page website with forms — domain + hosting included</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="minComplete">1,500 minutes/mo — around 500 typical calls</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#2f6fa3" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="t2d">Customer texting included — customers text your number, the assistant replies instantly, 24/7</span></li>
-          </ul>
-          <p class="simple-price" style="margin-top:20px" data-i18n="t2value">3× the minutes. 3× the numbers. A whole website included — for less than 2× the price.</p>
-        </div>
-      </div>
-      <a class="see-pricing" href="pricing.html" data-i18n="seePricing">See full pricing details</a>
-      <p class="pricing-note" data-i18n="priceNote">Quoting is your choice — it can give rough estimates for simple jobs, or never mention price at all. Either way, your technician confirms the final price on site.</p>
+    <p class="launchline"><span data-i18n="introLine">Launch pricing — these rates are good through the end of 2026.</span> <span data-i18n="mtm">Month-to-month. No contract. Cancel anytime.</span></p>
+    <p style="text-align:center;margin-top:10px;color:var(--ink2);font-size:14.5px" data-i18n="priceNote">Quoting is your choice — it can give rough estimates for simple jobs, or never mention price at all. Either way, your technician confirms the final price on site.</p>
+    <p style="text-align:center;margin-top:18px"><a class="btn ghost" href="pricing.html" data-i18n="seePricing">See full pricing details</a></p>
+    <div class="ent">
+      <b data-i18n="entShortH">Bigger operation?</b>
+      <p data-i18n="entShortP">Multiple locations, high call volume, or something custom — talk to us about Enterprise pricing.</p>
+      <a class="btn ghost" href="tel:+16193042687">(619) 304-2687</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section form-section" id="setup">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label" data-i18n="formLabel">Get set up</div>
-        <h2 data-i18n="formH2">Tell us about your shop.</h2>
-      </div>
-      <form id="lead-form" novalidate>
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="faq_eye">Questions</div>
+    <h2 data-i18n="faq_h">Straight answers.</h2>
+    <div class="faq" id="faq" style="margin-top:28px"></div>
+  </div>
+</section>
+
+<!-- GET STARTED -->
+<section id="getstarted">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="gs_eye">Get started</div>
+    <h2 data-i18n="gs_h">Tell us about your business.</h2>
+    <p class="sub" style="margin:10px 0 24px;max-width:40rem" data-i18n="gs_sub">Two minutes. Our team emails you back with next steps and your payment link — no sales-pressure calls.</p>
+    <form id="lead-form" class="formcard" novalidate>
         <div class="form-grid">
           <div class="field"><label for="owner" data-i18n="fOwner">Your name *</label><input id="owner" name="owner" required autocomplete="name"></div>
           <div class="field"><label for="business" data-i18n="fBusiness">Business name *</label><input id="business" name="business" required autocomplete="organization"></div>
@@ -267,118 +1148,36 @@ footer h3{color:var(--ink);font-size:.95rem;margin-bottom:10px;letter-spacing:0}
         </div>
         <button class="submit-btn" type="submit" data-i18n="submitBtn">Get my setup link</button>
       </form>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:48px;padding-bottom:56px">
-    <div class="wrap">
-      <div class="faq" id="faq"></div>
-    </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
+    <div class="fcols">
       <div>
-        <div class="brand"><span>Chaidez Automations</span></div>
-        <p class="footer-tagline" data-i18n="footerTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</p>
-        <p style="margin-top:10px" data-i18n="footerTag">Answered 24/7, in English and Spanish.</p>
+        <b style="font-size:16px">Chaidez Automations</b>
+        <p style="font-size:14px;line-height:1.6;max-width:17rem" data-i18n="ftrBlurb">Your front desk, automated. 24/7 answering in English &amp; Spanish for businesses that can’t miss a call.</p>
+        <p style="margin-top:14px;font-size:14px"><span data-i18n="footerAreas">Service areas</span>: <span data-i18n="footerArea3">All across the US</span></p>
+        <p style="margin-top:14px;font-size:12.5px;color:#8fb0c9" data-i18n="disclaimer">Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.</p>
       </div>
-      <div>
-        <h3 data-i18n="footerAreas">Service areas</h3>
-        <p><span data-i18n="footerArea3">All across the US</span></p>
-      </div>
+      <div><b data-i18n="ftrSvcH">Services</b><a href="#services" data-i18n="svc1_t">Phone Answering</a><a href="#services" data-i18n="svc2_t">Customer Texting</a><a href="#services" data-i18n="svc3_t">Website &amp; Forms</a><a href="#pricing" data-i18n="nav_pricing">Pricing</a></div>
+      <div><b data-i18n="ftrIndH">Industries</b><a href="#industries" data-i18n="flInd1">HVAC &amp; Plumbing</a><a href="#industries" data-i18n="ind4n">Roofing &amp; Contractors</a><a href="#industries" data-i18n="flInd3">Landscaping &amp; Pest</a><a href="#industries" data-i18n="flInd4">Auto Shops</a><a href="#industries" data-i18n="dd6t">Salons, Clinics &amp; More</a></div>
+      <div><b data-i18n="ftrCoH">Company</b><a href="#how" data-i18n="nav_how">How it works</a><a href="#faq" data-i18n="nav_faq">FAQ</a><a href="#getstarted" data-i18n="d_start">Get started</a><a href="tel:+16193042687">Demo line: (619) 304-2687</a></div>
     </div>
-    <p class="disclaimer" data-i18n="disclaimer">Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.</p>
+    <div class="fbot"><span data-i18n="ftrRights">© 2026 Chaidez Automations. All rights reserved.</span><span data-i18n="footerTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</span></div>
   </div>
 </footer>
 
 <script>
-var TRADES = {
-  en: ["HVAC","Plumbing","Electrical","Roofing","Concrete","Landscaping","Remodeling","Handyman","Pest Control","Cleaning","Junk Hauling","Auto & Upholstery","Mobile Mechanic","Property Management","Med Spa & Salon","Other"],
-  es: ["Aire acondicionado (HVAC)","Plomería","Electricidad","Techos","Concreto","Jardinería","Remodelación","Handyman / Reparaciones","Control de plagas","Limpieza","Retiro de escombro","Auto y tapicería","Mecánico a domicilio","Administración de propiedades","Med spa y salón","Otro"]
-};
-var NEEDS = {
-  en: ["Answer + take messages","Book estimates","Text me summaries","Text customers back","After-hours only"],
-  es: ["Contestar y tomar mensajes","Agendar cotizaciones","Enviarme resúmenes por texto","Responder a clientes por texto","Solo fuera de horario"]
-};
-var FAQS = {
-  en: [
-    ["Does it work with my current number?","Yes — it works with your current number, no new phone, no app. Or if you'd rather start fresh, we can set it up with a brand-new number instead. Your choice."],
-    ["Will it quote prices for my jobs?","Only if you want it to. It's totally customizable — it can give rough estimates for simple jobs, and your technician (or you) confirms the final price on site. Or keep it simple: it books the estimate or takes a message and never mentions price. Your call."],
-    ["Can it transfer a call to me?","Your choice. We can set it up to transfer calls to you or your team — or set it to never transfer, take the caller's info instead, and text you the summary so you can call them back. Either way, it's up to you, the owner."]
-  ],
-  es: [
-    ["¿Funciona con mi número actual?","Sí — funciona con su número actual, sin teléfono nuevo y sin aplicación. Y si prefiere empezar de cero, también podemos configurarlo con un número completamente nuevo. Usted elige."],
-    ["¿Va a dar precios de mis trabajos?","Solo si usted lo quiere. Es totalmente personalizable — puede dar estimaciones aproximadas para trabajos sencillos, y su técnico (o usted) confirma el precio final en el lugar. O lo dejamos simple: agenda la cotización o toma el mensaje y nunca menciona precios. Usted decide."],
-    ["¿Puede transferirme una llamada?","Usted elige. Podemos configurarlo para transferir las llamadas a usted o a su equipo — o para que nunca transfiera, tome los datos de quien llama y le envíe el resumen por texto para que usted le regrese la llamada. Como usted prefiera."]
-  ]
-};
-var T = {
-  en: {
-    brandSub:"Front desk automation", headerCall:"Call the demo: (619) 304-2687",
-    heroH1:"Your front desk, automated.",
-    heroSub:"Your calls answered 24/7 in English and Spanish. No missed calls. No missed texts. No missed leads.",
-    demoLabel:"Call our demo line", demoPlaceholder:"This is our own Chaidez Automations line. Call it — that's the automated assistant. It'll take your info for a callback, just like it'll do for your customers.", callDemo:"Call the demo: (619) 304-2687",
-    howLabel:"How it works", howH2:"You work. It answers.",
-    step1T:"A customer calls", step1:"By phone — day, night, and weekends.",
-    step2T:"We answer in English or Spanish", step2:"We take their name, number, and what they need, and book the estimate.",
-    step3T:"You get a text summary", step3:"Sent within a minute, so you can follow up when you're free.",
-    transferNote:"By default it takes the call and texts you the summary. If a caller asks for a human, we can also set it up to transfer the call to you or your team — your choice.",
-    priceLabel:"Pricing", priceH2:"Two plans.", priceSub:"Pick a plan, pay your first month up front, and we're ready in about 2 days. Then it bills monthly, starting a month after your first day live.",
-    noSetup:"No setup fee — just pay your first month up front.", mtm:"Month-to-month. No contract. Cancel anytime.", introLine:"Launch pricing — these rates are good through the end of 2026.",
-    outLabel:"Why it matters", outH2:"One saved job pays for this for months.", outP:"When a customer can't reach you, they don't leave a voicemail — they hang up and call the next shop on Google. One booked job in most trades is worth <b>$400 to $5,000+</b>. Front Desk costs <b>$350/mo</b> — less than a single job. If we save you <i>one</i> call a month, everything after that is profit.",
-    t2value:"3× the minutes. 3× the numbers. A whole website included — for less than 2× the price.",
-    perMo:"/mo", perMo2:"/mo", navPricing:"Pricing", minFD:"500 minutes/mo — about 150+ typical calls", minComplete:"1,500 minutes/mo — around 500 typical calls", seePricing:"See full pricing details",
-    t1b:"24/7 answering in English and Spanish", t1c:"Text summary to you after every call",
-    t1Texting:"Add customer texting: +$100/mo — unlimited texts, instant replies to your customers",
-    t2a:"Everything in Front Desk", t2c:"Custom 1-page website with forms — domain + hosting included", t2d:"Customer texting included — customers text your number, the assistant replies instantly, 24/7",
-    priceNote:"Quoting is your choice — it can give rough estimates for simple jobs, or never mention price at all. Either way, your technician confirms the final price on site.",
-    fPlan:"Which plan are you interested in?", fPlan1:"Front Desk — $350/mo", fPlan2:"Front Desk Complete — $600/mo",
-    fCustText:"Add customer texting (+$100/mo, basic tier only)",
-    formLabel:"Get set up", formH2:"Tell us about your shop.",
-    fOwner:"Your name *", fBusiness:"Business name *", fTrade:"Trade *", fSelect:"Select your trade", fPhone:"Phone *", fEmail:"Email *",
-    fTimeline:"When do you want to start?", optThisWeek:"This week", optLooking:"Just looking", optLater:"Later",
-    fNeeds:"What do you need most?", fNotes:"Anything we should know?",
-    consentEmail:"It's okay to email me setup info", consentText:"It's okay to text me about my setup (optional)",
-    submitBtn:"Get my setup link",
-    confirmTitle:"Got it — Orlando will email you within 24 hours with your setup link.",
-    footerTag:"Answered 24/7, in English and Spanish.", footerTagline:"Your front desk, automated. No missed calls. No missed texts. No missed leads.", footerAreas:"Service areas", footerArea3:"All across the US",
-    disclaimer:"Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting."
-  },
-  es: {
-    brandSub:"Automatización de recepción", headerCall:"Llame al demo: (619) 304-2687",
-    heroH1:"Su recepción, automatizada.",
-    heroSub:"Sus llamadas atendidas 24/7 en inglés y español. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.",
-    demoLabel:"Llame a nuestra línea demo", demoPlaceholder:"Esta es nuestra propia línea de Chaidez Automations. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", callDemo:"Llame al demo: (619) 304-2687",
-    howLabel:"Cómo funciona", howH2:"Usted trabaja. Nosotros contestamos.",
-    step1T:"Un cliente llama", step1:"Por teléfono — día, noche y fines de semana.",
-    step2T:"Contestamos en inglés o español", step2:"Tomamos su nombre, número y lo que necesita, y agendamos la cotización.",
-    step3T:"Usted recibe el resumen por texto", step3:"En menos de un minuto, para que le regrese la llamada cuando pueda.",
-    transferNote:"Por defecto toma la llamada y le envía el resumen por texto. Si quien llama pide hablar con una persona, también podemos configurarlo para transferir la llamada a usted o a su equipo — usted elige.",
-    priceLabel:"Precios", priceH2:"Dos planes.", priceSub:"Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.",
-    noSetup:"Sin cargo de instalación — solo pague su primer mes por adelantado.", mtm:"Mes a mes. Sin contrato. Cancele cuando quiera.", introLine:"Precios de lanzamiento — estas tarifas están vigentes hasta finales de 2026.",
-    outLabel:"Por qué importa", outH2:"Un solo trabajo salvado paga esto por meses.", outP:"Cuando un cliente no logra comunicarse con usted, no deja un mensaje de voz — cuelga y llama al siguiente negocio en Google. Un solo trabajo agendado en la mayoría de los oficios vale de <b>$400 a $5,000+</b>. Front Desk cuesta <b>$350/mes</b> — menos que un solo trabajo. Si le salvamos <i>una</i> llamada al mes, todo lo demás es ganancia.",
-    t2value:"3× los minutos. 3× los números. Un sitio web completo incluido — por menos del doble del precio.",
-    perMo:"/mes", perMo2:"/mes", navPricing:"Precios", minFD:"500 minutos/mes — unas 150+ llamadas típicas", minComplete:"1,500 minutos/mes — unas 500 llamadas típicas", seePricing:"Ver todos los detalles de precios",
-    t1b:"Atención 24/7 en inglés y español", t1c:"Resumen por texto para usted después de cada llamada",
-    t1Texting:"Agregue mensajes a clientes: +$100/mes — textos ilimitados, respuesta inmediata a sus clientes",
-    t2a:"Todo lo de Front Desk", t2c:"Sitio web personalizado de 1 página con formularios — dominio y hosting incluidos", t2d:"Mensajes a clientes incluidos — sus clientes escriben a su número y el asistente responde al instante, 24/7",
-    priceNote:"Dar precios es su decisión — puede dar estimaciones aproximadas para trabajos sencillos, o nunca mencionar precios. De cualquier forma, su técnico confirma el precio final en el lugar.",
-    fPlan:"¿Qué plan le interesa?", fPlan1:"Front Desk — $350/mes", fPlan2:"Front Desk Complete — $600/mes",
-    fCustText:"Agregar mensajes a clientes (+$100/mes, solo plan básico)",
-    formLabel:"Empiece ahora", formH2:"Cuéntenos de su negocio.",
-    fOwner:"Su nombre *", fBusiness:"Nombre del negocio *", fTrade:"Oficio *", fSelect:"Seleccione su oficio", fPhone:"Teléfono *", fEmail:"Correo electrónico *",
-    fTimeline:"¿Cuándo quiere empezar?", optThisWeek:"Esta semana", optLooking:"Solo estoy viendo", optLater:"Más adelante",
-    fNeeds:"¿Qué necesita más?", fNotes:"¿Algo que debamos saber?",
-    consentEmail:"Acepto que me envíen la información de instalación por correo", consentText:"Acepto que me envíen textos sobre mi instalación (opcional)",
-    submitBtn:"Quiero mi enlace de instalación",
-    confirmTitle:"Listo — Orlando le enviará un correo dentro de 24 horas con su enlace de instalación.",
-    footerTag:"Atención 24/7, en inglés y español.", footerTagline:"Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", footerAreas:"Áreas de servicio", footerArea3:"Todo Estados Unidos",
-    disclaimer:"Asistente automatizado, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica."
-  }
-};
+function toggleDrawer(open){
+  document.getElementById('drawer').classList.toggle('open', open);
+  document.getElementById('scrim').classList.toggle('open', open);
+  document.getElementById('drawer').setAttribute('aria-hidden', String(!open));
+}
+var TRADES = {"en": ["HVAC", "Plumbing", "Electrical", "Roofing", "Concrete", "Landscaping", "Remodeling", "Handyman", "Pest Control", "Cleaning", "Junk Hauling", "Auto & Upholstery", "Mobile Mechanic", "Property Management", "Med Spa & Salon", "Other"], "es": ["Aire acondicionado (HVAC)", "Plomería", "Electricidad", "Techos", "Concreto", "Jardinería", "Remodelación", "Handyman / Reparaciones", "Control de plagas", "Limpieza", "Retiro de escombro", "Auto y tapicería", "Mecánico a domicilio", "Administración de propiedades", "Med spa y salón", "Otro"]};
+var NEEDS = {"en": ["Answer + take messages", "Book estimates", "Text me summaries", "Text customers back", "After-hours only"], "es": ["Contestar y tomar mensajes", "Agendar cotizaciones", "Enviarme resúmenes por texto", "Responder a clientes por texto", "Solo fuera de horario"]};
+var FAQS = {"en": [["Does it work with my current number?", "Yes — it works with your current number, no new phone, no app. Or if you'd rather start fresh, we can set it up with a brand-new number instead. Your choice."], ["Will it quote prices for my jobs?", "Only if you want it to. It's totally customizable — it can give rough estimates for simple jobs, and your technician (or you) confirms the final price on site. Or keep it simple: it books the estimate or takes a message and never mentions price. Your call."], ["Can it transfer a call to me?", "Your choice. We can set it up to transfer calls to you or your team — or set it to never transfer, take the caller's info instead, and text you the summary so you can call them back. Either way, it's up to you, the owner."], ["How fast can we go live?", "Front Desk is typically live in about 3 days; Front Desk Complete in 3–5 days, since the website takes a little longer. We test-call your assistant with you before a single customer hears it."], ["Do you only work with home-services businesses?", "Home services is who we built this for first — but it works for any business whose customers call: auto shops, salons, clinics, law offices, property managers, and more. If your phone ringing matters, it fits."], ["What happens if I cancel?", "It's month-to-month — no contract, no cancellation games. Your answering, texting, and (on Complete) your website stay live through the end of your paid month, then switch off."]], "es": [["¿Funciona con mi número actual?", "Sí — funciona con su número actual, sin teléfono nuevo y sin aplicación. Y si prefiere empezar de cero, también podemos configurarlo con un número completamente nuevo. Usted elige."], ["¿Va a dar precios de mis trabajos?", "Solo si usted lo quiere. Es totalmente personalizable — puede dar estimaciones aproximadas para trabajos sencillos, y su técnico (o usted) confirma el precio final en el lugar. O lo dejamos simple: agenda la cotización o toma el mensaje y nunca menciona precios. Usted decide."], ["¿Puede transferirme una llamada?", "Usted elige. Podemos configurarlo para transferir las llamadas a usted o a su equipo — o para que nunca transfiera, tome los datos de quien llama y le envíe el resumen por texto para que usted le regrese la llamada. Como usted prefiera."], ["¿Qué tan rápido podemos estar activos?", "Front Desk normalmente queda activo en unos 3 días; Front Desk Complete en 3 a 5 días, porque el sitio web toma un poco más. Probamos su asistente con usted en una llamada antes de que un solo cliente lo escuche."], ["¿Solo trabajan con negocios de servicios del hogar?", "Los oficios y servicios del hogar son para quienes lo construimos primero, pero funciona para cualquier negocio cuyos clientes llaman — talleres mecánicos, salones, clínicas, oficinas legales, administradores de propiedades y más. Si que su teléfono suene es importante, encaja."], ["¿Qué pasa si cancelo?", "Es mes a mes — sin contrato ni juegos de cancelación. Su contestación, mensajes y (en Complete) su sitio web siguen activos hasta el fin del mes pagado, y luego se desactivan."]]};
+var T = {"en": {"nav_services": "Services ▾", "svc1_t": "Phone Answering", "svc1_d": "24/7 front desk in English &amp; Spanish", "svc2_t": "Customer Texting", "svc2_d": "Your customers text — it answers instantly", "svc3_t": "Website &amp; Forms", "svc3_d": "A custom one-page site that captures leads", "nav_ind": "Industries ▾", "dd1t": "HVAC, Plumbing &amp; Electrical", "dd1d": "Emergency calls can't wait", "dd2t": "Roofing &amp; Contractors", "dd2d": "Every estimate starts with a call", "dd3t": "Landscaping &amp; Pest Control", "dd3d": "Route crews, not voicemails", "dd4t": "Cleaning &amp; Home Services", "dd4d": "Quotes while you're on a job", "dd5t": "Auto Shops", "dd5d": "Status calls handled for you", "dd6t": "Salons, Clinics &amp; More", "dd6d": "Any business that lives on the phone", "nav_how": "How it works", "nav_pricing": "Pricing", "nav_faq": "FAQ", "call_demo": "Call the demo", "d_services": "Services", "d_explore": "Explore", "nav_ind2": "Industries we serve", "d_start": "Get started", "d_hear": "Hear it yourself", "d_hear_sub": "Call our live demo line — it answers like it would for your shop.", "hero_h": "Your front desk, <span class=\"hl\">automated.</span>", "hero_sub": "Every call answered in seconds, day or night, in English and Spanish — and a text summary in your pocket after every single one. Built for shops that can't afford to miss a job.", "pill1": "24/7 answering", "pill2": "English &amp; Spanish", "pill3": "Live in about 3 days", "pill4": "No contract", "hero_cta": "Get started", "hero_cta2": "See pricing", "demo_tag": "Try it right now", "demo_p": "This is our own automated assistant, live. Call it, speak English or Spanish, and hear exactly what your customers would hear.", "tr1": "\"Thanks for calling — how can we help you?\"", "tr2": "\"My AC died. Can someone come out this week?\"", "tr3": "\"Absolutely — let me grab your name, address, and the best callback number…\"", "demo_btn": "Call the demo line", "demo_fine": "Free to call · Answers in English &amp; Spanish", "st1": "nights, weekends, holidays", "st2": "languages — English &amp; Spanish", "st3": "from signup to live", "st4": "setup fee · no contract", "how_eye": "How it works", "how_h": "Live in days. Not weeks.", "how_sub": "The big answering services put you through sales calls, onboarding teams, and week-long setups. Ours is three steps — and the timeline is printed right here, not hidden behind a demo request.", "s1h": "Tell us how your shop runs", "s1p": "A short form or one call with our demo line: your hours, services, service area, and how you want calls handled. Keep your number or get a new one — your choice.", "s1c": "Takes about 10 minutes", "s2h": "We build &amp; test your assistant", "s2p": "We train it on your business, set up your number, and test-call it before a single customer hears it. You hear it first and approve how it sounds.", "s2c": "Front Desk: ~3 days · Complete: 3–5 days", "s3h": "It answers. You get a text.", "s3p": "Every call answered in seconds, 24/7. After every call, a text summary lands on your phone — who called, what they need, and how to reach them.", "s3c": "Summary after every call", "svc_eye": "What we do", "svc_h": "Three services. One front desk.", "svc1_plan": "Front Desk · $350/mo", "svc1_p": "Your business number, answered in seconds around the clock by an automated assistant that knows your shop — services, hours, area, and how you like calls handled.", "svc1_l1": "Answers in English &amp; Spanish", "svc1_l2": "Takes messages &amp; books estimate requests", "svc1_l3": "Text summary to you after every call", "svc1_l4": "500 minutes a month included", "svc2_plan": "Add-on $100/mo · Included in Complete", "svc2_p": "Customers text your business number and get instant answers — hours, services, service area — plus help booking an estimate. Every conversation lands in your summary.", "svc2_l1": "Unlimited texts — no per-message charges", "svc2_l2": "Replies in seconds, 24/7, both languages", "svc2_l3": "Captures names, jobs &amp; callback numbers", "svc3_plan": "Front Desk Complete · $600/mo", "svc3_p": "A custom one-page website, built how you want it — your colors, your logo, your photos, your words — with lead forms wired straight to you. Domain &amp; hosting included.", "svc3_l1": "Designed with you — you pick the look", "svc3_l2": "Lead forms that text you instantly", "svc3_l3": "Your domain &amp; hosting included", "svc3_l4": "Stays online while you're subscribed", "ind_eye": "Industries", "ind_h": "Built for the trades. Ready for any business that lives on the phone.", "ind1n": "HVAC", "ind1d": "No-cool calls at 9 PM are tomorrow's installs — if somebody answers.", "ind2n": "Plumbing", "ind2d": "A burst pipe won't leave a voicemail. We pick up, you roll out.", "ind3n": "Electrical", "ind3d": "Emergency calls screened and summarized while you're on a panel.", "ind4n": "Roofing &amp; Contractors", "ind4d": "Every estimate request captured with name, address, and job details.", "ind5n": "Landscaping", "ind5d": "New-client calls answered while the whole crew is on site.", "ind6n": "Pest Control", "ind6d": "Recurring-service questions and new bookings, handled.", "ind7n": "Cleaning Services", "ind7d": "Quote requests taken by phone or text, day or night.", "ind8n": "Handyman &amp; Remodeling", "ind8d": "You're under a sink or up a ladder — we answer.", "chip1": "<svg\n  class=\"bic lucide lucide-car\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2\" />\n  <circle cx=\"7\" cy=\"17\" r=\"2\" />\n  <path d=\"M9 17h6\" />\n  <circle cx=\"17\" cy=\"17\" r=\"2\" />\n</svg>Auto repair", "chip2": "<svg\n  class=\"bic lucide lucide-scissors\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"6\" cy=\"6\" r=\"3\" />\n  <path d=\"M8.12 8.12 12 12\" />\n  <path d=\"M20 4 8.12 15.88\" />\n  <circle cx=\"6\" cy=\"18\" r=\"3\" />\n  <path d=\"M14.8 14.8 20 20\" />\n</svg>Salons &amp; barbers", "chip3": "<svg\n  class=\"bic lucide lucide-building-2\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M10 12h4\" />\n  <path d=\"M10 8h4\" />\n  <path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" />\n  <path d=\"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2\" />\n  <path d=\"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16\" />\n</svg>Property management", "chip4": "<svg\n  class=\"bic lucide lucide-scale\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M12 3v18\" />\n  <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" />\n  <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" />\n  <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" />\n  <path d=\"M7 21h10\" />\n</svg>Law offices", "chip5": "<svg\n  class=\"bic lucide lucide-stethoscope\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M11 2v2\" />\n  <path d=\"M5 2v2\" />\n  <path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\" />\n  <path d=\"M8 15a6 6 0 0 0 12 0v-3\" />\n  <circle cx=\"20\" cy=\"10\" r=\"2\" />\n</svg>Dental &amp; clinics", "chip6": "<svg\n  class=\"bic lucide lucide-key-round\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z\" />\n  <circle cx=\"16.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />\n</svg>Real estate", "chip7": "<svg\n  class=\"bic lucide lucide-truck\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2\" />\n  <path d=\"M15 18H9\" />\n  <path d=\"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14\" />\n  <circle cx=\"17\" cy=\"18\" r=\"2\" />\n  <circle cx=\"7\" cy=\"18\" r=\"2\" />\n</svg>Moving &amp; junk removal", "chip8": "<svg\n  class=\"bic lucide lucide-wrench\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z\" />\n</svg>Appliance repair", "chip9": "<svg\n  class=\"bic lucide lucide-paw-print\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"11\" cy=\"4\" r=\"2\" />\n  <circle cx=\"18\" cy=\"8\" r=\"2\" />\n  <circle cx=\"20\" cy=\"16\" r=\"2\" />\n  <path d=\"M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z\" />\n</svg>Pet services", "chip10": "<svg\n  class=\"bic lucide lucide-dumbbell\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z\" />\n  <path d=\"m2.5 21.5 1.4-1.4\" />\n  <path d=\"m20.1 3.9 1.4-1.4\" />\n  <path d=\"M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z\" />\n  <path d=\"m9.6 14.4 4.8-4.8\" />\n</svg>Gyms &amp; studios", "ind_catch_b": "Don't see your business?", "ind_catch": "If your customers call you, we can answer for you — in English and Spanish, 24/7.", "roi_h": "One saved job pays for this for months.", "roi_p": "When a caller hits voicemail, they don't wait — they call the next shop on Google. One booked job is worth <b>$400–$5,000+</b> for most home-service businesses. Front Desk is <b>$350/mo</b> — less than a single saved job.", "pr_eye": "Pricing", "pr_h": "Two plans. That's it.", "pr_sub": "First month up front, no setup fee — Front Desk live in about 3 days, Complete in 3–5 days.", "perMo": "/mo", "live1": "Live in about 3 days", "t1b": "24/7 answering in English and Spanish", "t1c": "Text summary to you after every call", "t1num": "1 business number covered", "minFD": "500 minutes/mo — about 150+ typical calls", "t1Texting": "Add customer texting: +$100/mo — unlimited texts, instant replies to your customers", "perMo2": "/mo", "live2": "Live in 3–5 days", "t2a": "Everything in Front Desk, plus:", "t2web": "A custom 1-page website, built how you want it — we show you design options, you pick the look. Your colors, your logo, your photos, your words", "t2domain": "Your own domain + hosting included — we set it all up and keep it online while you’re subscribed", "t2num": "Up to 3 business numbers covered", "minComplete": "1,500 minutes/mo — around 500 typical calls", "t2text": "Customer texting included — unlimited texts. Customers text your number and the assistant replies instantly, 24/7", "introLine": "Launch pricing — these rates are good through the end of 2026.", "mtm": "Month-to-month. No contract. Cancel anytime.", "priceNote": "Quoting is your choice — it can give rough estimates for simple jobs, or never mention price at all. Either way, your technician confirms the final price on site.", "seePricing": "See full pricing details", "entShortH": "Bigger operation?", "entShortP": "Multiple locations, high call volume, or something custom — talk to us about Enterprise pricing.", "faq_eye": "Questions", "faq_h": "Straight answers.", "gs_eye": "Get started", "gs_h": "Tell us about your business.", "gs_sub": "Two minutes. Our team emails you back with next steps and your payment link — no sales-pressure calls.", "fOwner": "Your name *", "fBusiness": "Business name *", "fTrade": "Trade *", "fSelect": "Select your trade", "fPhone": "Phone *", "fEmail": "Email *", "fTimeline": "When do you want to start?", "optThisWeek": "This week", "optLooking": "Just looking", "optLater": "Later", "fPlan": "Which plan are you interested in?", "fPlan1": "Front Desk — $350/mo", "fPlan2": "Front Desk Complete — $600/mo", "fCustText": "Add customer texting (+$100/mo, basic tier only)", "fNeeds": "What do you need most?", "fNotes": "Anything we should know?", "consentEmail": "It's okay to email me setup info", "consentText": "It's okay to text me about my setup (optional)", "confirmTitle": "Got it — Orlando will email you within 24 hours with your setup link.", "submitBtn": "Get my setup link", "ftrBlurb": "Your front desk, automated. 24/7 answering in English &amp; Spanish for businesses that can’t miss a call.", "footerAreas": "Service areas", "footerArea3": "All across the US", "disclaimer": "Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.", "ftrSvcH": "Services", "ftrIndH": "Industries", "flInd1": "HVAC &amp; Plumbing", "flInd3": "Landscaping &amp; Pest", "flInd4": "Auto Shops", "ftrCoH": "Company", "ftrRights": "© 2026 Chaidez Automations. All rights reserved.", "footerTagline": "Your front desk, automated. No missed calls. No missed texts. No missed leads."}, "es": {"nav_services": "Servicios ▾", "nav_ind": "Industrias ▾", "nav_ind2": "Industrias que atendemos", "nav_how": "Cómo funciona", "nav_pricing": "Precios", "nav_faq": "Preguntas", "call_demo": "Llama a la demo", "svc1_t": "Contestación de llamadas", "svc1_d": "Recepción 24/7 en inglés y español", "svc2_t": "Mensajes de texto", "svc2_d": "Tus clientes escriben — responde al instante", "svc3_t": "Sitio web y formularios", "svc3_d": "Un sitio de una página que captura clientes", "d_services": "Servicios", "d_explore": "Explorar", "d_start": "Empezar", "d_hear": "Escúchalo tú mismo", "d_hear_sub": "Llama a nuestra línea demo en vivo — contesta como contestaría por tu negocio.", "hero_h": "Tu recepción, <span class=\"hl\">automatizada.</span>", "hero_sub": "Cada llamada contestada en segundos, día y noche, en inglés y español — y un resumen por texto después de cada una. Hecho para negocios que no pueden perder un trabajo.", "pill1": "Contestación 24/7", "pill2": "Inglés y español", "pill3": "En vivo en unos 3 días", "pill4": "Sin contrato", "hero_cta": "Empezar", "hero_cta2": "Ver precios", "demo_tag": "Pruébalo ahora mismo", "demo_p": "Es nuestro propio asistente automatizado, en vivo. Llámalo, habla inglés o español, y escucha exactamente lo que escucharían tus clientes.", "tr1": "\"Gracias por llamar — ¿en qué podemos ayudarle?\"", "tr2": "\"Se descompuso mi aire. ¿Pueden venir esta semana?\"", "tr3": "\"Claro que sí — deme su nombre, dirección y el mejor número para llamarle…\"", "demo_btn": "Llamar a la línea demo", "demo_fine": "Llamada gratis · Contesta en inglés y español", "st1": "noches, fines de semana, festivos", "st2": "idiomas — inglés y español", "st3": "de la inscripción a estar en vivo", "st4": "cuota de instalación · sin contrato", "how_eye": "Cómo funciona", "how_h": "En vivo en días. No en semanas.", "how_sub": "Los servicios grandes de contestación te pasan por vendedores, equipos de instalación y esperas de semanas. Lo nuestro son tres pasos — y el plazo está impreso aquí, no escondido detrás de una llamada de ventas.", "s1h": "Cuéntanos cómo trabaja tu negocio", "s1p": "Un formulario corto o una llamada: tus horarios, servicios, zona y cómo quieres que se atiendan las llamadas. Conserva tu número o estrena uno nuevo — tú eliges.", "s1c": "Toma unos 10 minutos", "s2h": "Armamos y probamos tu asistente", "s2p": "Lo entrenamos con tu negocio, configuramos tu número y lo probamos con llamadas antes de que un solo cliente lo escuche. Tú lo escuchas primero y apruebas cómo suena.", "s2c": "Front Desk: ~3 días · Complete: 3–5 días", "s3h": "Contesta. Tú recibes un texto.", "s3p": "Cada llamada contestada en segundos, 24/7. Después de cada llamada, te llega un resumen por texto — quién llamó, qué necesita y cómo contactarlo.", "s3c": "Resumen después de cada llamada", "svc_eye": "Lo que hacemos", "svc_h": "Tres servicios. Una sola recepción.", "svc1_plan": "Front Desk · $350/mes", "svc1_p": "Tu número de negocio, contestado en segundos a toda hora por un asistente automatizado que conoce tu negocio — servicios, horarios, zona y cómo te gusta atender las llamadas.", "svc1_l1": "Contesta en inglés y español", "svc1_l2": "Toma mensajes y agenda solicitudes de presupuesto", "svc1_l3": "Resumen por texto después de cada llamada", "svc1_l4": "500 minutos al mes incluidos", "svc2_plan": "Extra $100/mes · Incluido en Complete", "svc2_p": "Tus clientes escriben a tu número y reciben respuestas al instante — horarios, servicios, zona — además de ayuda para agendar un presupuesto. Cada conversación llega a tu resumen.", "svc2_l1": "Textos ilimitados — sin cargos por mensaje", "svc2_l2": "Responde en segundos, 24/7, en ambos idiomas", "svc2_l3": "Captura nombres, trabajos y números", "svc3_plan": "Front Desk Complete · $600/mes", "svc3_p": "Un sitio web de una página hecho a tu gusto — tus colores, tu logo, tus fotos, tus palabras — con formularios conectados directo a ti. Dominio y hosting incluidos.", "svc3_l1": "Diseñado contigo — tú eliges el estilo", "svc3_l2": "Formularios que te avisan por texto al instante", "svc3_l3": "Tu dominio y hosting incluidos", "svc3_l4": "En línea mientras dure tu suscripción", "ind_eye": "Industrias", "ind_h": "Hecho para los oficios. Listo para cualquier negocio que vive del teléfono.", "ind_catch_b": "¿No ves tu negocio?", "ind_catch": "Si tus clientes te llaman, podemos contestar por ti — en inglés y español, 24/7.", "vs_eye": "La comparación honesta", "vs_h": "La misma llamada contestada. Una fracción del precio — y en vivo esta semana.", "roi_h": "Un solo trabajo salvado paga esto por meses.", "roi_p": "Cuando un cliente cae en el buzón de voz, no espera — llama al siguiente negocio en Google. Un trabajo agendado vale <b>$400–$5,000+</b> para la mayoría de los negocios de servicios. Front Desk cuesta <b>$350/mes</b> — menos que un solo trabajo salvado.", "pr_eye": "Precios", "pr_h": "Dos planes. Y ya.", "pr_sub": "Primer mes por adelantado, sin cuota de instalación — Front Desk activo en unos 3 días, Complete en 3 a 5 días.", "faq_eye": "Preguntas", "faq_h": "Respuestas directas.", "gs_eye": "Empezar", "gs_h": "Cuéntanos de tu negocio.", "gs_sub": "Dos minutos. Nuestro equipo te escribe por correo con los siguientes pasos y tu enlace de pago — sin llamadas de presión.", "brandSub": "Automatización de recepción", "headerCall": "Llame al demo: (619) 304-2687", "heroH1": "Su recepción, automatizada.", "heroSub": "Sus llamadas atendidas 24/7 en inglés y español. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", "demoLabel": "Llame a nuestra línea demo", "demoPlaceholder": "Esta es nuestra propia línea de Chaidez Automations. Llame — ese es el asistente automatizado. Tomará sus datos para regresarle la llamada, igual que lo hará con sus clientes.", "callDemo": "Llame al demo: (619) 304-2687", "howLabel": "Cómo funciona", "howH2": "Usted trabaja. Nosotros contestamos.", "step1T": "Un cliente llama", "step1": "Por teléfono — día, noche y fines de semana.", "step2T": "Contestamos en inglés o español", "step2": "Tomamos su nombre, número y lo que necesita, y agendamos la cotización.", "step3T": "Usted recibe el resumen por texto", "step3": "En menos de un minuto, para que le regrese la llamada cuando pueda.", "transferNote": "Por defecto toma la llamada y le envía el resumen por texto. Si quien llama pide hablar con una persona, también podemos configurarlo para transferir la llamada a usted o a su equipo — usted elige.", "priceLabel": "Precios", "priceH2": "Dos planes.", "priceSub": "Elija un plan, pague su primer mes por adelantado, y lo tenemos listo en unos 2 días. Luego se factura mensualmente, empezando un mes después de su primer día activo.", "noSetup": "Sin cargo de instalación — solo pague su primer mes por adelantado.", "mtm": "Mes a mes. Sin contrato. Cancele cuando quiera.", "introLine": "Precios de lanzamiento — estas tarifas están vigentes hasta finales de 2026.", "outLabel": "Por qué importa", "outH2": "Un solo trabajo salvado paga esto por meses.", "outP": "Cuando un cliente no logra comunicarse con usted, no deja un mensaje de voz — cuelga y llama al siguiente negocio en Google. Un solo trabajo agendado en la mayoría de los oficios vale de <b>$400 a $5,000+</b>. Front Desk cuesta <b>$350/mes</b> — menos que un solo trabajo. Si le salvamos <i>una</i> llamada al mes, todo lo demás es ganancia.", "t2value": "3× los minutos. 3× los números. Un sitio web completo incluido — por menos del doble del precio.", "perMo": "/mes", "perMo2": "/mes", "navPricing": "Precios", "minFD": "500 minutos/mes — unas 150+ llamadas típicas", "minComplete": "1,500 minutos/mes — unas 500 llamadas típicas", "seePricing": "Ver todos los detalles de precios", "t1b": "Atención 24/7 en inglés y español", "t1c": "Resumen por texto para usted después de cada llamada", "t1Texting": "Agregue mensajes a clientes: +$100/mes — textos ilimitados, respuesta inmediata a sus clientes", "t2a": "Todo lo de Front Desk, más:", "t2c": "Sitio web personalizado de 1 página con formularios — dominio y hosting incluidos", "t2d": "Mensajes a clientes incluidos — sus clientes escriben a su número y el asistente responde al instante, 24/7", "priceNote": "Dar precios es su decisión — puede dar estimaciones aproximadas para trabajos sencillos, o nunca mencionar precios. De cualquier forma, su técnico confirma el precio final en el lugar.", "fPlan": "¿Qué plan le interesa?", "fPlan1": "Front Desk — $350/mes", "fPlan2": "Front Desk Complete — $600/mes", "fCustText": "Agregar mensajes a clientes (+$100/mes, solo plan básico)", "formLabel": "Empiece ahora", "formH2": "Cuéntenos de su negocio.", "fOwner": "Su nombre *", "fBusiness": "Nombre del negocio *", "fTrade": "Oficio *", "fSelect": "Seleccione su oficio", "fPhone": "Teléfono *", "fEmail": "Correo electrónico *", "fTimeline": "¿Cuándo quiere empezar?", "optThisWeek": "Esta semana", "optLooking": "Solo estoy viendo", "optLater": "Más adelante", "fNeeds": "¿Qué necesita más?", "fNotes": "¿Algo que debamos saber?", "consentEmail": "Acepto que me envíen la información de instalación por correo", "consentText": "Acepto que me envíen textos sobre mi instalación (opcional)", "submitBtn": "Quiero mi enlace de instalación", "confirmTitle": "Listo — Orlando le enviará un correo dentro de 24 horas con su enlace de instalación.", "footerTag": "Atención 24/7, en inglés y español.", "footerTagline": "Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", "footerAreas": "Áreas de servicio", "footerArea3": "Todo Estados Unidos", "disclaimer": "Asistente automatizado, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica.", "navHome": "Inicio", "priceH1": "Precios simples, pensados para negocios pequeños.", "t2stack": "Por separado, un sitio web personalizado cuesta $1,000+ por adelantado, el hosting unos $50/mes, y los mensajes a clientes son un agregado de $100/mes. En Complete, todo está incluido.", "t1num": "1 número de negocio cubierto", "t1min": "500 minutos de llamadas al mes — unas 150+ llamadas típicas. La mayoría de los negocios pequeños ni se acerca", "t1transfer": "Transferencias — usted elige: transferirle la llamada, o tomamos los datos y se los enviamos por texto", "t1quote": "Estimaciones aproximadas para trabajos sencillos — solo si usted lo quiere", "ctaSetup": "Empezar ahora", "textH": "Sus clientes también pueden escribirle — textos ilimitados", "textP": "Muchos clientes prefieren enviar un texto que llamar. Con los mensajes a clientes, escriben a su número de negocio y el asistente responde al instante — día o noche, en inglés o español. Contesta las preguntas de siempre (horario, servicios, zonas donde trabaja), toma sus datos y ayuda a agendar la cotización — igual que una llamada, pero por escrito. Y cada conversación aparece en su resumen, igual que una llamada. <b>Textos ilimitados — sin cargos por mensaje.</b> Incluido en Front Desk Complete; agréguelo a Front Desk por $100/mes.", "t2web": "Un sitio web personalizado de 1 página, hecho como usted quiera — le mostramos opciones de diseño y usted elige el estilo. Sus colores, su logo, sus fotos, sus palabras", "t2domain": "Su propio dominio + hosting incluido — nosotros lo configuramos todo y lo mantenemos en línea mientras esté suscrito", "t2form": "Formulario de contacto en su sitio web incluido", "t2num": "Hasta 3 números de negocio cubiertos", "t2min": "1,500 minutos de llamadas al mes — unas 500 llamadas típicas", "t2text": "Mensajes a clientes incluidos — textos ilimitados. Sus clientes escriben a su número y el asistente responde al instante, 24/7", "ctaSetup2": "Empezar ahora", "minH": "¿Qué tanto alcanzan los minutos en realidad?", "minP": "Una llamada típica — saludo, lo que necesita el cliente, nombre y número, agendar la cotización — toma unos <b>3 minutos</b>. Así que 500 minutos cubren aproximadamente <b>más de 150 llamadas al mes</b>, y 1,500 minutos cubren unas <b>500 llamadas</b>. La mayoría de los negocios pequeños usa solo una fracción de eso. Y si su negocio llegara a necesitar más regularmente, se lo avisamos y vemos opciones — nunca recibirá un cargo sorpresa de nosotros.", "entLabel": "Empresas", "entH2": "¿Su operación es más grande?", "entP": "Nuestros planes estándar están hechos para negocios pequeños. ¿Tiene varias ubicaciones, un volumen alto de llamadas, o una operación que no encaja en un plan estándar? Creamos un precio empresarial a la medida de su negocio. Llame a la línea demo, cuéntele al asistente sobre su operación, y nuestro equipo le enviará una cotización personalizada.", "entCall": "Llame al demo: (619) 304-2687", "entAlt": "Cuéntenos de su negocio", "ind1n": "Aire acondicionado", "ind2n": "Plomería", "ind3n": "Electricidad", "ind4n": "Techos y contratistas", "ind5n": "Jardinería", "ind6n": "Control de plagas", "ind7n": "Servicios de limpieza", "ind8n": "Handyman y remodelación", "ind1d": "Las llamadas de “no enfría” a las 9 PM son las instalaciones de mañana — si alguien contesta.", "ind2d": "Una tubería rota no deja mensaje de voz. Nosotros contestamos, usted sale.", "ind3d": "Llamadas de emergencia filtradas y resumidas mientras usted trabaja en un tablero.", "ind4d": "Cada solicitud de cotización capturada con nombre, dirección y detalles del trabajo.", "ind5d": "Llamadas de clientes nuevos contestadas mientras todo el equipo está en el sitio.", "ind6d": "Preguntas de servicio recurrente y nuevas citas, resueltas.", "ind7d": "Solicitudes de cotización por teléfono o texto, día o noche.", "ind8d": "Usted está bajo un fregadero o en una escalera — nosotros contestamos.", "chip1": "<svg\n  class=\"bic lucide lucide-car\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2\" />\n  <circle cx=\"7\" cy=\"17\" r=\"2\" />\n  <path d=\"M9 17h6\" />\n  <circle cx=\"17\" cy=\"17\" r=\"2\" />\n</svg>Reparación de autos", "chip2": "<svg\n  class=\"bic lucide lucide-scissors\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"6\" cy=\"6\" r=\"3\" />\n  <path d=\"M8.12 8.12 12 12\" />\n  <path d=\"M20 4 8.12 15.88\" />\n  <circle cx=\"6\" cy=\"18\" r=\"3\" />\n  <path d=\"M14.8 14.8 20 20\" />\n</svg>Salones y barberías", "chip3": "<svg\n  class=\"bic lucide lucide-building-2\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M10 12h4\" />\n  <path d=\"M10 8h4\" />\n  <path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" />\n  <path d=\"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2\" />\n  <path d=\"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16\" />\n</svg>Administración de propiedades", "chip4": "<svg\n  class=\"bic lucide lucide-scale\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M12 3v18\" />\n  <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" />\n  <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" />\n  <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" />\n  <path d=\"M7 21h10\" />\n</svg>Oficinas legales", "chip5": "<svg\n  class=\"bic lucide lucide-stethoscope\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M11 2v2\" />\n  <path d=\"M5 2v2\" />\n  <path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\" />\n  <path d=\"M8 15a6 6 0 0 0 12 0v-3\" />\n  <circle cx=\"20\" cy=\"10\" r=\"2\" />\n</svg>Dental y clínicas", "chip6": "<svg\n  class=\"bic lucide lucide-key-round\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z\" />\n  <circle cx=\"16.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />\n</svg>Bienes raíces", "chip7": "<svg\n  class=\"bic lucide lucide-truck\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2\" />\n  <path d=\"M15 18H9\" />\n  <path d=\"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14\" />\n  <circle cx=\"17\" cy=\"18\" r=\"2\" />\n  <circle cx=\"7\" cy=\"18\" r=\"2\" />\n</svg>Mudanzas y retiro de escombro", "chip8": "<svg\n  class=\"bic lucide lucide-wrench\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z\" />\n</svg>Reparación de electrodomésticos", "chip9": "<svg\n  class=\"bic lucide lucide-paw-print\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"11\" cy=\"4\" r=\"2\" />\n  <circle cx=\"18\" cy=\"8\" r=\"2\" />\n  <circle cx=\"20\" cy=\"16\" r=\"2\" />\n  <path d=\"M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z\" />\n</svg>Servicios para mascotas", "chip10": "<svg\n  class=\"bic lucide lucide-dumbbell\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"1em\"\n  height=\"1em\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z\" />\n  <path d=\"m2.5 21.5 1.4-1.4\" />\n  <path d=\"m20.1 3.9 1.4-1.4\" />\n  <path d=\"M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z\" />\n  <path d=\"m9.6 14.4 4.8-4.8\" />\n</svg>Gimnasios y estudios", "dd1t": "HVAC, plomería y electricidad", "dd1d": "Las emergencias no pueden esperar", "dd2t": "Techos y contratistas", "dd2d": "Cada cotización empieza con una llamada", "dd3t": "Jardinería y control de plagas", "dd3d": "Rutas para su equipo, no buzones de voz", "dd4t": "Limpieza y servicios del hogar", "dd4d": "Cotizaciones mientras usted trabaja", "dd5t": "Talleres mecánicos", "dd5d": "Nos encargamos de las llamadas de estatus", "dd6t": "Salones, clínicas y más", "dd6d": "Cualquier negocio que vive del teléfono", "live1": "Activo en unos 3 días", "live2": "Activo en 3 a 5 días", "ftrBlurb": "Su recepción, automatizada. Atención 24/7 en inglés y español para negocios que no pueden perder una llamada.", "ftrSvcH": "Servicios", "ftrIndH": "Industrias", "ftrCoH": "Compañía", "flInd1": "HVAC y plomería", "flInd3": "Jardinería y plagas", "flInd4": "Talleres mecánicos", "ftrRights": "© 2026 Chaidez Automations. Todos los derechos reservados.", "entShortH": "¿Su operación es más grande?", "entShortP": "Varias ubicaciones, alto volumen de llamadas o algo a la medida — hable con nosotros sobre precios Enterprise."}};
 var lang = "en";
 function renderTrades(){
   var sel = document.getElementById("trade");
@@ -401,11 +1200,11 @@ function renderNeeds(){
 }
 function renderFaq(){
   var box = document.getElementById("faq"); box.innerHTML="";
-  FAQS[lang].forEach(function(f){
-    var d = document.createElement("details");
-    var s = document.createElement("summary"); s.textContent=f[0];
+  FAQS[lang].forEach(function(f, i){
+    var d = document.createElement("details"); if(i===0) d.open = true;
+    var sm = document.createElement("summary"); sm.textContent=f[0];
     var p = document.createElement("p"); p.textContent=f[1];
-    d.appendChild(s); d.appendChild(p); box.appendChild(d);
+    d.appendChild(sm); d.appendChild(p); box.appendChild(d);
   });
 }
 function setLang(l){
@@ -413,6 +1212,8 @@ function setLang(l){
   document.documentElement.lang = (l==="es" ? "es" : "en");
   document.getElementById("btn-en").setAttribute("aria-pressed", l==="en" ? "true":"false");
   document.getElementById("btn-es").setAttribute("aria-pressed", l==="es" ? "true":"false");
+  document.getElementById("btn-en").classList.toggle("on", l==="en");
+  document.getElementById("btn-es").classList.toggle("on", l==="es");
   document.querySelectorAll("[data-i18n]").forEach(function(el){
     var k = el.getAttribute("data-i18n");
     if(T[l][k] !== undefined) el.innerHTML = T[l][k];
