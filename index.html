@@ -308,7 +308,7 @@
         <button data-i18n="nav_ind">Industries ▾</button>
         <div class="dropdown wide">
           <div class="cols">
-            <a href="#industries"><svg
+            <a href="hvac.html"><svg
   class="ic lucide lucide-wrench"
   xmlns="http://www.w3.org/2000/svg"
   width="1em"
@@ -322,7 +322,7 @@
 >
   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
 </svg><span><b data-i18n="dd1t">HVAC, Plumbing &amp; Electrical</b><small data-i18n="dd1d">Emergency calls can't wait</small></span></a>
-            <a href="#industries"><svg
+            <a href="roofing.html"><svg
   class="ic lucide lucide-home"
   xmlns="http://www.w3.org/2000/svg"
   width="1em"
@@ -1103,7 +1103,7 @@
   <div class="wrap">
     <div class="eyebrow" data-i18n="faq_eye">Questions</div>
     <h2 data-i18n="faq_h">Straight answers.</h2>
-    <div class="faq" id="faq" style="margin-top:28px"></div>
+    <div class="faq" id="faq-list" style="margin-top:28px"></div>
   </div>
 </section>
 
@@ -1170,7 +1170,7 @@
         <p style="margin-top:10px;font-size:12.5px;color:#8fb0c9" data-i18n="privLine">Your data stays yours: call details are used only to run your front desk and send your summaries — never sold, never shared.</p>
       </div>
       <div><b data-i18n="ftrSvcH">Services</b><a href="#services" data-i18n="svc1_t">Phone Answering</a><a href="#services" data-i18n="svc2_t">Calendar Booking</a><a href="#services" data-i18n="svc3_t">Summaries & Call Log</a><a href="#pricing" data-i18n="nav_pricing">Pricing</a></div>
-      <div><b data-i18n="ftrIndH">Industries</b><a href="#industries" data-i18n="flInd1">HVAC &amp; Plumbing</a><a href="#industries" data-i18n="ind4n">Roofing &amp; Contractors</a><a href="#industries" data-i18n="flInd3">Landscaping &amp; Pest</a><a href="#industries" data-i18n="flInd4">Auto Shops</a><a href="#industries" data-i18n="dd6t">Salons, Clinics &amp; More</a></div>
+      <div><b data-i18n="ftrIndH">Industries</b><a href="hvac.html" data-i18n="flInd1">HVAC &amp; Plumbing</a><a href="roofing.html" data-i18n="ind4n">Roofing &amp; Contractors</a><a href="#industries" data-i18n="flInd3">Landscaping &amp; Pest</a><a href="#industries" data-i18n="flInd4">Auto Shops</a><a href="#industries" data-i18n="dd6t">Salons, Clinics &amp; More</a></div>
       <div><b data-i18n="ftrCoH">Company</b><a href="#how" data-i18n="nav_how">How it works</a><a href="#faq" data-i18n="nav_faq">FAQ</a><a href="#getstarted" data-i18n="d_start">Apply to get started</a><a href="https://app.chaidezautomations.com" data-i18n="nav_login">Client login</a><a href="tel:+16193042687">Our line: (619) 304-2687</a><a href="mailto:team@chaidezautomations.com">team@chaidezautomations.com</a><a href="privacy.html" data-i18n="ftrPrivacy">Privacy Policy</a><a href="terms.html" data-i18n="ftrTerms">Terms of Service</a></div>
     </div>
     <div class="fbot"><span data-i18n="ftrRights">© 2026 Chaidez Automations. All rights reserved.</span><span data-i18n="footerTagline">Your front desk, automated. No missed calls. No missed texts. No missed leads.</span></div>
@@ -1208,7 +1208,7 @@ function renderNeeds(){
   });
 }
 function renderFaq(){
-  var box = document.getElementById("faq"); box.innerHTML="";
+  var box = document.getElementById("faq-list"); box.innerHTML="";
   FAQS[lang].forEach(function(f, i){
     var d = document.createElement("details"); if(i===0) d.open = true;
     var sm = document.createElement("summary"); sm.textContent=f[0];
