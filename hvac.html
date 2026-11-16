@@ -144,7 +144,7 @@
   .roi h3{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.01em;margin-bottom:10px}
   .roi p{color:#c3d6e6;line-height:1.6;max-width:46rem}
   .roi b{color:#fff}
-  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .price{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
   .price h3{font-size:19px}
   .price .amt{font-size:44px;font-weight:900;letter-spacing:-.03em;margin:8px 0 2px}
@@ -693,8 +693,8 @@
       <p data-i18n="roi_p">When a caller hits voicemail, they don’t wait — they call the next shop on Google. One booked job is worth <b>$400–$5,000+</b> for most home-service businesses. Save one job a month and your front desk pays for itself many times over — at <b>75¢ a minute</b> on the base plan, or <b>$1 flat</b> with no monthly fee.</p>
     </div>
     <div class="eyebrow" data-i18n="pr_eye">Pricing</div>
-    <h2 data-i18n="pr_h">Two ways to pay. Same front desk.</h2>
-    <p class="sub" style="margin-top:8px" data-i18n="pr_sub">$50 to start on either plan. Month-to-month — cancel anytime.</p>
+    <h2 data-i18n="pr_h">Three ways to pay. Same front desk.</h2>
+    <p class="sub" style="margin-top:8px" data-i18n="pr_sub">$50 to start on any plan. Month-to-month — cancel anytime.</p>
     <div class="price-grid" style="margin-top:30px">
       <div class="price">
         <span class="tag" data-i18n="planA_tag">Best for most shops</span>
@@ -726,6 +726,25 @@
           <li data-i18n="t1log">Call log — every call in one simple sheet</li>
           <li data-i18n="t1num">1 business number covered</li>
           <li data-i18n="b_l1">$1 per answered minute — nothing else</li>
+          <li data-i18n="pm_l2">Calls under 10 seconds are free.</li>
+          <li data-i18n="pm_l3">Usage alerts at 250, 500 &amp; 1,000 minutes — never a surprise</li>
+          <li data-i18n="bill2wk">Minutes billed every two weeks — card on file, itemized receipt</li>
+        </ul>
+        <a class="btn" href="#getstarted" data-i18n="hero_cta">Apply to get started</a>
+      </div>
+      <div class="price">
+        <span class="tag" data-i18n="planC_tag">Best for high volume</span>
+        <h3 data-i18n="planC_name">Pro</h3>
+        <div class="amt">$150<small data-i18n="perMo">/mo</small></div>
+        <div style="font-weight:700;color:var(--ink2);margin:2px 0 12px" data-i18n="planC_note">+ 50¢ per answered minute</div>
+        <ul>
+          <li data-i18n="t1b">24/7 answering in English and Spanish</li>
+          <li data-i18n="t1book">Booking included — jobs land on your calendar</li>
+          <li data-i18n="t1c">Text + email summary after every call</li>
+          <li data-i18n="t1log">Call log — every call in one simple sheet</li>
+          <li data-i18n="t1num">1 business number covered</li>
+          <li data-i18n="c_l1">$150/mo base — cheapest above 400 minutes a month</li>
+          <li data-i18n="a_free">Your $50 start covers your first month</li>
           <li data-i18n="pm_l2">Calls under 10 seconds are free.</li>
           <li data-i18n="pm_l3">Usage alerts at 250, 500 &amp; 1,000 minutes — never a surprise</li>
           <li data-i18n="bill2wk">Minutes billed every two weeks — card on file, itemized receipt</li>
@@ -783,7 +802,7 @@
         <div>
           <span class="group-label" data-i18n="fPlan">Your plan</span>
           <div class="checks">
-            <label class="check"><input type="radio" name="plan" value="Base+Minutes $50/mo + 75c/min" checked><span data-i18n="fPlan1">Base + Minutes — $50/mo + 75¢/min</span></label><label class="check"><input type="radio" name="plan" value="Pay-as-you-go $1/min"><span data-i18n="fPlan2">Pay as you go — $1/min + $50 setup, no monthly fee</span></label>
+            <label class="check"><input type="radio" name="plan" value="Base+Minutes $50/mo + 75c/min" checked><span data-i18n="fPlan1">Base + Minutes — $50/mo + 75¢/min</span></label><label class="check"><input type="radio" name="plan" value="Pay-as-you-go $1/min"><span data-i18n="fPlan2">Pay as you go — $1/min + $50 setup, no monthly fee</span></label><label class="check"><input type="radio" name="plan" value="Pro $150/mo + 50c/min"><span data-i18n="fPlan3">Pro — $150/mo + 50¢/min, best above 400 min/mo</span></label>
           </div>
         </div>
         <div>
@@ -942,7 +961,7 @@ var T = {
     "s3c": "Summary after every call",
     "svc_eye": "What we do",
     "svc_h": "Everything in one front desk.",
-    "svc1_plan": "Base $50/mo + 75¢/min · or $1/min, no base",
+    "svc1_plan": "Base $50/mo + 75¢/min · $1/min, no base · Pro $150/mo + 50¢/min",
     "svc1_p": "Your business number, answered in seconds around the clock by an automated assistant that knows your shop — services, hours, area, and how you like calls handled.",
     "svc1_l1": "Answers in English &amp; Spanish",
     "svc1_l2": "Books jobs right onto your calendar",
@@ -992,8 +1011,8 @@ var T = {
     "roi_h": "One saved job pays for this for months.",
     "roi_p": "When a caller hits voicemail, they don’t wait — they call the next shop on Google. One booked job is worth <b>$400–$5,000+</b> for most home-service businesses. Save one job a month and your front desk pays for itself many times over — at <b>75¢ a minute</b> on the base plan, or <b>$1 flat</b> with no monthly fee.",
     "pr_eye": "Pricing",
-    "pr_h": "Two ways to pay. Same front desk.",
-    "pr_sub": "$50 to start either way. No contract. Live in 1–2 days.",
+    "pr_h": "Three ways to pay. Same front desk.",
+    "pr_sub": "$50 to start on any plan. No contract. Live in 1–2 days.",
     "perMo": "/mo",
     "live1": "Live 1–2 days after approval",
     "t1b": "24/7 answering in English and Spanish",
@@ -1027,7 +1046,7 @@ var T = {
     "optLater": "Later",
     "fPlan": "Your plan",
     "fPlan1": "Base + Minutes — $50/mo + 75¢/min",
-    "fPlan2": "Pay as you go — $1/min + $50 setup, no monthly fee",
+    "fPlan2": "Pay as you go — $1/min + $50 setup, no monthly fee", "fPlan3": "Pro — $150/mo + 50¢/min, best above 400 min/mo",
     "fNeeds": "What do you need most?",
     "fNotes": "Anything we should know?",
     "consentEmail": "It's okay to email me setup info",
@@ -1078,7 +1097,7 @@ var T = {
     "planB_tag": "No monthly fee",
     "planB_name": "Pay As You Go",
     "planB_note": "$0/mo after a one-time $50 setup",
-    "b_l1": "$1 per answered minute — nothing else",
+    "b_l1": "$1 per answered minute — nothing else", "planC_tag": "Best for high volume", "planC_name": "Pro", "planC_note": "+ 50¢ per answered minute", "c_l1": "$150/mo base — cheapest above 400 minutes a month",
     "outP": "When a customer can’t reach you, they don’t leave a voicemail — they hang up and call the next shop on Google. One booked job in most trades is worth <b>$400 to $5,000+</b>. At <b>75¢ a minute</b> on the base plan — or <b>$1 flat</b> with no monthly fee — saving even <i>one</i> job a month pays for your front desk. Everything after that is profit.",
     "applyNote": "We build every front desk by hand and test it before it goes live — so we onboard a few shops at a time (about 5 a month). Apply below; if it's a fit, our team reaches out within 2 business days.",
     "ftrIndHVAC": "HVAC",
@@ -1145,7 +1164,7 @@ var T = {
     "s3c": "Resumen después de cada llamada",
     "svc_eye": "Lo que hacemos",
     "svc_h": "Todo en una sola recepción.",
-    "svc1_plan": "Base $50/mes + 75¢/min · o $1/min sin base",
+    "svc1_plan": "Base $50/mes + 75¢/min · $1/min sin base · Pro $150/mes + 50¢/min",
     "svc1_p": "Tu número de negocio, contestado en segundos a toda hora por un asistente automatizado que conoce tu negocio — servicios, horarios, zona y cómo te gusta atender las llamadas.",
     "svc1_l1": "Contesta en inglés y español",
     "svc1_l2": "Agenda trabajos directo en su calendario",
@@ -1171,8 +1190,8 @@ var T = {
     "roi_h": "Un solo trabajo salvado paga esto por meses.",
     "roi_p": "Cuando una llamada cae al buzón de voz, el cliente no espera — llama al siguiente negocio en Google. Un solo trabajo agendado vale de <b>$400 a $5,000+</b> en la mayoría de los oficios. Salve un trabajo al mes y su recepción se paga sola muchas veces — a <b>75¢ por minuto</b> en el plan base, o <b>$1 fijo</b> sin mensualidad.",
     "pr_eye": "Precios",
-    "pr_h": "Dos formas de pagar. La misma recepción.",
-    "pr_sub": "$50 para empezar en ambas. Sin contrato. Activo en 1 a 2 días.",
+    "pr_h": "Tres formas de pagar. La misma recepción.",
+    "pr_sub": "$50 para empezar en cualquier plan. Sin contrato. Activo en 1 a 2 días.",
     "faq_eye": "Preguntas",
     "faq_h": "Respuestas directas.",
     "gs_eye": "Solicitud",
@@ -1215,7 +1234,7 @@ var T = {
     "priceNote": "Dar precios es su decisión — puede dar estimaciones aproximadas para trabajos sencillos, o nunca mencionar precios. De cualquier forma, su técnico confirma el precio final en el lugar.",
     "fPlan": "Su plan",
     "fPlan1": "Base + Minutos — $50/mes + 75¢/min",
-    "fPlan2": "Pago por uso — $1/min + $50 de instalación, sin mensualidad",
+    "fPlan2": "Pago por uso — $1/min + $50 de instalación, sin mensualidad", "fPlan3": "Pro — $150/mes + 50¢/min, ideal arriba de 400 min/mes",
     "formLabel": "Empiece ahora",
     "formH2": "Cuéntenos de su negocio.",
     "fOwner": "Su nombre *",
@@ -1334,7 +1353,7 @@ var T = {
     "planB_tag": "Sin mensualidad",
     "planB_name": "Pago Por Uso",
     "planB_note": "$0/mes tras una instalación única de $50",
-    "b_l1": "$1 por minuto contestado — nada más",
+    "b_l1": "$1 por minuto contestado — nada más", "planC_tag": "Ideal para alto volumen", "planC_name": "Pro", "planC_note": "+ 50¢ por minuto contestado", "c_l1": "Base de $150/mes — el más barato arriba de 400 minutos al mes",
     "applyNote": "Construimos cada recepción a mano y la probamos antes de activarla — por eso aceptamos pocos negocios a la vez (unos 5 al mes). Aplique abajo; si encaja, nuestro equipo le contacta en 2 días hábiles.",
     "ftrIndHVAC": "HVAC",
     "ftrIndPlumb": "Plomería",
