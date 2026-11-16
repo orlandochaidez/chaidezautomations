@@ -272,8 +272,7 @@
   @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
 
 .setupflow{text-align:center;color:var(--ink2);font-size:14.5px;margin-top:14px;line-height:1.7}
-.stickybar{display:none}
-@media (max-width:760px){.stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:85;background:var(--card);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -8px 24px rgba(13,33,54,.10)}body{padding-bottom:62px}.stickybar a{flex:1;text-align:center;padding:12px 8px;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px}.stickybar .sb1{background:var(--amber);color:#231a00}.stickybar .sb2{background:var(--sky);color:var(--ink);border:1px solid var(--line)}}
+
 .see-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 @media (max-width:900px){.see-grid{grid-template-columns:1fr}}
 .mock{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
@@ -1219,6 +1218,6 @@ document.getElementById("lead-form").addEventListener("submit", function(e){
   }).finally(function(){ btn.disabled = false; });
 });
 </script>
-<div class="stickybar"><a class="sb1" href="tel:+16193042687"><span data-i18n="sticky_call">Call our line</span> · (619) 304-2687</a><a class="sb2" href="#pricing" data-i18n="sticky_pricing">See pricing</a></div>
+
 </body>
 </html>
