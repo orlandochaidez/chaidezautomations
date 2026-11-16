@@ -8,23 +8,57 @@
 <link rel="canonical" href="https://chaidezautomations.com/privacy.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+<script>
+// Theme before first paint: stored choice wins, else follow the device.
+// Same keys as the dashboard (ca_theme: auto | daylight | midnight).
+(function(){try{var p=localStorage.getItem('ca_theme')||'auto';var d=p==='auto'?((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'midnight':'daylight'):p;document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','daylight');}})();
+</script>
 <style>
   :root{
     --ink:#0d2136; --ink2:#3c5871; --mut:#647d92;
     --blue:#1f6fb2; --blue-d:#155a94; --sky:#eef4fa; --sky2:#e2edf7;
-    --line:#d8e4ee; --card:#ffffff;
+    --line:#d8e4ee; --card:#ffffff; --amber:#f5a800;
+    --bg:#ffffff; --panel:#0d2136; --headbg:rgba(255,255,255,.92);
+    --field:#fbfdff; --red:#c0392b;
+    --ok-bg:#e7f6ec; --ok-line:#bfe6cd; --ok-txt:#177245;
+    --err-bg:#fdecec; --err-line:#f5c2c2; --err-txt:#7f1d1d;
+    --warn-bg:#fff7e6; --warn-line:#e8c877; --warn-txt:#7a5410;
+    --radius:18px; --shadow:0 10px 30px rgba(13,33,54,.08);
+    color-scheme:light;
   }
+  html[data-theme="midnight"]{
+    --ink:#eef3f9; --ink2:#c2d0e2; --mut:#9fb2c8;
+    --blue:#3f8cff; --blue-d:#6ea8ff; --sky:#16202f; --sky2:#1b2940;
+    --line:#26354a; --card:#16202f; --amber:#f5a800;
+    --bg:#0b1526; --panel:#0a1120; --headbg:rgba(11,21,38,.92);
+    --field:#0d1624; --red:#ff6b6b;
+    --ok-bg:#0f2a1c; --ok-line:#1f5c3a; --ok-txt:#7ddba8;
+    --err-bg:#331414; --err-line:#7a2e2e; --err-txt:#ff9a9a;
+    --warn-bg:#2e2608; --warn-line:#8a7320; --warn-txt:#f5cf6e;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+  /* color-mode picker (same as the dashboard: ca_theme auto | daylight | midnight) */
+  .theme-wrap{position:relative;flex:none}
+  .themebtn{border:1.5px solid var(--line);background:var(--card);color:var(--amber);border-radius:999px;padding:6px 11px;cursor:pointer;font-size:15px;line-height:1.4}
+  .themebtn:hover{border-color:var(--blue)}
+  .thememenu{position:absolute;right:0;top:calc(100% + 8px);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px;min-width:170px;z-index:60;box-shadow:var(--shadow)}
+  .thememenu-title{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.04em;padding:6px 12px 2px}
+  .thememenu button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--ink);padding:10px 12px;border-radius:8px;cursor:pointer;font-size:15px;font-weight:600}
+  .thememenu button:hover{background:var(--sky)}
+  .thememenu button.on{color:var(--blue);font-weight:700}
+  .hidden{display:none}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
   a{color:var(--blue);text-decoration:none}
-  header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
+  header{position:sticky;top:0;background:var(--headbg);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
   .bar{display:flex;align-items:center;gap:18px;height:68px}
   .logo{font-weight:900;font-size:19px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
   .logo span{color:var(--blue)}
   .bar .sp{flex:1}
   .langtog{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
-  .langtog button{font:inherit;font-size:12.5px;font-weight:700;padding:7px 12px;background:#fff;border:0;cursor:pointer;color:var(--mut)}
+  .langtog button{font:inherit;font-size:12.5px;font-weight:700;padding:7px 12px;background:var(--card);border:0;cursor:pointer;color:var(--mut)}
   .langtog button.on{background:var(--blue);color:#fff}
   main{max-width:820px;margin:0 auto;padding:56px 22px 72px}
   h1{font-size:clamp(30px,4vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.1}
@@ -50,6 +84,15 @@
     <div class="langtog" role="group" aria-label="Language">
       <button id="btn-en" class="on" type="button">EN</button>
       <button id="btn-es" type="button">ES</button>
+    </div>
+    <div class="theme-wrap">
+      <button id="themeBtn" class="themebtn" type="button" title="Color mode" aria-label="Color mode" aria-haspopup="true" aria-expanded="false">◐</button>
+      <div id="themeMenu" class="thememenu hidden" role="menu">
+        <div class="thememenu-title">Color mode</div>
+        <button type="button" data-theme-choice="auto" data-label="Auto">Auto</button>
+        <button type="button" data-theme-choice="daylight" data-label="Daylight">Daylight</button>
+        <button type="button" data-theme-choice="midnight" data-label="Midnight">Midnight</button>
+      </div>
     </div>
   </div>
 </header>
@@ -156,6 +199,52 @@
 </footer>
 
 <script>
+// Color mode: Daylight / Midnight / Auto (follows the device). Same keys as the dashboard (ca_theme).
+var themePref = 'auto';
+try { themePref = localStorage.getItem('ca_theme') || 'auto'; } catch(e){}
+function applyTheme(){
+  var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var eff = themePref === 'auto' ? (dark ? 'midnight' : 'daylight') : themePref;
+  document.documentElement.setAttribute('data-theme', eff);
+  document.querySelectorAll('#themeMenu [data-theme-choice]').forEach(function(b){
+    var active = b.getAttribute('data-theme-choice') === themePref;
+    b.classList.toggle('on', active);
+    b.textContent = (active ? '\u2713 ' : '') + b.getAttribute('data-label');
+  });
+}
+function setTheme(pref){
+  themePref = pref;
+  try { localStorage.setItem('ca_theme', pref); } catch(e){}
+  applyTheme();
+  document.getElementById('themeMenu').classList.add('hidden');
+  document.getElementById('themeBtn').setAttribute('aria-expanded', 'false');
+}
+document.getElementById('themeBtn').addEventListener('click', function(e){
+  e.stopPropagation();
+  var hidden = document.getElementById('themeMenu').classList.toggle('hidden');
+  document.getElementById('themeBtn').setAttribute('aria-expanded', String(!hidden));
+});
+document.querySelectorAll('#themeMenu [data-theme-choice]').forEach(function(b){
+  b.addEventListener('click', function(e){ e.stopPropagation(); setTheme(b.getAttribute('data-theme-choice')); });
+});
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.theme-wrap')){
+    document.getElementById('themeMenu').classList.add('hidden');
+    document.getElementById('themeBtn').setAttribute('aria-expanded', 'false');
+  }
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.getElementById('themeMenu').classList.add('hidden');
+    document.getElementById('themeBtn').setAttribute('aria-expanded', 'false');
+  }
+});
+if(window.matchMedia){
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(){
+    if(themePref === 'auto') applyTheme();
+  });
+}
+applyTheme();
 var L = {
   en: {home:"Home", pricing:"Pricing", privacy:"Privacy Policy", terms:"Terms of Service", rights:"© 2026 Chaidez Automations. All rights reserved.", tag:"Your front desk, automated.", title:"Privacy Policy — Chaidez Automations"},
   es: {home:"Inicio", pricing:"Precios", privacy:"Política de Privacidad", terms:"Términos del Servicio", rights:"© 2026 Chaidez Automations. Todos los derechos reservados.", tag:"Su recepción, automatizada.", title:"Política de Privacidad — Chaidez Automations"}
