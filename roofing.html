@@ -220,7 +220,6 @@
     .price-grid{grid-template-columns:1fr}
     .stats .wrap{grid-template-columns:1fr 1fr}
     .fcols{grid-template-columns:1fr 1fr}
-    .callbtn .lbl{display:none}
     .bar{gap:10px;min-width:0}
     .bar .sp{min-width:0}
     .logo{font-size:16.5px}
@@ -231,7 +230,6 @@
     header .wrap{padding:0 14px}
     .bar{gap:8px}
     .logo{font-size:15px}
-    .callbtn{display:none}
     .langtog button{padding:8px 11px}
     .burger{width:38px;height:38px;flex:none}
   }
@@ -295,20 +293,7 @@
       <button class="on" id="btn-en" aria-pressed="true">EN</button>
       <button id="btn-es" aria-pressed="false">ES</button>
     </div>
-    <a class="btn callbtn" href="tel:+16193042687"><svg
-  class="bic lucide lucide-phone"
-  xmlns="http://www.w3.org/2000/svg"
-  width="1em"
-  height="1em"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
-</svg><span class="lbl" data-i18n="call_demo">Call our line</span></a>
+    <a class="btn callbtn" href="#getstarted"><span class="lbl" data-i18n="call_demo">Get started</span></a>
     <button class="burger" onclick="toggleDrawer(true)" aria-label="Menu"><i></i><i></i><i></i></button>
   </div>
 </header>
@@ -382,11 +367,6 @@
     <a class="dlink" href="index.html#faq" onclick="toggleDrawer(false)"><span data-i18n="nav_faq">FAQ</span><span>→</span></a>
     <a class="dlink" href="#getstarted" onclick="toggleDrawer(false)"><span data-i18n="d_start">Apply to get started</span><span>→</span></a>
     <a class="dlink" href="https://app.chaidezautomations.com"><span data-i18n="nav_login">Client login</span><span>→</span></a>
-    <div class="dcta">
-      <b data-i18n="d_hear">Hear it yourself</b>
-      <p style="color:var(--ink2);font-size:13.5px;margin:6px 0 12px" data-i18n="d_hear_sub">Call our line — it's live right now, and it answers like it would for your shop.</p>
-      <a class="btn amber" href="tel:+16193042687" style="width:100%;justify-content:center">(619) 304-2687</a>
-    </div>
   </div>
 </aside>
 
@@ -641,7 +621,6 @@
     <div class="ent">
       <b data-i18n="entShortH">Bigger operation?</b>
       <p data-i18n="entShortP">Multiple locations, high call volume, or something custom — talk to us about Enterprise pricing.</p>
-      <a class="btn ghost" href="tel:+16193042687">(619) 304-2687</a>
     </div>
   </div>
 </section>
@@ -786,7 +765,7 @@ var FAQS = {
   "en": [
     [
       "Does it sound like a robot?",
-      "Call (619) 304-2687 and judge for yourself. It's a natural voice that answers in seconds and is trained on your business — your services, your hours, your rules. It handles the conversation, books the job, and takes clean messages."
+      "Sign up and try it yourself on 60 free test minutes. It's a natural voice that answers in seconds and is trained on your business — your services, your hours, your rules. It handles the conversation, books the job, and takes clean messages."
     ],
     [
       "Can it tell a storm emergency from a routine call?",
@@ -808,7 +787,7 @@ var FAQS = {
   "es": [
     [
       "¿Suena robótico?",
-      "Llame al (619) 304-2687 y juzgue usted mismo. Es una voz natural que contesta en segundos y está entrenada en su negocio — sus servicios, sus horarios, sus reglas. Maneja la conversación, agenda el trabajo y toma mensajes limpios."
+      "Regístrese y pruébelo usted mismo con 60 minutos gratis de prueba. Es una voz natural que contesta en segundos y está entrenada en su negocio — sus servicios, sus horarios, sus reglas. Maneja la conversación, agenda el trabajo y toma mensajes limpios."
     ],
     [
       "¿Puede distinguir una emergencia de tormenta de una llamada normal?",
@@ -854,7 +833,7 @@ var T = {
     "nav_pricing": "Pricing",
     "nav_faq": "FAQ",
     "nav_login": "Client login",
-    "call_demo": "Call our line",
+    "call_demo": "Get started",
     "d_services": "Services",
     "d_explore": "Explore",
     "nav_ind2": "Industries we serve",
@@ -1051,7 +1030,7 @@ var T = {
     "nav_pricing": "Precios",
     "nav_faq": "Preguntas",
     "nav_login": "Acceso clientes",
-    "call_demo": "Llama a nuestra línea",
+    "call_demo": "Empezar",
     "svc1_t": "Contestación de llamadas",
     "svc1_d": "Recepción 24/7 en inglés y español",
     "svc2_t": "Agendación en calendario",
