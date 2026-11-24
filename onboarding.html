@@ -291,6 +291,7 @@
   .ob-review-row span{font-size:14.5px;color:var(--ink2);white-space:pre-wrap;word-break:break-word}
   .ob-edit{background:none;border:0;color:var(--blue);font:inherit;font-size:14px;font-weight:700;cursor:pointer;padding:4px 0;white-space:nowrap}
   .ob-hint{font-size:13.5px;color:var(--mut);margin-top:4px;line-height:1.5}
+  .ob-suggest{background:var(--ok-bg);border:1px solid var(--ok-line);color:var(--ok-txt);border-radius:12px;padding:11px 14px;font-size:14.5px;line-height:1.5;margin-top:12px}
 </style>
 </head>
 <body>
@@ -427,6 +428,16 @@
             <label class="check"><input type="radio" name="number_choice" value="keep" required><span data-i18n="q_number_keep">Keep mine — I'll forward it</span></label>
             <label class="check"><input type="radio" name="number_choice" value="new"><span data-i18n="q_number_new">New number, please</span></label>
           </div>
+          <div id="area-picker" style="display:none">
+            <span class="group-label" data-i18n="q_area_code">Pick an area code for your new number</span>
+            <p class="ob-hint" data-i18n="q_area_code_hint">We'll get you the closest match we can — the exact code depends on what's available, so we can't promise a specific one.</p>
+            <div class="checks" style="flex-direction:column;align-items:flex-start" id="area-choices">
+              <label class="check"><input type="radio" name="area_code_choice" value="auto" checked><span data-i18n="q_area_auto">You pick for me — closest match to my service area</span></label>
+              <span id="area-suggestions"></span>
+              <label class="check"><input type="radio" name="area_code_choice" value="other"><span data-i18n="q_area_other">Other area code:</span>&nbsp;<input id="area_code_other" name="area_code_other" inputmode="numeric" autocomplete="off" maxlength="3" size="3" placeholder="619" style="width:4.5em"></label>
+            </div>
+            <input type="hidden" id="area_code" name="area_code" value="auto">
+          </div>
           <label for="services" data-i18n="q_services">What services or jobs do you take? List the main ones. *</label>
           <textarea id="services" name="services" required rows="3"></textarea>
           <label for="service_area" data-i18n="q_area">What areas or cities do you serve?</label>
@@ -485,6 +496,7 @@
             <label class="check"><input type="radio" name="plan" value="payg"><span data-i18n="q_plan_payg">Pay As You Go — $1/min, no monthly fee</span></label>
             <label class="check"><input type="radio" name="plan" value="pro"><span data-i18n="q_plan_pro">Pro — $150/mo + 50¢/min, best above 400 min/mo</span></label>
           </div>
+          <p class="ob-suggest" id="plan-suggestion" style="display:none" role="status"></p>
         </div>
         <div class="ob-step" id="step-6">
           <h2 data-i18n="s6_h">Your script (optional)</h2>
@@ -594,7 +606,7 @@ function toggleDrawer(open){
   document.getElementById('drawer').setAttribute('aria-hidden', String(!open));
 }
 var TRADES = {"en": ["HVAC", "Plumbing", "Electrical", "Roofing", "Concrete", "Landscaping", "Remodeling", "Handyman", "Pest Control", "Cleaning", "Junk Hauling", "Auto & Upholstery", "Mobile Mechanic", "Property Management", "Med Spa & Salon", "Other"], "es": ["Aire acondicionado (HVAC)", "Plomería", "Electricidad", "Techos", "Concreto", "Jardinería", "Remodelación", "Handyman / Reparaciones", "Control de plagas", "Limpieza", "Retiro de escombro", "Auto y tapicería", "Mecánico a domicilio", "Administración de propiedades", "Med spa y salón", "Otro"]};
-var T = {"en": {"call_demo": "Get started", "d_explore": "Explore", "d_hear": "Hear it yourself", "d_hear_sub": "Call our line — it's live right now, and it answers like it would for your shop.", "d_services": "Services", "d_start": "Get started", "dd1d": "Emergency calls can't wait", "dd1t": "HVAC, Plumbing &amp; Electrical", "dd2d": "Every estimate starts with a call", "dd2t": "Roofing &amp; Contractors", "dd3d": "Route crews, not voicemails", "dd3t": "Landscaping &amp; Pest Control", "dd4d": "Quotes while you're on a job", "dd4t": "Cleaning &amp; Home Services", "dd5d": "Status calls handled for you", "dd5t": "Auto Shops", "dd6d": "Any business that lives on the phone", "dd6t": "Salons, Clinics &amp; More", "disclaimer": "Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.", "flInd1": "HVAC &amp; Plumbing", "flInd3": "Landscaping &amp; Pest", "flInd4": "Auto Shops", "footerArea3": "All across the US", "footerAreas": "Service areas", "footerTagline": "Your front desk, automated. No missed calls. No missed texts. No missed leads.", "ftrBlurb": "Your front desk, automated. 24/7 answering in English &amp; Spanish for businesses that can’t miss a call.", "ftrCoH": "Company", "ftrIndH": "Industries", "ftrPrivacy": "Privacy Policy", "ftrRights": "© 2026 Chaidez Automations. All rights reserved.", "ftrSvcH": "Services", "ftrTerms": "Terms of Service", "ind4n": "Roofing &amp; Contractors", "nav_faq": "FAQ", "nav_how": "How it works", "nav_ind": "Industries ▾", "nav_ind2": "Industries we serve", "nav_login": "Client login", "nav_pricing": "Pricing", "nav_services": "Services ▾", "privLine": "Your data stays yours: call details are used only to run your front desk and send your summaries — never sold, never shared.", "sticky_call": "Call our line", "sticky_pricing": "See pricing", "svc1_d": "24/7 front desk in English &amp; Spanish", "svc1_t": "Phone Answering", "svc2_d": "Jobs booked straight onto your calendar", "svc2_t": "Calendar Booking", "svc3_d": "Every call — in your pocket and in one log", "svc3_t": "Summaries & Call Log", "ob_eye": "Setup", "ob_h": "Tell us how your shop runs.", "ob_sub": "About 5 minutes. Answer at your pace — your answers save as you go, and you can come back anytime with your link.", "ob_stepof": "Step {n} of {t}", "ob_saved": "Saved ✓", "ob_back": "← Back", "ob_next": "Save &amp; continue →", "ob_submit": "Send my setup", "ob_err": "Something went wrong saving — please try again, or call us at (619) 304-2687.", "ob_email_h": "Start with your email", "ob_email_p": "We use it to save your answers, so you can pick up where you left off — here, by text, or by email.", "ob_email_label": "Email *", "ob_email_btn": "Start my setup →", "ob_email_bad": "Please enter a valid email address.", "ob_link_note": "Bookmark this page — your answers save as you go.", "ob_done_h": "Got it — thank you!", "ob_done_p": "We're building your front desk now. Typical go-live is 1–2 days. We'll text you when it's ready for a quick test call.", "ob_already_h": "Already sent", "ob_already_p": "Your setup is already with our team — nothing more to do. We'll text you when it's ready for a quick test call.", "ob_review_h": "Check everything, then send it", "ob_review_p": "Tap Edit on anything you'd like to change.", "ob_edit": "Edit", "ob_notset": "—", "ob_missing": "Please fill in: ", "fSelect": "Select your trade", "q_select": "Select…", "s1_h": "Your business", "s2_h": "Your number & services", "s3_h": "Booking", "s4_h": "How calls get handled", "s5_h": "Your plan", "s6_h": "Your script (optional)", "q_business": "Business name — exactly as it should be answered on the phone *", "q_owner": "Your name *", "q_trade": "Trade *", "q_phone": "Cell number for your call summaries (text after every call) *", "q_email": "Email for your call summaries *", "q_number": "Your business number", "q_number_keep": "Keep mine — I'll forward it", "q_number_new": "New number, please", "q_services": "What services or jobs do you take? List the main ones. *", "q_area": "What areas or cities do you serve?", "q_hours": "Business hours for jobs (e.g. Mon–Sat 8–6) and any closed days *", "q_booking": "Do you want the assistant to book jobs onto a Google Calendar we set up for you?", "q_booking_yes": "Yes, book jobs", "q_booking_no": "No, messages only", "q_tracker": "How do you keep track of jobs right now?", "q_tracker_google": "Google Calendar", "q_tracker_jobber": "Jobber", "q_tracker_housecall": "Housecall Pro", "q_tracker_servicetitan": "ServiceTitan", "q_tracker_paper": "Paper notebook", "q_tracker_other": "Other", "q_durations": "Typical job lengths — for your main services, about how long does each take? (e.g. drain clog 1 hr, water heater half day)", "q_transfer": "When a call is urgent or the caller asks for you:", "q_transfer_transfer": "Transfer the call to my cell — 25¢ per transfer minute", "q_transfer_message": "Take a message and text me right away (free — the default)", "q_quoting": "Prices on the phone?", "q_quoting_never": "Never quote — tech prices on site", "q_quoting_ballpark": "Rough ballparks for simple jobs OK", "q_quoting_set": "I have set prices (I'll send them)", "q_volume": "About how many minutes of calls do you expect a month?", "q_volume_under100": "Under 100", "q_volume_100_200": "100–200", "q_volume_200_400": "200–400", "q_volume_400_750": "400–750", "q_volume_over750": "Over 750", "q_plan": "Which plan do you want?", "q_plan_monthly": "Base + Minutes — $50/mo + 75¢/min", "q_plan_payg": "Pay As You Go — $1/min, no monthly fee", "q_plan_pro": "Pro — $150/mo + 50¢/min, best above 400 min/mo", "q_script": "Paste your own script or prompt (optional)", "q_script_hint": "If you already have a script for how calls should go, paste it here. We wrap it in our safety rules — it can set the tone and the must-ask questions, but it can't remove the guardrails.", "q_notes": "Anything else callers should know or always ask about? (service area, gate notes, “we don't do X”)"}, "es": {"call_demo": "Empezar", "d_explore": "Explorar", "d_hear": "Escúchalo tú mismo", "d_hear_sub": "Llama a nuestra línea — está activa ahorita, y contesta como contestaría por su negocio.", "d_services": "Servicios", "d_start": "Empezar", "dd1d": "Las emergencias no pueden esperar", "dd1t": "HVAC, plomería y electricidad", "dd2d": "Cada cotización empieza con una llamada", "dd2t": "Techos y contratistas", "dd3d": "Rutas para su equipo, no buzones de voz", "dd3t": "Jardinería y control de plagas", "dd4d": "Cotizaciones mientras usted trabaja", "dd4t": "Limpieza y servicios del hogar", "dd5d": "Nos encargamos de las llamadas de estatus", "dd5t": "Talleres mecánicos", "dd6d": "Cualquier negocio que vive del teléfono", "dd6t": "Salones, clínicas y más", "disclaimer": "Asistente automatizado, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica.", "flInd1": "HVAC y plomería", "flInd3": "Jardinería y plagas", "flInd4": "Talleres mecánicos", "footerArea3": "Todo Estados Unidos", "footerAreas": "Áreas de servicio", "footerTagline": "Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", "ftrBlurb": "Su recepción, automatizada. Atención 24/7 en inglés y español para negocios que no pueden perder una llamada.", "ftrCoH": "Compañía", "ftrIndH": "Industrias", "ftrPrivacy": "Privacidad", "ftrRights": "© 2026 Chaidez Automations. Todos los derechos reservados.", "ftrSvcH": "Servicios", "ftrTerms": "Términos", "ind4n": "Techos y contratistas", "nav_faq": "Preguntas", "nav_how": "Cómo funciona", "nav_ind": "Industrias ▾", "nav_ind2": "Industrias que atendemos", "nav_login": "Acceso clientes", "nav_pricing": "Precios", "nav_services": "Servicios ▾", "privLine": "Sus datos son suyos: los detalles de sus llamadas se usan solo para operar su recepción y enviarle sus resúmenes — nunca se venden ni se comparten.", "sticky_call": "Llama a nuestra línea", "sticky_pricing": "Ver precios", "svc1_d": "Recepción 24/7 en inglés y español", "svc1_t": "Contestación de llamadas", "svc2_d": "Trabajos agendados directo en su calendario", "svc2_t": "Agendación en calendario", "svc3_d": "Cada llamada — en su bolsillo y en un registro", "svc3_t": "Resúmenes y registro", "ob_eye": "Configuración", "ob_h": "Cuéntenos cómo trabaja su negocio.", "ob_sub": "Unos 5 minutos. Conteste a su ritmo — sus respuestas se guardan solas y puede volver cuando quiera con su enlace.", "ob_stepof": "Paso {n} de {t}", "ob_saved": "Guardado ✓", "ob_back": "← Atrás", "ob_next": "Guardar y seguir →", "ob_submit": "Enviar mi configuración", "ob_err": "Algo salió mal al guardar — inténtelo de nuevo, o llámenos al (619) 304-2687.", "ob_email_h": "Empiece con su correo", "ob_email_p": "Lo usaremos para guardar sus respuestas y que pueda seguir donde quedó — aquí, por texto o por correo.", "ob_email_label": "Correo electrónico *", "ob_email_btn": "Empezar mi configuración →", "ob_email_bad": "Escriba un correo válido.", "ob_link_note": "Guarde esta página en favoritos — sus respuestas se guardan solas.", "ob_done_h": "¡Listo — gracias!", "ob_done_p": "Estamos armando su recepción ahora. Normalmente queda activa en 1 a 2 días. Le escribiremos por texto cuando esté lista para una llamada de prueba.", "ob_already_h": "Ya enviado", "ob_already_p": "Su configuración ya está con nuestro equipo — no falta nada más. Le escribiremos por texto cuando esté lista para una llamada de prueba.", "ob_review_h": "Revise todo y luego envíelo", "ob_review_p": "Toque Editar en lo que quiera cambiar.", "ob_edit": "Editar", "ob_notset": "—", "ob_missing": "Falta llenar: ", "fSelect": "Seleccione su oficio", "q_select": "Seleccione…", "s1_h": "Su negocio", "s2_h": "Su número y servicios", "s3_h": "Agendación", "s4_h": "Cómo se atienden las llamadas", "s5_h": "Su plan", "s6_h": "Su guion (opcional)", "q_business": "Nombre del negocio — tal como se debe contestar el teléfono *", "q_owner": "Su nombre *", "q_trade": "Oficio *", "q_phone": "Celular para sus resúmenes de llamada (texto después de cada llamada) *", "q_email": "Correo para sus resúmenes de llamada *", "q_number": "Su número de negocio", "q_number_keep": "Conservo el mío — yo lo desvío", "q_number_new": "Número nuevo, por favor", "q_services": "¿Qué servicios o trabajos hace? Los principales. *", "q_area": "¿Qué zonas o ciudades atiende?", "q_hours": "Horario de trabajo (ej. lun–sáb 8–6) y días cerrados *", "q_booking": "¿Quiere que el asistente agende trabajos en un Google Calendar que configuramos para usted?", "q_booking_yes": "Sí, que agende trabajos", "q_booking_no": "No, solo mensajes", "q_tracker": "¿Cómo lleva sus trabajos ahorita?", "q_tracker_google": "Google Calendar", "q_tracker_jobber": "Jobber", "q_tracker_housecall": "Housecall Pro", "q_tracker_servicetitan": "ServiceTitan", "q_tracker_paper": "Cuaderno de papel", "q_tracker_other": "Otro", "q_durations": "Duración típica — ¿cuánto toma cada trabajo principal? (ej. drenaje tapado 1 hora, calentador medio día)", "q_transfer": "Cuando una llamada es urgente o piden hablar con usted:", "q_transfer_transfer": "Transferir la llamada a mi celular — 25¢ por minuto de transferencia", "q_transfer_message": "Tomar el mensaje y avisarme por texto de inmediato (gratis — lo normal)", "q_quoting": "¿Precios por teléfono?", "q_quoting_never": "Nunca dar precios — el técnico cobra en el lugar", "q_quoting_ballpark": "Estimaciones aproximadas para trabajos sencillos, está bien", "q_quoting_set": "Tengo precios fijos (se los envío)", "q_volume": "¿Cuántos minutos de llamadas espera al mes, más o menos?", "q_volume_under100": "Menos de 100", "q_volume_100_200": "100–200", "q_volume_200_400": "200–400", "q_volume_400_750": "400–750", "q_volume_over750": "Más de 750", "q_plan": "¿Qué plan quiere?", "q_plan_monthly": "Base + Minutos — $50/mes + 75¢/min", "q_plan_payg": "Pago Por Uso — $1/min, sin mensualidad", "q_plan_pro": "Pro — $150/mes + 50¢/min, ideal arriba de 400 min/mes", "q_script": "Pegue su propio guion o instrucciones (opcional)", "q_script_hint": "Si ya tiene un guion para sus llamadas, péguelo aquí. Lo ponemos dentro de nuestras reglas de seguridad — puede fijar el tono y las preguntas clave, pero no puede quitar las protecciones.", "q_notes": "¿Algo más que los clientes deban saber o preguntar siempre? (zona, notas de puerta, “no hacemos X”)"}};
+var T = {"en": {"call_demo": "Get started", "d_explore": "Explore", "d_hear": "Hear it yourself", "d_hear_sub": "Call our line — it's live right now, and it answers like it would for your shop.", "d_services": "Services", "d_start": "Get started", "dd1d": "Emergency calls can't wait", "dd1t": "HVAC, Plumbing &amp; Electrical", "dd2d": "Every estimate starts with a call", "dd2t": "Roofing &amp; Contractors", "dd3d": "Route crews, not voicemails", "dd3t": "Landscaping &amp; Pest Control", "dd4d": "Quotes while you're on a job", "dd4t": "Cleaning &amp; Home Services", "dd5d": "Status calls handled for you", "dd5t": "Auto Shops", "dd6d": "Any business that lives on the phone", "dd6t": "Salons, Clinics &amp; More", "disclaimer": "Automated assistant, powered by AI, for routine business calls. Not certified legal/medical interpreting.", "flInd1": "HVAC &amp; Plumbing", "flInd3": "Landscaping &amp; Pest", "flInd4": "Auto Shops", "footerArea3": "All across the US", "footerAreas": "Service areas", "footerTagline": "Your front desk, automated. No missed calls. No missed texts. No missed leads.", "ftrBlurb": "Your front desk, automated. 24/7 answering in English &amp; Spanish for businesses that can’t miss a call.", "ftrCoH": "Company", "ftrIndH": "Industries", "ftrPrivacy": "Privacy Policy", "ftrRights": "© 2026 Chaidez Automations. All rights reserved.", "ftrSvcH": "Services", "ftrTerms": "Terms of Service", "ind4n": "Roofing &amp; Contractors", "nav_faq": "FAQ", "nav_how": "How it works", "nav_ind": "Industries ▾", "nav_ind2": "Industries we serve", "nav_login": "Client login", "nav_pricing": "Pricing", "nav_services": "Services ▾", "privLine": "Your data stays yours: call details are used only to run your front desk and send your summaries — never sold, never shared.", "sticky_call": "Call our line", "sticky_pricing": "See pricing", "svc1_d": "24/7 front desk in English &amp; Spanish", "svc1_t": "Phone Answering", "svc2_d": "Jobs booked straight onto your calendar", "svc2_t": "Calendar Booking", "svc3_d": "Every call — in your pocket and in one log", "svc3_t": "Summaries & Call Log", "ob_eye": "Setup", "ob_h": "Tell us how your shop runs.", "ob_sub": "About 5 minutes. Answer at your pace — your answers save as you go, and you can come back anytime with your link.", "ob_stepof": "Step {n} of {t}", "ob_saved": "Saved ✓", "ob_back": "← Back", "ob_next": "Save &amp; continue →", "ob_submit": "Send my setup", "ob_err": "Something went wrong saving — please try again, or call us at (619) 304-2687.", "ob_email_h": "Start with your email", "ob_email_p": "We use it to save your answers, so you can pick up where you left off — here, by text, or by email.", "ob_email_label": "Email *", "ob_email_btn": "Start my setup →", "ob_email_bad": "Please enter a valid email address.", "ob_link_note": "Bookmark this page — your answers save as you go.", "ob_done_h": "Got it — thank you!", "ob_done_p": "We're building your front desk now. Typical go-live is 1–2 days. We'll text you when it's ready for a quick test call.", "ob_already_h": "Already sent", "ob_already_p": "Your setup is already with our team — nothing more to do. We'll text you when it's ready for a quick test call.", "ob_review_h": "Check everything, then send it", "ob_review_p": "Tap Edit on anything you'd like to change.", "ob_edit": "Edit", "ob_notset": "—", "ob_missing": "Please fill in: ", "fSelect": "Select your trade", "q_select": "Select…", "s1_h": "Your business", "s2_h": "Your number & services", "s3_h": "Booking", "s4_h": "How calls get handled", "s5_h": "Your plan", "s6_h": "Your script (optional)", "q_business": "Business name — exactly as it should be answered on the phone *", "q_owner": "Your name *", "q_trade": "Trade *", "q_phone": "Cell number for your call summaries (text after every call) *", "q_email": "Email for your call summaries *", "q_number": "Your business number", "q_number_keep": "Keep mine — I'll forward it", "q_number_new": "New number, please", "q_area_code": "Pick an area code for your new number", "q_area_code_hint": "We'll get you the closest match we can — the exact code depends on what's available, so we can't promise a specific one.", "q_area_auto": "You pick for me — closest match to my service area", "q_area_other": "Other area code:", "q_area_review_auto": "You pick for me", "q_services": "What services or jobs do you take? List the main ones. *", "q_area": "What areas or cities do you serve?", "q_hours": "Business hours for jobs (e.g. Mon–Sat 8–6) and any closed days *", "q_booking": "Do you want the assistant to book jobs onto a Google Calendar we set up for you?", "q_booking_yes": "Yes, book jobs", "q_booking_no": "No, messages only", "q_tracker": "How do you keep track of jobs right now?", "q_tracker_google": "Google Calendar", "q_tracker_jobber": "Jobber", "q_tracker_housecall": "Housecall Pro", "q_tracker_servicetitan": "ServiceTitan", "q_tracker_paper": "Paper notebook", "q_tracker_other": "Other", "q_durations": "Typical job lengths — for your main services, about how long does each take? (e.g. drain clog 1 hr, water heater half day)", "q_transfer": "When a call is urgent or the caller asks for you:", "q_transfer_transfer": "Transfer the call to my cell — 25¢ per transfer minute", "q_transfer_message": "Take a message and text me right away (free — the default)", "q_quoting": "Prices on the phone?", "q_quoting_never": "Never quote — tech prices on site", "q_quoting_ballpark": "Rough ballparks for simple jobs OK", "q_quoting_set": "I have set prices (I'll send them)", "q_volume": "About how many minutes of calls do you expect a month?", "q_volume_under100": "Under 100", "q_volume_100_200": "100–200", "q_volume_200_400": "200–400", "q_volume_400_750": "400–750", "q_volume_over750": "Over 750", "q_plan": "Which plan do you want?", "q_plan_monthly": "Base + Minutes — $50/mo + 75¢/min", "q_plan_payg": "Pay As You Go — $1/min, no monthly fee", "q_plan_pro": "Pro — $150/mo + 50¢/min, best above 400 min/mo", "q_plan_name_monthly": "Base + Minutes", "q_plan_name_payg": "Pay As You Go", "q_plan_name_pro": "Pro", "q_plan_range_under100": "under 100", "q_plan_range_over750": "over 750", "q_plan_suggest": "For {range} min/mo, {plan} is cheapest — about {cost}/mo.", "q_plan_suggest_upto": "For {range} min/mo, {plan} is cheapest — up to about {cost}/mo.", "q_plan_suggest_from": "For {range} min/mo, {plan} is cheapest — from about {cost}/mo.", "q_script": "Paste your own script or prompt (optional)", "q_script_hint": "If you already have a script for how calls should go, paste it here. We wrap it in our safety rules — it can set the tone and the must-ask questions, but it can't remove the guardrails.", "q_notes": "Anything else callers should know or always ask about? (service area, gate notes, “we don't do X”)"}, "es": {"call_demo": "Empezar", "d_explore": "Explorar", "d_hear": "Escúchalo tú mismo", "d_hear_sub": "Llama a nuestra línea — está activa ahorita, y contesta como contestaría por su negocio.", "d_services": "Servicios", "d_start": "Empezar", "dd1d": "Las emergencias no pueden esperar", "dd1t": "HVAC, plomería y electricidad", "dd2d": "Cada cotización empieza con una llamada", "dd2t": "Techos y contratistas", "dd3d": "Rutas para su equipo, no buzones de voz", "dd3t": "Jardinería y control de plagas", "dd4d": "Cotizaciones mientras usted trabaja", "dd4t": "Limpieza y servicios del hogar", "dd5d": "Nos encargamos de las llamadas de estatus", "dd5t": "Talleres mecánicos", "dd6d": "Cualquier negocio que vive del teléfono", "dd6t": "Salones, clínicas y más", "disclaimer": "Asistente automatizado, con tecnología de IA, para llamadas rutinarias de negocios. No es interpretación certificada legal ni médica.", "flInd1": "HVAC y plomería", "flInd3": "Jardinería y plagas", "flInd4": "Talleres mecánicos", "footerArea3": "Todo Estados Unidos", "footerAreas": "Áreas de servicio", "footerTagline": "Su recepción, automatizada. Sin llamadas perdidas. Sin mensajes perdidos. Sin clientes perdidos.", "ftrBlurb": "Su recepción, automatizada. Atención 24/7 en inglés y español para negocios que no pueden perder una llamada.", "ftrCoH": "Compañía", "ftrIndH": "Industrias", "ftrPrivacy": "Privacidad", "ftrRights": "© 2026 Chaidez Automations. Todos los derechos reservados.", "ftrSvcH": "Servicios", "ftrTerms": "Términos", "ind4n": "Techos y contratistas", "nav_faq": "Preguntas", "nav_how": "Cómo funciona", "nav_ind": "Industrias ▾", "nav_ind2": "Industrias que atendemos", "nav_login": "Acceso clientes", "nav_pricing": "Precios", "nav_services": "Servicios ▾", "privLine": "Sus datos son suyos: los detalles de sus llamadas se usan solo para operar su recepción y enviarle sus resúmenes — nunca se venden ni se comparten.", "sticky_call": "Llama a nuestra línea", "sticky_pricing": "Ver precios", "svc1_d": "Recepción 24/7 en inglés y español", "svc1_t": "Contestación de llamadas", "svc2_d": "Trabajos agendados directo en su calendario", "svc2_t": "Agendación en calendario", "svc3_d": "Cada llamada — en su bolsillo y en un registro", "svc3_t": "Resúmenes y registro", "ob_eye": "Configuración", "ob_h": "Cuéntenos cómo trabaja su negocio.", "ob_sub": "Unos 5 minutos. Conteste a su ritmo — sus respuestas se guardan solas y puede volver cuando quiera con su enlace.", "ob_stepof": "Paso {n} de {t}", "ob_saved": "Guardado ✓", "ob_back": "← Atrás", "ob_next": "Guardar y seguir →", "ob_submit": "Enviar mi configuración", "ob_err": "Algo salió mal al guardar — inténtelo de nuevo, o llámenos al (619) 304-2687.", "ob_email_h": "Empiece con su correo", "ob_email_p": "Lo usaremos para guardar sus respuestas y que pueda seguir donde quedó — aquí, por texto o por correo.", "ob_email_label": "Correo electrónico *", "ob_email_btn": "Empezar mi configuración →", "ob_email_bad": "Escriba un correo válido.", "ob_link_note": "Guarde esta página en favoritos — sus respuestas se guardan solas.", "ob_done_h": "¡Listo — gracias!", "ob_done_p": "Estamos armando su recepción ahora. Normalmente queda activa en 1 a 2 días. Le escribiremos por texto cuando esté lista para una llamada de prueba.", "ob_already_h": "Ya enviado", "ob_already_p": "Su configuración ya está con nuestro equipo — no falta nada más. Le escribiremos por texto cuando esté lista para una llamada de prueba.", "ob_review_h": "Revise todo y luego envíelo", "ob_review_p": "Toque Editar en lo que quiera cambiar.", "ob_edit": "Editar", "ob_notset": "—", "ob_missing": "Falta llenar: ", "fSelect": "Seleccione su oficio", "q_select": "Seleccione…", "s1_h": "Su negocio", "s2_h": "Su número y servicios", "s3_h": "Agendación", "s4_h": "Cómo se atienden las llamadas", "s5_h": "Su plan", "s6_h": "Su guion (opcional)", "q_business": "Nombre del negocio — tal como se debe contestar el teléfono *", "q_owner": "Su nombre *", "q_trade": "Oficio *", "q_phone": "Celular para sus resúmenes de llamada (texto después de cada llamada) *", "q_email": "Correo para sus resúmenes de llamada *", "q_number": "Su número de negocio", "q_number_keep": "Conservo el mío — yo lo desvío", "q_number_new": "Número nuevo, por favor", "q_area_code": "Elija un código de área para su número nuevo", "q_area_code_hint": "Le conseguimos lo más cercano que podamos — el código exacto depende de lo disponible, así que no podemos prometer uno específico.", "q_area_auto": "Elijan por mí — lo más cercano a mi zona de servicio", "q_area_other": "Otro código de área:", "q_area_review_auto": "Ustedes eligen por mí", "q_services": "¿Qué servicios o trabajos hace? Los principales. *", "q_area": "¿Qué zonas o ciudades atiende?", "q_hours": "Horario de trabajo (ej. lun–sáb 8–6) y días cerrados *", "q_booking": "¿Quiere que el asistente agende trabajos en un Google Calendar que configuramos para usted?", "q_booking_yes": "Sí, que agende trabajos", "q_booking_no": "No, solo mensajes", "q_tracker": "¿Cómo lleva sus trabajos ahorita?", "q_tracker_google": "Google Calendar", "q_tracker_jobber": "Jobber", "q_tracker_housecall": "Housecall Pro", "q_tracker_servicetitan": "ServiceTitan", "q_tracker_paper": "Cuaderno de papel", "q_tracker_other": "Otro", "q_durations": "Duración típica — ¿cuánto toma cada trabajo principal? (ej. drenaje tapado 1 hora, calentador medio día)", "q_transfer": "Cuando una llamada es urgente o piden hablar con usted:", "q_transfer_transfer": "Transferir la llamada a mi celular — 25¢ por minuto de transferencia", "q_transfer_message": "Tomar el mensaje y avisarme por texto de inmediato (gratis — lo normal)", "q_quoting": "¿Precios por teléfono?", "q_quoting_never": "Nunca dar precios — el técnico cobra en el lugar", "q_quoting_ballpark": "Estimaciones aproximadas para trabajos sencillos, está bien", "q_quoting_set": "Tengo precios fijos (se los envío)", "q_volume": "¿Cuántos minutos de llamadas espera al mes, más o menos?", "q_volume_under100": "Menos de 100", "q_volume_100_200": "100–200", "q_volume_200_400": "200–400", "q_volume_400_750": "400–750", "q_volume_over750": "Más de 750", "q_plan": "¿Qué plan quiere?", "q_plan_monthly": "Base + Minutos — $50/mes + 75¢/min", "q_plan_payg": "Pago Por Uso — $1/min, sin mensualidad", "q_plan_pro": "Pro — $150/mes + 50¢/min, ideal arriba de 400 min/mes", "q_plan_name_monthly": "Base + Minutos", "q_plan_name_payg": "Pago Por Uso", "q_plan_name_pro": "Pro", "q_plan_range_under100": "menos de 100", "q_plan_range_over750": "más de 750", "q_plan_suggest": "Para {range} min/mes, {plan} es lo más barato — unos {cost}/mes.", "q_plan_suggest_upto": "Para {range} min/mes, {plan} es lo más barato — hasta unos {cost}/mes.", "q_plan_suggest_from": "Para {range} min/mes, {plan} es lo más barato — desde unos {cost}/mes.", "q_script": "Pegue su propio guion o instrucciones (opcional)", "q_script_hint": "Si ya tiene un guion para sus llamadas, péguelo aquí. Lo ponemos dentro de nuestras reglas de seguridad — puede fijar el tono y las preguntas clave, pero no puede quitar las protecciones.", "q_notes": "¿Algo más que los clientes deban saber o preguntar siempre? (zona, notas de puerta, “no hacemos X”)"}};
 var lang = "en";
 var WORKER = "https://chaidez-2-0-backend.orlandochaidez.workers.dev";
 var token = null, leadId = null, hp = "";
@@ -602,7 +614,7 @@ var answers = {}, scriptText = "", step = 1, submitted = false;
 var TOTAL = 7;
 var REVIEW_FIELDS = [
   ["business_name","q_business",1],["owner_name","q_owner",1],["trade","q_trade",1],["phone","q_phone",1],["email","q_email",1],
-  ["number_choice","q_number",2],["services","q_services",2],["service_area","q_area",2],["hours","q_hours",2],
+  ["number_choice","q_number",2],["area_code","q_area_code",2],["services","q_services",2],["service_area","q_area",2],["hours","q_hours",2],
   ["booking_on","q_booking",3],["tracker","q_tracker",3],["durations","q_durations",3],
   ["transfer","q_transfer",4],["quoting","q_quoting",4],["expected_minutes","q_volume",4],
   ["plan","q_plan",5],["script_text","q_script",6],["notes","q_notes",6]
@@ -617,6 +629,170 @@ function renderTrades(){
   });
   if(current) sel.value = current;
 }
+// Area-code picker (2026-11-23): suggestions from the service area the
+// applicant already typed. Mirrors AREA_CODE_SUGGESTIONS in worker.js —
+// keep the two tables in step. Codes are suggestions only: Twilio stock
+// varies, so the page promises the closest match, never a guaranteed code.
+// The hidden #area_code field is the single source of truth ("auto" or
+// exactly 3 digits); the radios and the free-type box only feed it, and
+// re-rendering suggestions never overwrites a pick already made.
+var AREA_CODE_MAP = [
+  { match: ["san diego", "sd", "chula vista", "national city", "el cajon", "la mesa", "la jolla", "imperial beach", "san ysidro", "otay mesa", "spring valley", "downtown san diego"], codes: ["619", "858"], label: "San Diego" },
+  { match: ["los angeles", "la", "pasadena", "glendale", "burbank", "van nuys", "north hollywood", "santa clarita", "sylmar", "north hills", "downey", "long beach", "san fernando", "hollywood"], codes: ["213", "310", "323", "424", "626", "818"], label: "Los Angeles" },
+  { match: ["escondido", "oceanside", "vista", "san marcos", "carlsbad", "encinitas", "solana beach"], codes: ["760", "442"], label: "San Diego North County" },
+  { match: ["orange county", "huntington beach", "costa mesa", "newport beach", "laguna beach", "san clemente", "dana point", "seal beach", "anaheim", "santa ana", "irvine"], codes: ["714", "949", "657", "562"], label: "Orange County" },
+  { match: ["san antonio"], codes: ["210"], label: "San Antonio" },
+  { match: ["el paso"], codes: ["915"], label: "El Paso" },
+  { match: ["bakersfield"], codes: ["661"], label: "Bakersfield" },
+  { match: ["lindsay", "tulare", "visalia", "fresno"], codes: ["559"], label: "Central Valley" }
+];
+function areaSuggestions(areaText){
+  var raw = String(areaText || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  var text = " " + raw.replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim() + " ";
+  if(!text.trim()) return [];
+  var hits = [];
+  // Collect every (row, keyword, position) match first: a short keyword
+  // shadowed at the same position by a longer one from another row does
+  // NOT count — "La Mesa" must suggest San Diego, not Los Angeles via
+  // the bare "la" keyword (same for "La Jolla").
+  var matches = [];
+  AREA_CODE_MAP.forEach(function(row, i){
+    row.match.forEach(function(kw){
+      var idx = text.indexOf(" " + kw + " ");
+      if(idx !== -1) matches.push({ row: i, len: kw.length, idx: idx });
+    });
+  });
+  AREA_CODE_MAP.forEach(function(row, i){
+    var rowMatches = matches.filter(function(m){
+      return m.row === i && !matches.some(function(o){ return o.row !== i && o.idx === m.idx && o.len > m.len; });
+    });
+    if(!rowMatches.length) return;
+    var at = Math.min.apply(null, rowMatches.map(function(m){ return m.idx; }));
+    hits.push({ at: at, order: i, row: row });
+  });
+  hits.sort(function(a, b){ return (a.at - b.at) || (a.order - b.order); });
+  var out = [], seen = {};
+  hits.forEach(function(h){ h.row.codes.forEach(function(c){ if(!seen[c]){ seen[c] = true; out.push({ code: c, label: h.row.label }); } }); });
+  return out;
+}
+function areaPick(){
+  var h = document.getElementById("area_code");
+  return h ? h.value : "auto";
+}
+function areaPickIsSuggested(pick){
+  return !!document.querySelector('#area-suggestions input[value="' + pick + '"]');
+}
+// Reflect the stored pick in the radios: a suggested code checks its
+// radio; a code the area no longer suggests lives in the "other" box.
+function reflectAreaPick(){
+  var pick = areaPick();
+  var other = document.getElementById("area_code_other");
+  if(other) other.value = (/^\d{3}$/.test(pick) && !areaPickIsSuggested(pick)) ? pick : "";
+  document.querySelectorAll('input[name="area_code_choice"]').forEach(function(r){
+    if(r.value === "auto") r.checked = (pick === "auto" || pick === "");
+    else if(r.value === "other") r.checked = (/^\d{3}$/.test(pick) && !areaPickIsSuggested(pick));
+    else r.checked = (r.value === pick);
+  });
+}
+function renderAreaSuggestions(){
+  var box = document.getElementById("area-suggestions");
+  if(!box) return;
+  var sug = areaSuggestions(document.getElementById("service_area").value);
+  box.innerHTML = "";
+  sug.forEach(function(s){
+    var lab = document.createElement("label"); lab.className = "check";
+    var inp = document.createElement("input"); inp.type = "radio"; inp.name = "area_code_choice"; inp.value = s.code;
+    var sp = document.createElement("span"); sp.textContent = s.code + " — " + s.label;
+    lab.appendChild(inp); lab.appendChild(sp); box.appendChild(lab);
+  });
+  reflectAreaPick();
+}
+// Push the checked choice into the hidden area_code field (the value
+// that actually saves): auto, a suggested code, or the typed 3 digits.
+// An "other" pick with fewer than 3 digits falls back to auto.
+function syncAreaCode(){
+  var h = document.getElementById("area_code");
+  if(!h) return;
+  var sel = document.querySelector('input[name="area_code_choice"]:checked');
+  if(!sel){ h.value = "auto"; return; }
+  if(sel.value === "auto"){ h.value = "auto"; return; }
+  if(sel.value === "other"){
+    var d = (document.getElementById("area_code_other").value || "").replace(/\D/g, "");
+    h.value = (/^\d{3}$/.test(d)) ? d : "auto";
+    return;
+  }
+  h.value = sel.value;
+}
+function updateAreaPicker(){
+  var checked = document.querySelector('input[name="number_choice"]:checked');
+  var isNew = checked && checked.value === "new";
+  var p = document.getElementById("area-picker");
+  if(!p) return;
+  if(isNew){ p.style.display = "block"; renderAreaSuggestions(); }
+  else {
+    p.style.display = "none";
+    // Keep-number: the picker is moot — clear the stored pick so no
+    // picker data rides along with a forwarding shop.
+    var h = document.getElementById("area_code");
+    if(h) h.value = "";
+    delete answers.area_code;
+    var other = document.getElementById("area_code_other");
+    if(other) other.value = "";
+  }
+}
+// Cheapest-plan suggestion (2026-11-23): step 5 shows which plan costs
+// least for the minutes picked on step 4. Suggestion only — it never
+// changes the selected plan, and nothing about it is saved. Mirrors
+// cheapestPlanForRange in worker.js (same FINAL pricing); the band is a
+// range, so the line quotes the cost across the band instead of inventing
+// a midpoint. A plan is the band's pick when it is cheapest-or-tied at
+// both ends, so a boundary tie (PAYG/Base at 200, Base/Pro at 400) does
+// not count as a flip; a genuine flip would name both ends.
+var PLAN_SUGGEST_COSTS = { payg: { base: 0, rate: 1 }, monthly: { base: 50, rate: 0.75 }, pro: { base: 150, rate: 0.5 } };
+var PLAN_SUGGEST_BANDS = { under_100: [0, 100], "100_200": [100, 200], "200_400": [200, 400], "400_750": [400, 750], over_750: [750, null] };
+var PLAN_SUGGEST_LABELS = { "100_200": "100–200", "200_400": "200–400", "400_750": "400–750" };
+function suggestCost(plan, min){ return PLAN_SUGGEST_COSTS[plan].base + PLAN_SUGGEST_COSTS[plan].rate * min; }
+function suggestDollars(n){ return "$" + (Number.isInteger(n) ? n : n.toFixed(2)); }
+function renderPlanSuggestion(){
+  var el = document.getElementById("plan-suggestion");
+  if(!el) return;
+  var sel = document.getElementById("expected_minutes");
+  var range = (sel && sel.value) || answers.expected_minutes || "";
+  var band = PLAN_SUGGEST_BANDS[range];
+  if(!band){ el.style.display = "none"; el.textContent = ""; return; }
+  var all = ["payg", "monthly", "pro"];
+  var qualifies = function(p){
+    if(!all.every(function(q){ return suggestCost(p, band[0]) <= suggestCost(q, band[0]); })) return false;
+    if(band[1] == null) return PLAN_SUGGEST_COSTS[p].rate <= Math.min.apply(null, all.map(function(q){ return PLAN_SUGGEST_COSTS[q].rate; }));
+    return all.every(function(q){ return suggestCost(p, band[1]) <= suggestCost(q, band[1]); });
+  };
+  var winners = all.filter(qualifies);
+  var plan = winners.length ? winners.sort(function(a, b){ return PLAN_SUGGEST_COSTS[a].base - PLAN_SUGGEST_COSTS[b].base; })[0] : null;
+  var rangeLabel;
+  if(range === "under_100") rangeLabel = T[lang].q_plan_range_under100;
+  else if(range === "over_750") rangeLabel = T[lang].q_plan_range_over750;
+  else rangeLabel = PLAN_SUGGEST_LABELS[range];
+  var line;
+  if(!plan){
+    // Genuine flip inside the band (does not happen for today's bands):
+    // name both ends honestly instead of picking one.
+    var cheapestAt = function(m){
+      var best = "payg";
+      ["monthly", "pro"].forEach(function(p){ if(suggestCost(p, m) < suggestCost(best, m)) best = p; });
+      return best;
+    };
+    var lowPlan = cheapestAt(band[0]), highPlan = cheapestAt(band[1]);
+    line = T[lang].q_plan_suggest.replace("{range}", rangeLabel).replace("{plan}", T[lang]["q_plan_name_" + lowPlan] + " / " + T[lang]["q_plan_name_" + highPlan]).replace("{cost}", suggestDollars(suggestCost(lowPlan, band[0])) + "–" + suggestDollars(suggestCost(highPlan, band[1])));
+  } else if(band[1] == null){
+    line = T[lang].q_plan_suggest_from.replace("{range}", rangeLabel).replace("{plan}", T[lang]["q_plan_name_" + plan]).replace("{cost}", suggestDollars(suggestCost(plan, band[0])));
+  } else if(suggestCost(plan, band[0]) === 0){
+    line = T[lang].q_plan_suggest_upto.replace("{range}", rangeLabel).replace("{plan}", T[lang]["q_plan_name_" + plan]).replace("{cost}", suggestDollars(suggestCost(plan, band[1])));
+  } else {
+    line = T[lang].q_plan_suggest.replace("{range}", rangeLabel).replace("{plan}", T[lang]["q_plan_name_" + plan]).replace("{cost}", suggestDollars(suggestCost(plan, band[0])) + "–" + suggestDollars(suggestCost(plan, band[1])));
+  }
+  el.textContent = line;
+  el.style.display = "block";
+}
 function setLang(l){
   lang = l;
   document.documentElement.lang = (l==="es" ? "es" : "en");
@@ -630,6 +806,7 @@ function setLang(l){
   });
   renderTrades();
   updateStepUI();
+  if(step === 5) renderPlanSuggestion();
   if(step === TOTAL) renderReview();
 }
 document.getElementById("btn-en").addEventListener("click", function(){ setLang("en"); });
@@ -657,6 +834,8 @@ function showStep(n){
   step = Math.max(1, Math.min(TOTAL, n));
   hideErr();
   updateStepUI();
+  if(step === 2) updateAreaPicker();
+  if(step === 5) renderPlanSuggestion();
   if(step === TOTAL) renderReview();
   window.scrollTo({top: 0, behavior: "smooth"});
 }
@@ -689,6 +868,7 @@ function fillForm(){
   renderTrades();
   var t = document.getElementById("trade");
   if(answers.trade) t.value = answers.trade;
+  updateAreaPicker();
 }
 async function post(path, body){
   var r = await fetch(WORKER + path, { method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify(body) });
@@ -697,6 +877,7 @@ async function post(path, body){
 }
 async function saveStep(nextStep){
   var data = collectStep(step);
+  delete data.area_code_other; // the free-type box is not an answer — the hidden area_code field carries the pick
   var st = "";
   var hasScript = !!document.getElementById("step-" + step).querySelector('[name="script_text"]');
   if(data.script_text !== undefined){ st = data.script_text; delete data.script_text; }
@@ -725,6 +906,12 @@ document.getElementById("ob-back").addEventListener("click", async function(){
 });
 function displayValue(key){
   if(key === "script_text") return scriptText || "";
+  if(key === "area_code"){
+    var v = (document.getElementById("area_code").value || answers.area_code || "").trim();
+    if(v === "auto") return T[lang].q_area_review_auto;
+    if(/^\d{3}$/.test(v)) return v;
+    return "";
+  }
   var els = document.querySelectorAll('[name="' + key + '"]');
   for(var i = 0; i < els.length; i++){
     var el = els[i];
@@ -783,6 +970,33 @@ document.getElementById("gate-btn").addEventListener("click", async function(){
     hide("gate"); show("wizard"); showStep(1);
   }catch(e){ bad2.classList.add("show"); }
   finally{ btn.disabled = false; }
+});
+// Area-code picker wiring: number choice shows/hides the picker;
+// suggestion radios are built dynamically, so the choice change is
+// delegated from #area-choices; typing in the free-type box selects
+// "other" and syncs the hidden field; editing the service area
+// re-renders suggestions without touching the stored pick.
+document.querySelectorAll('input[name="number_choice"]').forEach(function(r){
+  r.addEventListener("change", updateAreaPicker);
+});
+// Cheapest-plan suggestion: recompute when the minutes band changes, so
+// going back to step 4 and picking a different band updates step 5.
+document.getElementById("expected_minutes").addEventListener("change", renderPlanSuggestion);
+document.getElementById("area-choices").addEventListener("change", function(e){
+  if(e.target && e.target.name === "area_code_choice") syncAreaCode();
+});
+document.getElementById("area_code_other").addEventListener("input", function(){
+  this.value = this.value.replace(/\D/g, "").slice(0, 3);
+  if(this.value){
+    var other = document.querySelector('input[name="area_code_choice"][value="other"]');
+    if(other) other.checked = true;
+  }
+  syncAreaCode();
+});
+["input", "blur"].forEach(function(evt){
+  document.getElementById("service_area").addEventListener(evt, function(){
+    if(document.getElementById("area-picker").style.display !== "none") renderAreaSuggestions();
+  });
 });
 async function init(){
   var q = new URLSearchParams(location.search);
